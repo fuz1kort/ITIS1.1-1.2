@@ -1,0 +1,167 @@
+/*char chA, chB;
+int numberA, numberB;
+
+chA = char.Parse(Console.ReadLine());
+numberA = int.Parse(Console.ReadLine());
+
+chB = char.Parse(Console.ReadLine());
+numberB= int.Parse(Console.ReadLine());
+
+if (chA == chB && (Math.Abs(numberB - numberA) == 1 || Math.Abs(numberB-numberA)==2 && numberA==2))
+{
+    Console.WriteLine("Да");
+}
+else
+{
+    Console.WriteLine("Нет");
+}
+
+char chA, chB;
+int numberA, numberB;
+
+chA = char.Parse(Console.ReadLine());
+numberA = int.Parse(Console.ReadLine());
+
+chB = char.Parse(Console.ReadLine());
+numberB= int.Parse(Console.ReadLine());
+
+if ((chA == chB && numberB != numberA) || (chA != chB && numberA == numberB)){
+    Console.WriteLine("Да");
+}
+else
+{
+    Console.WriteLine("Нет");
+}
+
+char chA, chB;
+int numberA, numberB;
+
+chA = char.Parse(Console.ReadLine());
+numberA = int.Parse(Console.ReadLine());
+
+chB = char.Parse(Console.ReadLine());
+numberB = int.Parse(Console.ReadLine());
+
+if((Math.Abs(numberA - numberB) ==1 && Math.Abs(chB-chA)==2) || Math.Abs(chB-chA)==1 && Math.Abs(numberA - numberB) == 2)
+{
+    Console.WriteLine("Да");
+}
+else
+{
+    Console.WriteLine("Нет");
+}
+
+char chA, chB;
+int numberA, numberB;
+
+chA = char.Parse(Console.ReadLine());
+numberA = int.Parse(Console.ReadLine());
+
+chB = char.Parse(Console.ReadLine());
+numberB = int.Parse(Console.ReadLine());
+
+if((Math.Abs(chB-chA)<=1 && Math.Abs(numberB - numberA) <= 1))
+{
+    Console.WriteLine("Да");
+}
+else
+{
+    Console.WriteLine("Нет");
+}
+char chA, chB;
+int numberA, numberB;
+
+chA = char.Parse(Console.ReadLine());
+numberA = int.Parse(Console.ReadLine());
+
+chB = char.Parse(Console.ReadLine());
+numberB = int.Parse(Console.ReadLine());
+
+if(Math.Abs(chB - chA)==Math.Abs(numberB-numberA) && Math.Abs(chA - chB) != 0)
+{
+    Console.WriteLine("Да");
+}
+else
+{
+    Console.WriteLine("Нет");
+}
+
+char chA, chB;
+int numberA, numberB;
+
+chA = char.Parse(Console.ReadLine());
+numberA = int.Parse(Console.ReadLine());
+
+chB = char.Parse(Console.ReadLine());
+numberB = int.Parse(Console.ReadLine());
+
+if(((Math.Abs(chB - chA) <= 1 && Math.Abs(numberB - numberA) <= 1)) || ((chA == chB && numberB != numberA) || (chA != chB && numberA == numberB)))
+{
+    Console.WriteLine("Да");
+}
+else
+{
+    Console.WriteLine("Нет");
+}
+
+int n = 10, fact;
+
+fact = 1;
+int i = 1;
+
+while (i <= n)
+{
+    fact = fact * i;
+    i++;
+}
+
+Console.WriteLine(fact);
+
+long n = 35, fact;
+
+fact = 1;
+int i = 1;
+
+do
+{
+    fact = fact * i;
+    i++;
+} while (i <= n);
+Console.WriteLine(fact);
+
+int n = 10, fact;
+
+fact = 1;
+int i = 1;
+
+for(i = 1; i <= n; i++)
+{
+    fact *= i;
+}
+Console.WriteLine(fact);
+
+double n;
+
+n = double.Parse(Console.ReadLine());
+while (n > 1)
+{
+    n = n / 2;
+}
+if (n == 1)
+{
+    Console.WriteLine("Да");
+}
+else
+{
+    Console.WriteLine("Нет");
+}
+
+int n, kolichestvo_tsifr_v_chisle = 0;
+n = int.Parse(Console.ReadLine());
+while (n > 0)
+{
+    n /= 10;
+    kolichestvo_tsifr_v_chisle++;
+}
+Console.WriteLine(kolichestvo_tsifr_v_chisle);*/
+

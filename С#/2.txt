@@ -1,0 +1,11 @@
+double a, b, c, x1, x2;
+Console.WriteLine("Введите коэффиценты квадратного уравнения:");
+a = double.Parse(Console.ReadLine());
+b = double.Parse(Console.ReadLine());
+c = double.Parse(Console.ReadLine());
+if (a != 0)
+{
+    x1 = (-b + Math.Sqrt(b * b - 4 * a * c)) / 2 * a;
+    x2 = (-b - Math.Sqrt(b * b - 4 * a * c)) / 2 * a;
+    Console.WriteLine(x1, x2);
+}
