@@ -1,2 +1,2 @@
 ﻿Console.WriteLine("Здарова");
-Console.WriteLine("Хёндай");
+Console.WriteLine("АНИМЕЕЕЕЕ");

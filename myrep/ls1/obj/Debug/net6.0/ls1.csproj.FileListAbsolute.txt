@@ -1,0 +1,15 @@
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\myrep\ls1\bin\Debug\net6.0\ls1.exe
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\myrep\ls1\bin\Debug\net6.0\ls1.deps.json
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\myrep\ls1\bin\Debug\net6.0\ls1.runtimeconfig.json
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\myrep\ls1\bin\Debug\net6.0\ls1.dll
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\myrep\ls1\bin\Debug\net6.0\ls1.pdb
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\myrep\ls1\obj\Debug\net6.0\ls1.csproj.AssemblyReference.cache
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\myrep\ls1\obj\Debug\net6.0\ls1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\myrep\ls1\obj\Debug\net6.0\ls1.AssemblyInfoInputs.cache
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\myrep\ls1\obj\Debug\net6.0\ls1.AssemblyInfo.cs
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\myrep\ls1\obj\Debug\net6.0\ls1.csproj.CoreCompileInputs.cache
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\myrep\ls1\obj\Debug\net6.0\ls1.dll
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\myrep\ls1\obj\Debug\net6.0\refint\ls1.dll
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\myrep\ls1\obj\Debug\net6.0\ls1.pdb
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\myrep\ls1\obj\Debug\net6.0\ls1.genruntimeconfig.cache
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\myrep\ls1\obj\Debug\net6.0\ref\ls1.dll
