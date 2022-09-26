@@ -1,4 +1,4 @@
-﻿double x = double.Parse(Console.ReadLine()), y = 0;
+﻿/*double x = double.Parse(Console.ReadLine()), y = 0;
 int k = int.Parse(Console.ReadLine());
 double p = x;
 while (k > 0)
@@ -8,4 +8,59 @@ while (k > 0)
     p = Math.Sin(p);
 }
 Console.WriteLine(y);
-//Корни 
+
+
+double x, step, y, cnt;
+x=double.Parse(Console.ReadLine());
+step = Math.Sin(x);
+y = 1;
+cnt = 0;
+while (y > 0.0001)
+{
+    y=Math.Sin(step);
+    step = Math.Sin(step);
+    cnt++;
+}
+Console.WriteLine($"{y},{cnt}");
+
+
+double x, y = 1;
+int fact = 1, step = 0;
+x=double.Parse(Console.ReadLine());
+while (y < Math.Pow(Math.E, x))
+{
+    step++;
+    fact = fact * step;
+    y = y + Math.Pow(x, step) / fact;
+
+}
+Console.WriteLine(y); 
+
+
+double x, y = 1;
+int fact = 1, step = 0;
+x = double.Parse(Console.ReadLine());
+step += 2;
+fact = fact * (-step) * (step - 1);
+y = y + Math.Pow(x, step) / fact;
+while (y < Math.Cos(x))
+{
+    step+=2;
+    fact = fact * (-step)*(step-1);
+    y = y + Math.Pow(x, step) / fact;
+
+}
+Console.WriteLine(y);
+*/
+
+double x, y;
+x = double.Parse(Console.ReadLine());
+y = double.Parse(Console.ReadLine());
+if(x<=1 && x>=-1 && y>=(-(x*x)) && y<=1 && Math.Abs(x + y) <= 1)
+{
+    Console.WriteLine("Входит");
+}
+else
+{
+    Console.WriteLine("Не входит");
+}
