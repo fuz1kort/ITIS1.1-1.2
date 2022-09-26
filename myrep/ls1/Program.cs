@@ -53,14 +53,10 @@ while (y < Math.Cos(x))
 Console.WriteLine(y);
 */
 
-double x, y;
-x = double.Parse(Console.ReadLine());
-y = double.Parse(Console.ReadLine());
-if(x<=1 && x>=-1 && y>=(-(x*x)) && y<=1 && Math.Abs(x + y) <= 1)
-{
+
+double x = double.Parse(Console.ReadLine());
+double y = double.Parse(Console.ReadLine());
+if(x<=1 && x>=-1 && y>=(-(x*x)) && y<=0 || (Math.Abs(x + y) <= 1 && y>=1))
     Console.WriteLine("Входит");
-}
 else
-{
     Console.WriteLine("Не входит");
-}
