@@ -56,7 +56,7 @@ Console.WriteLine(y);
 
 double x = double.Parse(Console.ReadLine());
 double y = double.Parse(Console.ReadLine());
-if(x<=1 && x>=-1 && y>=(-(x*x)) && y<=0 || (Math.Abs(x + y) <= 1 && y>=1))
+if(x<=1 && x>=-1 && y>=(-(x*x)) && y<=0 || (Math.Abs(x + y) <= 1 && y>=0))
     Console.WriteLine("Входит");
 else
     Console.WriteLine("Не входит");
