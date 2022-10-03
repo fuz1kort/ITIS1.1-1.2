@@ -1,4 +1,4 @@
-﻿double x, y;
+double x, y;
 x = double.Parse(Console.ReadLine());
 y = 0;
 int k = 1;
