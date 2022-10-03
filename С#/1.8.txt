@@ -2,12 +2,14 @@ double x, y;
 x = double.Parse(Console.ReadLine());
 y = x;
 int fact = 1;
+int k = 1;
 double step = x;
 while (Math.Sinh(x) - y >= 0.01)
 {
-    fact = fact * (fact + 2) * (fact + 1);
+    fact = fact * (k + 2) * (k + 1);
     step = step * x * x;
     y += (step / fact);
+    k += 2;
 }
 Console.WriteLine(y);
 Console.WriteLine(Math.Sinh(x));
