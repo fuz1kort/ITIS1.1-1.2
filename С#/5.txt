@@ -1,4 +1,4 @@
-﻿/*const int n = 10;
+/*const int n = 10;
 double[] arr = new double[n];
 
 arr[5] = 20;
