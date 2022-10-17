@@ -217,10 +217,14 @@ for (int i = 1; i < mass.Length-1; i++)
     }
 
 }
+
 Console.WriteLine();
+
 for (int i = 0; i < mass.Length; i++)
 {
     Console.Write($"{mass[i]} ");
 }
+
 Console.WriteLine();
+
 Console.WriteLine($"Ответ: {cnt}");
