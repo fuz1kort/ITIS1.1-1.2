@@ -223,4 +223,4 @@ for (int i = 0; i < mass.Length; i++)
     Console.Write($"{mass[i]} ");
 }
 Console.WriteLine();
-Console.WriteLine(cnt);
+Console.WriteLine($"Ответ: {cnt}");
