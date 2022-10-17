@@ -1,190 +1,226 @@
-﻿/*const int n = 10;
-double[] arr = new double[n];
+﻿/*int n = 3, m = 3;
+Random r = new Random();
+int[,] matr = new int[n, m];
 
-arr[5] = 20;
-Random r =new Random();
+for (int i = 0; i < n; i++)
+{
+    for (int j = 0; j < m; j++)
+    {
+        matr[i, j] = r.Next(100);
+        
+    }
+}
 
+for (int i = 0; i < n; i++)
+{
+    for (int j = 0; j < m; j++)
+    {
+
+        Console.Write($"{matr[i, j]} ");
+    }
+    Console.WriteLine();
+}
+Console.WriteLine();
+for (int i = 0; i < n; i++)
+{
+    for (int j = 0; j < m; j++)
+    {
+
+        Console.Write($"{matr[m-1-j, i]} ");
+    }
+    Console.WriteLine();
+}
+
+
+
+
+int n = 3, m = 3, summa = 0;
+Random r = new Random();
+int[,] matr = new int[n, m];
+for (int i = 0; i < n; i++)
+{
+    for (int j = 0; j < m; j++)
+    {
+        matr[i, j] = r.Next(100);
+        if (i == 0 || j == 0 || i == (n - 1) || j == (m - 1))
+        {
+            summa += matr[i, j];
+        }
+    }
+}
+
+for (int i = 0; i < n; i++)
+{
+    for (int j = 0; j < m; j++)
+    {
+        Console.Write($"{matr[i, j]} ");
+    }
+    Console.WriteLine();
+}
+
+Console.WriteLine(summa);
+
+int n = 3, m = 3;
+int[,] matr = new int[n, m];
+Random r = new Random();
+
+int summ = 0;
+for (int i = 0; i < n; i++)
+{
+    for (int j = 0; j < m; j++)
+    {
+        matr[i, j] = r.Next(100);
+        if (i == j || (i == n - j - 1))
+        {
+            summ += matr[i, j];
+        }
+    }
+}
+for (int i = 0; i < n; i++)
+{
+    for (int j = 0; j < m; j++)
+    {
+        Console.Write($"{matr[i, j]} ");
+    }
+    Console.WriteLine();
+}
+
+
+int n = 3, m = 5;
+int f = 5, k = 2;
+int[,] matr = new int[n, m];
+int[,] matr2 = new int[f, k];
+int[,] matr3 = new int[n, k];
+Random r = new Random();
 for(int i = 0; i < n; i++)
 {
-    arr[i] = r.Next(-100,100);
-    Console.WriteLine($"arr[i] = {arr[i]}");
-}
-
-
-double sum = 0, kolPol = 0;
-double max = int.MinValue;
-for(int i=0; i < n; i++)
-{
-    sum += arr[i];
-    if (arr[i] > 0)
-        kolPol++;
-    if (arr[i] > max)
-        max = arr[i];
-}
-Console.WriteLine($"sum = {sum}  kolPol = {kolPol}  max = {max}");
-
-int[] mas = { -3, -5, -6, -3, -7, -65, -11, -13 };
-
-bool fl = false;
-int fl2 = 1;
-for (int i = 0; i < mas.Length; i++)
-{
-    Console.WriteLine($"mas[i] = {mas[i]}");
-    if (mas[i] < 0)
+    for (int j = 0; j < m; j++)
     {
-        fl = true;
-        if (mas[i] >= 0)
-            fl2 = 0;
- 
+        matr[i, j] = r.Next(10);
     }
 }
-if(fl)
-{
-    Console.WriteLine("Есть отрицательное число");
-}
-else
-{
-    Console.WriteLine("Нет отрицательных чисел");
-}
 
-if (fl2==1)
+for(int i = 0; i < f; i++)
 {
-    Console.WriteLine("все числа в массиве отрицательные");
-}
-else
-{
-    Console.WriteLine("не все числа в массиве отрицательные");
-}
-
-
-int[] mas = { -3, 5, 6, -3, -7, -65, 11, -13 };
-
-double max = double.MinValue;
-double min = double.MaxValue;
-for (int i = 0; i < mas.Length; i++)
-{
-    if (mas[i] > max & mas[i]<0)
-        max = mas[i];
-    if (mas[i] < min & mas[i]>0)
-        min = mas[i];
-}
-Console.WriteLine(min);
-Console.WriteLine(max);
-
-int[] mas = { -3, 5, 6, -3, -7, -65, 11, -13 };
-
-int ind = 0;
-double max = double.MinValue;
-for (int i = 0; i < mas.Length; i++)
-{
-    if (mas[i] > max)
+    for (int j = 0; j < k; j++)
     {
-        max = mas[i];
-        ind = i;
+        matr2[i, j] = r.Next(10);
     }
 }
-Console.WriteLine(ind+1);
-Console.WriteLine(max);
 
-int[] mas = { -3, -7, 6, -3, -7, 65, -7, 13 };
-int cntmin = 0;
-int posled = 0, pp = 0;
-double min = double.MaxValue;
-for (int i = 0; i < mas.Length; i++)
+for (int i = 0; i < n; i++)
 {
-    if (mas[i] < min)
+    for (int j = 0; j < k; j++)
     {
-        min = mas[i];
-        cntmin = 0;
-        posled = i;
-    }
-    if (mas[i] == min)
-    {
-        cntmin++;
-        pp = posled;
-        posled = i;
- 
-    }
-}
-Console.WriteLine(cntmin);
-Console.WriteLine(pp +1);
-static bool prost(double x)
-{
-    bool Ok = true;
-    for (int i = 0; i < (int)Math.Sqrt(x) + 1; i++)
-    {
-        if (x % i == 0)
+        for (int a = 0; a < m; a++)
         {
-            Ok = false;
-            break;
+            matr3[i, j] += matr[i, a] * matr2[a, j];
         }
     }
-    if (Ok)
-        return true;
-    else
-        return false;
 }
-int[] mas = { 4, 6, 6, 8, 15 ,12 };
-bool prostoy = true;
-double min = double.MaxValue;
-for (int i = 0; i < mas.Length; i++)
+for (int i = 0; i < n; i++)
 {
-    if (prost(mas[i]))
+    for (int j = 0; j < m; j++)
     {
-        Console.WriteLine("Есть простое число");
-        prostoy = false;
-        break;
+        Console.Write($"{matr[i, j]} ");
     }
-}
-if (prostoy)
-{
-    Console.WriteLine("Нет простых чисел");
+    Console.WriteLine();
 }
 
-int[] mas = { 4, 6, 7, 8, 15, 12 };
-bool flag = true;
-for (int i = 0; i < mas.Length-1; i++)
-{
-    for (int j = i + 1; j < mas.Length; j++)
-    {
-        if (mas[i] == mas[j])
-        {
-            flag = false;
-            break;
-        }
-    }
-    if (!flag)
-    {
-        Console.WriteLine("Есть повторяющиеся числа");
-        break;
-    }
-}
-if (flag)
-{
-    Console.WriteLine("Нет повторяющихся чисел");
-}*/
+Console.WriteLine();
 
-int[] mas = { 4, 6, 6, 4, 14, 14 };
-bool flag1 = true;
-for (int i = 0; i < mas.Length; i++)
+for (int i = 0; i < f; i++)
 {
-    int cnt = 0;
-    for (int j=0; j<mas.Length; j++)
+    for (int j = 0; j < k; j++)
     {
-        if (i == j) { continue; }
-        if (mas[i] != mas[j])
-        {
-            cnt++;
-        }
+        Console.Write($"{matr2[i, j]} ");
     }
-    if (cnt == mas.Length - 1) 
+    Console.WriteLine();
+}
+
+Console.WriteLine();
+
+for (int i = 0; i < n; i++)
+{
+    for (int j = 0; j < k; j++)
     {
-        flag1 = false;
-        Console.WriteLine("Есть уникальные числа");
-        break;
+        Console.Write($"{matr3[i, j]} ");
+    }
+    Console.WriteLine();
+}
+
+
+int n = 7, m = 5, c;
+int[,] matr = new int[n, m];
+Random r = new Random();
+for (int i = 0; i < n; i++)
+{
+    for (int j = 0; j < m; j++)
+    {
+        matr[i, j] = r.Next(10);
     }
 }
-if (flag1)
+
+for (int i = 0; i < n; i++)
 {
-    Console.WriteLine("Нет уникальных чисел");
+    for (int j = 0; j < m; j++)
+    {
+        Console.Write($"{matr[i, j]} ");
+    }
+    Console.WriteLine();
 }
+
+Console.WriteLine();
+
+for (int i = 0; i < n-1; i=i+2)
+{
+    for(int j = 0; j < m; j++)
+    {
+        
+        c = matr[i, j];
+        matr[i, j] = matr[i + 1, j];
+        matr[i + 1, j] = c;
+        
+    }
+}
+
+for (int i = 0; i < n; i++)
+{
+    for (int j = 0; j < m; j++)
+    {
+        Console.Write($"{matr[i, j]} ");
+    }
+    Console.WriteLine();
+}
+
+Console.WriteLine();
+
+*/
+
+
+Random r = new Random();
+
+int[] mass = new int[r.Next(10,20)];
+for (int i = 0; i < mass.Length; i++)
+{
+    mass[i] = r.Next(100);
+
+}
+
+int cnt = 0;
+for (int i = 1; i < mass.Length-1; i++)
+{
+    if (mass[i] > mass[i-1] && mass[i] > mass[i + 1])
+    {
+        cnt++;
+        Console.Write($"{mass[i]} ");
+    }
+
+}
+Console.WriteLine();
+for (int i = 0; i < mass.Length; i++)
+{
+    Console.Write($"{mass[i]} ");
+}
+Console.WriteLine();
+Console.WriteLine(cnt);
