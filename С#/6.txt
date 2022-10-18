@@ -1,4 +1,4 @@
-﻿/*int n = 3, m = 3;
+/*int n = 3, m = 3;
 Random r = new Random();
 int[,] matr = new int[n, m];
 
