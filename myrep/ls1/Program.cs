@@ -213,12 +213,14 @@ for (int i = 1; i < mass.Length-1; i++)
     if (mass[i] > mass[i-1] && mass[i] > mass[i + 1])
     {
         cnt++;
-        Console.Write($"{mass[i]} ");
     }
 
 }
+if (mass[0] > mass[1])
+    cnt++;
+if (mass[mass.Length-1] > mass[mass.Length-2])
+    cnt++;
 
-Console.WriteLine();
 
 for (int i = 0; i < mass.Length; i++)
 {
