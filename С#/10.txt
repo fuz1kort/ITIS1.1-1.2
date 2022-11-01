@@ -1,0 +1,67 @@
+string path = "note1.txt";
+string text = "Hello World!\nHello bro";
+
+// полная перезапись файла 
+using (StreamWriter writer = new StreamWriter(path, false))
+{
+    await writer.WriteLineAsync(text);
+}
+
+
+
+/*using (StreamReader reader = new StreamReader(path))
+{
+    string words = await reader.ReadToEndAsync();
+    string[] arr = words.Split(new char[] {' ', '\n', '\t'});
+    for (int i = 0; i < arr.Length-1; i++) {
+        for (int j = i+1; j < arr.Length; j++)
+        {
+            if (arr[i] == arr[j]) {
+                arr[j] = "";
+                
+            }
+        }
+    }
+    
+    string res = $" {string.Join(" ", arr)}";
+    Console.WriteLine(res);
+}*/
+
+
+/*bool CheakWord(string word, string[] arr)
+{
+    for (int i = 0; i < arr.Length; i++)
+    {
+        if (arr[i] == word)
+        {
+            return true;
+        }
+    }
+    return false;
+
+}
+using (StreamReader reader = new StreamReader(path))
+{
+    string words = await reader.ReadToEndAsync();
+    string[] arr = words.Split(new char[] { ' ', '\n', '\t' });
+    string word = Console.ReadLine();
+
+    Console.WriteLine(CheakWord(word, arr));
+    
+}*/
+
+
+using (StreamReader reader = new StreamReader(path))
+{
+    string words = await reader.ReadToEndAsync();
+    string[] arr = words.Split(new char[] { ' ', '\n', '\t' });
+    string substring = Console.ReadLine();
+/*    
+    if (words.Contains(substring))
+    {
+        Console.WriteLine(true);
+    }
+    else { 
+        Console.WriteLine(false);
+    }
+}

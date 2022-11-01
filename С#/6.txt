@@ -1,4 +1,4 @@
-﻿int n = 10, m = 10;
+/*int n = 3, m = 3;
 Random r = new Random();
 int[,] matr = new int[n, m];
 
@@ -6,7 +6,7 @@ for (int i = 0; i < n; i++)
 {
     for (int j = 0; j < m; j++)
     {
-        matr[i, j] = r.Next(1000);
+        matr[i, j] = r.Next(100);
         
     }
 }
@@ -21,7 +21,6 @@ for (int i = 0; i < n; i++)
     Console.WriteLine();
 }
 Console.WriteLine();
-/*
 for (int i = 0; i < n; i++)
 {
     for (int j = 0; j < m; j++)
@@ -303,140 +302,24 @@ Console.WriteLine(cnt);
 //    Console.WriteLine("Таких слов нет");
 //}
 
-//String str;
-//str = Console.ReadLine();
-//int maxlen = 0, minlen = 1000000000;
-//String maxword = "", minword = "";
-//foreach (String word in str.Split(" "))
-//{
-//    if (maxlen < word.Length)
-//    {
-//        maxlen = word.Length;
-//        maxword = word;
-//    }
-//    if(minlen > word.Length)
-//    {
-//        minlen = word.Length;
-//        minword = word;
-//    }
-
-//}
-
-//Console.WriteLine(maxword);
-//Console.WriteLine(minword);
-
-//String str;
-//str = Console.ReadLine();
-//string[] arr = str.Split(new char[] {' '});
-//for (int i = 0; i < arr.Length-1; i++)
-//{
-//    for (int j = i+1; j < arr.Length; j++)
-//    {
-//        if (arr[i] == arr[j])
-//        {
-//            str=str.Replace(arr[i], "");
-//            break;
-//        }
-//    }
-//}
-//Console.WriteLine(str);
-
-//string path = "note1.txt";
-//string text = "Hello World!\nHello bro";
-
-//// полная перезапись файла 
-//using (StreamWriter writer = new StreamWriter(path, false))
-//{
-//    await writer.WriteLineAsync(text);
-//}
-
-
-
-/*using (StreamReader reader = new StreamReader(path))
+String str;
+str = Console.ReadLine();
+int maxlen = 0, minlen = 1000000000;
+String maxword = "", minword = "";
+foreach (String word in str.Split(" "))
 {
-    string words = await reader.ReadToEndAsync();
-    string[] arr = words.Split(new char[] {' ', '\n', '\t'});
-    for (int i = 0; i < arr.Length-1; i++) {
-        for (int j = i+1; j < arr.Length; j++)
-        {
-            if (arr[i] == arr[j]) {
-                arr[j] = "";
-                
-            }
-        }
-    }
-    
-    string res = $" {string.Join(" ", arr)}";
-    Console.WriteLine(res);
-}*/
-
-
-/*bool CheakWord(string word, string[] arr)
-{
-    for (int i = 0; i < arr.Length; i++)
+    if (maxlen < word.Length)
     {
-        if (arr[i] == word)
-        {
-            return true;
-        }
+        maxlen = word.Length;
+        maxword = word;
     }
-    return false;
-
-}
-using (StreamReader reader = new StreamReader(path))
-{
-    string words = await reader.ReadToEndAsync();
-    string[] arr = words.Split(new char[] { ' ', '\n', '\t' });
-    string word = Console.ReadLine();
-
-    Console.WriteLine(CheakWord(word, arr));
+    if(minlen > word.Length)
+    {
+        minlen = word.Length;
+        minword = word;
+    }
     
-}*/
+}
 
-
-//using (StreamReader reader = new StreamReader(path))
-//{
-//    string words = await reader.ReadToEndAsync();
-//    string[] arr = words.Split(new char[] { ' ', '\n', '\t' });
-//    Console.WriteLine("Введите подстроку");
-//    string substring = Console.ReadLine();
-//    int lenghtsubstring = substring.Length;
-//    for(int i=0; i<words.Length; i++)
-//    {
-//        var substr1=words.Substring(i,i+lenghtsubstring);
-//        if (substr1 == substring)
-//        {
-//            Console.WriteLine(true);
-//            break;
-//        }
-//    }
-//}
-
-//using System.Diagnostics.Tracing;
-
-//string path = "note1.txt";
-//string text = "Veeeeery coool days";
-
-//// полная перезапись файла 
-//using (StreamWriter writer = new StreamWriter(path, false))
-//{
-//    await writer.WriteLineAsync(text);
-//}
-//using (StreamReader reader = new StreamReader(path))
-//{
-//    string line = await reader.ReadToEndAsync();
-//    string[] words = line.Split(new char[] { ' ', '\r' });
-//    for (int i = 0; i < words.Length; i++)
-//    {
-//        string word = words[i];
-//        if (word.Length == 4)
-//        {
-//            word = word.Substring(1, 3) + word[0];
-//            words[i] = word;
-//        }
-//    }
-//    for(int i = 0; i < words.Length; i++)
-//    {
-//        Console.WriteLine(words[i]);
-//    }
-//}
+Console.WriteLine(maxword);
+Console.WriteLine(minword);

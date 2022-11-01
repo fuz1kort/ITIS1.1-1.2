@@ -1,0 +1,15 @@
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\myrep\proger\bin\Debug\net6.0\proger.exe
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\myrep\proger\bin\Debug\net6.0\proger.deps.json
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\myrep\proger\bin\Debug\net6.0\proger.runtimeconfig.json
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\myrep\proger\bin\Debug\net6.0\proger.dll
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\myrep\proger\bin\Debug\net6.0\proger.pdb
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\myrep\proger\obj\Debug\net6.0\proger.csproj.AssemblyReference.cache
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\myrep\proger\obj\Debug\net6.0\proger.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\myrep\proger\obj\Debug\net6.0\proger.AssemblyInfoInputs.cache
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\myrep\proger\obj\Debug\net6.0\proger.AssemblyInfo.cs
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\myrep\proger\obj\Debug\net6.0\proger.csproj.CoreCompileInputs.cache
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\myrep\proger\obj\Debug\net6.0\proger.dll
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\myrep\proger\obj\Debug\net6.0\refint\proger.dll
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\myrep\proger\obj\Debug\net6.0\proger.pdb
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\myrep\proger\obj\Debug\net6.0\proger.genruntimeconfig.cache
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\myrep\proger\obj\Debug\net6.0\ref\proger.dll
