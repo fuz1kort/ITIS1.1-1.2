@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "SRFkNz8zZY9NQOuqTmUMAogDZ+l4ayZRb7e5fBlCfQ3TdD8QRF1bRjbVhe9lgs47y8oCZCmRYFqVcWHE38qeIw==",
+  "dgSpecHash": "YEvBrs4KyEitVMzrSVgtmOC1Hn3/lTiKG/hgqXOgS0xAOSmkd5c6HMzABjL2hK8DJX25Wwn9+yRG2I64Hd7LHQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\gafar\\OneDrive\\Документы\\GitHub\\itiscs\\myrep\\ls1\\ls1.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\gafar\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.11\\microsoft.netcore.app.host.win-x64.6.0.11.nupkg.sha512",
+    "C:\\Users\\gafar\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.11\\microsoft.aspnetcore.app.ref.6.0.11.nupkg.sha512",
+    "C:\\Users\\gafar\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.11\\microsoft.windowsdesktop.app.ref.6.0.11.nupkg.sha512",
+    "C:\\Users\\gafar\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.11\\microsoft.netcore.app.ref.6.0.11.nupkg.sha512"
+  ],
   "logs": []
 }

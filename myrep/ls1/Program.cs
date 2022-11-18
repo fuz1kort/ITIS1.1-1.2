@@ -1,26 +1,26 @@
-﻿int n = 10, m = 10;
-Random r = new Random();
-int[,] matr = new int[n, m];
+﻿//int n = 10, m = 10;
+//Random r = new Random();
+//int[,] matr = new int[n, m];
 
-for (int i = 0; i < n; i++)
-{
-    for (int j = 0; j < m; j++)
-    {
-        matr[i, j] = r.Next(1000);
-        
-    }
-}
+//for (int i = 0; i < n; i++)
+//{
+//    for (int j = 0; j < m; j++)
+//    {
+//        matr[i, j] = r.Next(1000);
 
-for (int i = 0; i < n; i++)
-{
-    for (int j = 0; j < m; j++)
-    {
+//    }
+//}
 
-        Console.Write($"{matr[i, j]} ");
-    }
-    Console.WriteLine();
-}
-Console.WriteLine();
+//for (int i = 0; i < n; i++)
+//{
+//    for (int j = 0; j < m; j++)
+//    {
+
+//        Console.Write($"{matr[i, j]} ");
+//    }
+//    Console.WriteLine();
+//}
+//Console.WriteLine();
 /*
 for (int i = 0; i < n; i++)
 {
@@ -440,3 +440,85 @@ using (StreamReader reader = new StreamReader(path))
 //        Console.WriteLine(words[i]);
 //    }
 //}
+
+//bool FindInt(int[] mas, int x, int a, int b) //обязательно отсорченный массив
+//{
+//    while(a<=b)
+//    {
+//        int c = (a + b) / 2;
+//        if (mas[c] == x) return true;
+//        if (mas[c] < x) a = c+1;
+//        else b = c-1;
+//        Console.WriteLine($"{a} {b}");
+//    }
+//    return false;
+//}
+
+
+
+//bool FindIntRec(int[] mas, int x, int a, int b) //обязательно отсорченный массив
+//{
+//    int c = (a + b) / 2;
+//    if (mas[c] == x) return true;
+//    if (a > b) return false;
+//    if (mas[c] < x) return FindIntRec(mas,x,c+1,b);
+//    return FindIntRec(mas, x, a, c - 1);
+//    return false;
+//}
+
+//int SumMass(int[] arr, int k)
+//{
+//   return (k == 0) ? arr[0] : arr[k] + SumMass(arr, k - 1);
+//}
+
+//int MaxMass(int[] mas, int k)
+//{
+//    if (k == 0)
+//        return mas[0];
+//    var oldMax = MaxMass(mas, k);
+//    return (oldMax < mas[k]) ? mas[k] : oldMax;
+//}
+
+
+//bool Symmetr(int[] arr, int l, int r)
+//{
+
+//    return (arr[l] == arr[r-1]) ? Symmetr(arr, l + 1, r - 1) : false;
+//}
+
+//double FastPow(double x, int p)
+//{
+//    if (p == 0) return 1;
+//    if (p < 0) return FastPow(1 / x, -p);
+//    if (p == 1) return x;
+//    return x * FastPow(x, p - 1);
+//}
+//Console.WriteLine(FastPow(2, -2));
+
+//void MergeSort(int[] arr, int a, int b)
+//{
+//    if(b-a<1) return;
+//    int c = (a + b) / 2;
+//    MergeSort(arr, a, c);
+//    MergeSort(arr, c+1, b);
+//    int[] mergeArr=new int[b-a+1];
+//    int i = a, j = c + 1;
+//    for (int k = 0; k < mergeArr.Length; k++)
+//    {
+//        if(i>c) mergeArr[k] = arr[j++]; //закончился 1 массив
+//        else if (j>b) mergeArr[k] = arr[i++]; //закончился 2 массив
+//        else if (arr[i] < arr[j]) mergeArr[k] = arr[i++];
+//        else mergeArr[k] = arr[j++];
+//    }
+//    i = a;
+//    for(int k = 0; k < mergeArr.Length; k++)
+//        arr[i++]=mergeArr[k];
+//}
+
+double FastPow(double x, int p)
+{
+    if (p == 0) return 1;
+    if (p < 0) return FastPow(1 / x, -p);
+    return (p % 2 == 0) ? (FastPow(x * x, p / 2)) : x * (FastPow(x, p - 1));
+}
+Console.WriteLine(FastPow(3, 4));
