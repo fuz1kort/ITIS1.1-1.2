@@ -89,16 +89,14 @@ namespace time
 
         public override string ToString()
         {
-            var strh = "";
-            var strm = "";
-            var strs = "";
-            if (this.hour < 10) strh = $"0{this.hour}";
-            else strh = $"{this.hour}";
-            if (this.minute < 10) strm = $"0{this.minute}";
-            else strm = $"{this.minute}";
-            if (this.second < 10) strs = $"0{this.second}";
-            else strs = $"{this.second}";
-            return strh + ":" + strm + ":" + strs + "\n";
+            var str = "";
+            if (this.hour < 10) str = $"0{this.hour}:";
+            else str = $"{this.hour}:";
+            if (this.minute < 10) str += $"0{this.minute}:";
+            else str += $"{this.minute}:";
+            if (this.second < 10) str += $"0{this.second}";
+            else str += $"{this.second}";
+            return str+"\n";
 
              
         }
