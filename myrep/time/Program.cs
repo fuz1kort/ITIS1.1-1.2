@@ -8,7 +8,7 @@ namespace time
         {
             Time t = new Time(25, 9, 8);
             Time t2 = new Time(9, 8, 8);
-            Console.WriteLine(t);
+            //Console.WriteLine(t);
             //t.InSecond();
             //t2.InSecond();
             //Console.Write(t + t2);

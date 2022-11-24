@@ -5,6 +5,7 @@ using System.Reflection.Metadata.Ecma335;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace time
 {
@@ -96,9 +97,17 @@ namespace time
             else str += $"{this.minute}:";
             if (this.second < 10) str += $"0{this.second}";
             else str += $"{this.second}";
-            return str+"\n";
+            return str+"\n";  
+        }
 
-             
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+
+        public override bool Equals(object? obj)
+        {
+            return base.Equals(obj);
         }
 
         public static Time operator +(Time f1, Time f2)
@@ -129,7 +138,7 @@ namespace time
                 Console.WriteLine("На 0 делить нельзя");
                 return new Time(0);
             }
-            var s = f1.ToSecond() / 2;
+            var s = f1.ToSecond() / a;
             return new Time(s);
         }
 
