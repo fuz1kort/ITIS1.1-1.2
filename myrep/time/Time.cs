@@ -121,7 +121,7 @@ namespace time
         public static Time operator -(Time f1, Time f2)
         {
             int s = f1.ToSecond() - f2.ToSecond();
-            if (s <= 0) return new Time(0);
+            if (s <= 0) return new Time(86400+s);
             return new Time(s);
         }
 

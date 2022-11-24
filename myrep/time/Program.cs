@@ -6,9 +6,9 @@ namespace time
     {
         static void Main()
         {
-            Time t = new Time(25, 9, 8);
-            Time t2 = new Time(9, 8, 8);
-            //Console.WriteLine(t);
+            Time t = new Time(3, 9, 8);
+            t.Hour = 5;
+            Console.WriteLine(t);
             //t.InSecond();
             //t2.InSecond();
             //Console.Write(t + t2);
