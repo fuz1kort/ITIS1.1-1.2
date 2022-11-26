@@ -7,7 +7,6 @@ namespace time
         static void Main()
         {
             Time t = new Time(3, 9, 8);
-            t.Hour = 5;
             Console.WriteLine(t);
             //t.InSecond();
             //t2.InSecond();
