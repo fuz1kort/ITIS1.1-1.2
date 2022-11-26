@@ -12,9 +12,9 @@ namespace Zadacha910
 
         public SpeedMPS(double mps) => this.mps = mps;
 
-        public SpeedMPS FromKmH(double kmh) => new SpeedMPS(kmh / 3.6);
+        public void FromKmH(double kmh) => this.mps =kmh / 3.6;
 
-        public SpeedMPS FromMpH(double mph) => new SpeedMPS(mph / 3.6 * 1.609);
+        public void FromMpH(double mph) => this.mps = mph / 3.6 * 1.609;
 
         public double Kmh { get => mps / 3.6; }
 

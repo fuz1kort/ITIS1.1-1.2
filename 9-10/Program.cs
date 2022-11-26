@@ -8,8 +8,8 @@ namespace Zadachi910
         {
             SpeedKMH km1 = new SpeedKMH(100);
             //SpeedKMH km2 = new SpeedKMH(150);
-            km1.FromMPH(100);
-            Console.WriteLine(km1.Kmh);
+            //km1.FromMPH(100);
+            //Console.WriteLine(km1.Kmh);
             //Console.WriteLine(mp1.Kmh);
             //Console.WriteLine(mp1.Mph);
             //Console.WriteLine(mp1.Mps);
