@@ -10,7 +10,7 @@ using time;
 
 namespace time
 {
-    class Time
+    public class Time
     {
         private int hour;
         private int minute;
@@ -41,7 +41,6 @@ namespace time
             {
                 if (value > 23)
                 {
-                    Console.WriteLine("Часы были скорректированы");
                     hour = value % 24;
                 }
                 else hour = value;
@@ -55,7 +54,6 @@ namespace time
             {
                 if (value >= 60)
                 {
-                    Console.WriteLine("Минуты были скорректированы");
                     minute = value % 60;
                     Hour += value / 60;
                 }
@@ -70,7 +68,6 @@ namespace time
             {
                 if (value >= 60)
                 {
-                    Console.WriteLine("Секунды были скорректированы");
                     second = value % 60;
                     Minute += value / 60;
                     Hour += Minute / 60;
@@ -98,17 +95,7 @@ namespace time
             else str += $"{this.minute}:";
             if (this.second < 10) str += $"0{this.second}";
             else str += $"{this.second}";
-            return str+"\n";  
-        }
-
-        public override int GetHashCode()
-        {
-            return base.GetHashCode();
-        }
-
-        public override bool Equals(object? obj)
-        {
-            return base.Equals(obj);
+            return str+'\n';
         }
 
         public static Time operator +(Time f1, Time f2)
@@ -134,11 +121,7 @@ namespace time
 
         public static Time operator /(Time f1, int a)
         {
-            if (a == 0)
-            {
-                Console.WriteLine("На 0 делить нельзя");
-                return new Time(0);
-            }
+            if (a == 0) return new Time(0);
             var s = f1.ToSecond() / a;
             return new Time(s);
         }

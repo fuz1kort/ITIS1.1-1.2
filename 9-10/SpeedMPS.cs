@@ -6,24 +6,41 @@ using System.Threading.Tasks;
 
 namespace Zadacha910
 {
-    class SpeedMPS
+    public class SpeedMPS
     {
-        private double mps;
+        private double _meterpersecond;
+        private SpeedMPS(double mps) => MPS = mps;
 
-        public SpeedMPS(double mps) => this.mps = mps;
+        public static SpeedMPS FromMPS(double metersPerSecond) => new SpeedMPS(metersPerSecond);
 
-        public void FromKmH(double kmh) => this.mps =kmh / 3.6;
+        public static SpeedMPS FromKPH(double kmPerHour) => new SpeedMPS(kmPerHour * 3.6);
 
-        public void FromMpH(double mph) => this.mps = mph / 3.6 * 1.609;
+        public static SpeedMPS FromMPH(double milesPerHour) => new SpeedMPS(milesPerHour / 3.6 * 1.609);
 
-        public double Kmh { get => mps / 3.6; }
+        public static double IsZero(double value) => value < 0 ? 0 : value;
 
-        public double Mps { get => mps; set { mps = value; } }
+        public double KPH
+        {
+            get { return _meterpersecond; }
+            init { _meterpersecond = IsZero(value / 3.6); }
+        }
 
-        public double Mph { get => mps / 3.6 * 1.609; }
+        public double MPS
+        {
+            get { return _meterpersecond; }
+            init { _meterpersecond = IsZero(value); }
+        }
 
-        public static SpeedMPS operator +(SpeedMPS mps1, SpeedMPS mps2) => new SpeedMPS(mps1.Mps + mps2.Mps);
+        public double MPH
+        {
+            get { return _meterpersecond; }
+            init { _meterpersecond = IsZero(value * 1.609 / 3.6); }
+        }
 
-        public static SpeedMPS operator -(SpeedMPS mps1, SpeedMPS mps2) => new SpeedMPS(mps1.Mps - mps2.Mps);
+        public static SpeedMPS operator +(SpeedMPS mps1, SpeedMPS mps2) => new SpeedMPS(mps1.MPS + mps2.MPS);
+
+        public static SpeedMPS operator -(SpeedMPS mps1, SpeedMPS mps2) => new SpeedMPS(mps1.MPS - mps2.MPS);
+
+        public override string ToString() => $"{_meterpersecond}";
     }
 }

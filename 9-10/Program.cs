@@ -6,20 +6,12 @@ namespace Zadachi910
     {
         static void Main()
         {
-            SpeedKMH km1 = new SpeedKMH(100);
-            //SpeedKMH km2 = new SpeedKMH(150);
-            //km1.FromMPH(100);
-            //Console.WriteLine(km1.Kmh);
-            //Console.WriteLine(mp1.Kmh);
-            //Console.WriteLine(mp1.Mph);
-            //Console.WriteLine(mp1.Mps);
-            //Console.WriteLine(km1.Mph);
-            //Console.WriteLine(km1.Mps);
-            //Console.WriteLine(km2.Mph);
-            //Console.WriteLine(km1.Kmh+km2.Kmh);
-            
-
-
+            SpeedKPH f1 = SpeedKPH.FromMPS(2);
+            SpeedKPH f2 = SpeedKPH.FromMPH(3);
+            SpeedKPH f3 = SpeedKPH.FromKPH(4);
+            Console.WriteLine(f1);
+            Console.WriteLine(f2);
+            Console.WriteLine(f1+f2+f3);
         }
     }
 }

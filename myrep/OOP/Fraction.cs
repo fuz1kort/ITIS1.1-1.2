@@ -43,48 +43,36 @@ namespace FractionApp
             Denominator = d;
         }
 
-        public Fraction(int n) : this(n, 1)
-        {
-            //numerator = n;
-            //denominator = 1;
-        }
-        public Fraction() : this(0, 1)
-        {
-            //numerator = 0;
-            //denominator = 1;
-        }
+        public Fraction(int n) : this(n, 1) { }
 
-        private void PrivMethod()
-        {
+        public Fraction() : this(0, 1) { }
 
-
-        }
 
         public static void StaticMethod()
         {
             Console.WriteLine("Static method");
         }
-        //public void SetNum(int n) 
-        //{
-        //    numerator = n;  
-        //}
+        public void SetNum(int n)
+        {
+            numerator = n;
+        }
 
-        //public int GetNum()
-        //{
-        //    return numerator;
-        //}
+        public int GetNum()
+        {
+            return numerator;
+        }
 
-        //public void SetDenom(int d)
-        //{
-        //    if (d == 0)
-        //        throw new ArgumentException("Нельзя делить на ноль!");
-        //    denominator = d;
-        //}
+        public void SetDenom(int d)
+        {
+            if (d == 0)
+                throw new ArgumentException("Нельзя делить на ноль!");
+            denominator = d;
+        }
 
-        //public int GetDen()
-        //{
-        //    return denominator;
-        //}
+        public int GetDen()
+        {
+            return denominator;
+        }
 
         public void Print()
         {
@@ -126,9 +114,8 @@ namespace FractionApp
         public static Fraction operator +(Fraction f1, Fraction f2)
         {
             var n = f1.Numerator + f2.Denominator + f1.Denominator + f2.Numerator;
-            var d = f1.Denominator
+            var d = f1.Denominator;
+            return new Fraction(n, d);
         }
-
-
-
     }
+}
