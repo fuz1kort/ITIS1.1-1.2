@@ -3948,9 +3948,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\gafar\\OneDrive\\Документы\\GitHub\\itiscs\\TestProject1\\TestProject1.csproj",
-      "projectName": "TestProject1",
-      "projectPath": "C:\\Users\\gafar\\OneDrive\\Документы\\GitHub\\itiscs\\TestProject1\\TestProject1.csproj",
+      "projectUniqueName": "C:\\Users\\gafar\\OneDrive\\Документы\\GitHub\\itiscs\\TestProject1\\TestZadacha910.csproj",
+      "projectName": "TestZadacha910",
+      "projectPath": "C:\\Users\\gafar\\OneDrive\\Документы\\GitHub\\itiscs\\TestProject1\\TestZadacha910.csproj",
       "packagesPath": "C:\\Users\\gafar\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\gafar\\OneDrive\\Документы\\GitHub\\itiscs\\TestProject1\\obj\\",
       "projectStyle": "PackageReference",
