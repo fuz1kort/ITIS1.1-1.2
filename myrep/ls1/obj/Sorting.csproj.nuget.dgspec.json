@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Marat\\Documents\\GitHub\\itiscs\\myrep\\ls1\\ls1.csproj": {}
+    "C:\\Users\\Marat\\Documents\\GitHub\\itiscs\\myrep\\ls1\\Sorting.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Marat\\Documents\\GitHub\\itiscs\\myrep\\ls1\\ls1.csproj": {
+    "C:\\Users\\Marat\\Documents\\GitHub\\itiscs\\myrep\\ls1\\Sorting.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Marat\\Documents\\GitHub\\itiscs\\myrep\\ls1\\ls1.csproj",
-        "projectName": "ls1",
-        "projectPath": "C:\\Users\\Marat\\Documents\\GitHub\\itiscs\\myrep\\ls1\\ls1.csproj",
+        "projectUniqueName": "C:\\Users\\Marat\\Documents\\GitHub\\itiscs\\myrep\\ls1\\Sorting.csproj",
+        "projectName": "Sorting",
+        "projectPath": "C:\\Users\\Marat\\Documents\\GitHub\\itiscs\\myrep\\ls1\\Sorting.csproj",
         "packagesPath": "C:\\Users\\Marat\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Marat\\Documents\\GitHub\\itiscs\\myrep\\ls1\\obj\\",
         "projectStyle": "PackageReference",
