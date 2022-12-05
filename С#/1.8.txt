@@ -6,7 +6,6 @@ int k = 1;
 double step = x;
 while (Math.Sinh(x) - y >= 0.01)
 {
-    fact = fact * (fact + 2) * (fact + 1);
     fact = fact * (k + 2) * (k + 1);
     step = step * x * x;
     y += (step / fact);
