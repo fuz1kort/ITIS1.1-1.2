@@ -8,19 +8,24 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Marat\\.nuget\\packages\\": {}
+    "C:\\Users\\gafar\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Marat\\Documents\\GitHub\\itiscs\\myrep\\ls1\\Sorting.csproj",
+      "projectUniqueName": "C:\\Users\\gafar\\Source\\Repos\\fuz1kort\\itiscs\\myrep\\ls1\\Sorting.csproj",
       "projectName": "Sorting",
-      "projectPath": "C:\\Users\\Marat\\Documents\\GitHub\\itiscs\\myrep\\ls1\\Sorting.csproj",
-      "packagesPath": "C:\\Users\\Marat\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Marat\\Documents\\GitHub\\itiscs\\myrep\\ls1\\obj\\",
+      "projectPath": "C:\\Users\\gafar\\Source\\Repos\\fuz1kort\\itiscs\\myrep\\ls1\\Sorting.csproj",
+      "packagesPath": "C:\\Users\\gafar\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\gafar\\Source\\Repos\\fuz1kort\\itiscs\\myrep\\ls1\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Marat\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\gafar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

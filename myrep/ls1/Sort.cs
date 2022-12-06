@@ -14,13 +14,9 @@ int[] GetArr(int n)
 void PrintArr(int[] arr)
 {
     for (int i = 0; i < arr.Length; i++)
-        Console.Write($" {arr[i]} ");
+        Console.Write($"{arr[i]} ");
     Console.WriteLine();
 }
-
-int n = 20;
-int[] arr = GetArr(n);
-PrintArr(arr);
 
 static int[] QuickSort(int[] arr, int left, int right)
 {
@@ -54,6 +50,10 @@ static int GetPivotIndex(int[] arr, int left, int right)
     return pivot;
 }
 
+
+int n = 20;
+int[] arr = GetArr(n);
+PrintArr(arr);
 Console.WriteLine("Применена быстрая сортировка");
 int[] sortArr = QuickSort(arr, 0, n - 1);
 PrintArr(sortArr);
