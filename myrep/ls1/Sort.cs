@@ -1,95 +1,59 @@
-﻿static void Merge(int[] a, int l, int m, int r)
+﻿using System;
+
+int[] GetArr(int n)
 {
-    int i, j, k;
+    Random r = new Random();
 
-    int n1 = m - l + 1;
-    int n2 = r - m;
+    int[] arr = new int[n];
+    for (int i = 0; i < n; i++)
+        arr[i] = r.Next(-100, 101);
 
-    int[] left = new int[n1 + 1];
-    int[] right = new int[n2 + 1];
-
-    for (i = 0; i < n1; i++)
-    {
-        left[i] = a[l + i];
-    }
-
-    for (j = 1; j <= n2; j++)
-    {
-        right[j - 1] = a[m + j];
-    }
-
-    left[n1] = int.MaxValue;
-    right[n2] = int.MaxValue;
-
-    i = 0;
-    j = 0;
-
-    for (k = l; k <= r; k++)
-    {
-        if (left[i] < right[j])
-        {
-            a[k] = left[i];
-            i = i + 1;
-        }
-        else
-        {
-            a[k] = right[j];
-            j = j + 1;
-        }
-    }
+    return arr;
 }
 
-static void MergeSort(int[] a, int l, int r)
+void PrintArr(int[] arr)
 {
-    int q;
-
-    if (l < r)
-    {
-        q = (l + r) / 2;
-        MergeSort(a, l, q);
-        MergeSort(a, q + 1, r);
-        Merge(a, l, q, r);
-    }
+    for (int i = 0; i < arr.Length; i++)
+        Console.Write($" {arr[i]} ");
+    Console.WriteLine();
 }
 
-Random r = new Random();
-var n = 10;
-int[] a = new int[n];
-for(int i = 0; i < n; i++)
-    a[i] = r.Next(100);
-//MergeSort(a, 0, n - 1);
-SortArray(a, 0, n - 1);
-foreach (int i in a) Console.Write($"{i} ");
+int n = 20;
+int[] arr = GetArr(n);
+PrintArr(arr);
 
-static int[] SortArray(int[] a, int l, int r)
+static int[] QuickSort(int[] arr, int left, int right)
 {
-    var i = l;
-    var j = r;
-    var p = a[l];
-    while (i <= j)
-    {
-        while (a[i] < p)
-        {
-            i++;
-        }
-
-        while (a[j] > p)
-        {
-            j--;
-        }
-        if (i <= j)
-        {
-            int temp = a[i];
-            a[i] = a[j];
-            a[j] = temp;
-            i++;
-            j--;
-        }
-    }
-
-    if (l < j)
-        SortArray(a, l, j);
-    if (i < r)
-        SortArray(a, i, r);
-    return a;
+    if (left >= right)
+        return arr;
+    int pivotIndex = GetPivotIndex(arr, left, right);
+    QuickSort(arr, left, pivotIndex - 1);
+    QuickSort(arr, pivotIndex + 1, right);
+    return arr;
 }
+
+static int GetPivotIndex(int[] arr, int left, int right)
+{
+    int temp;
+    int pivot = left - 1;
+
+    for (int i = left; i <= right; i++)
+        if (arr[i] < arr[right])
+        {
+            pivot++;
+            temp = arr[pivot];
+            arr[pivot] = arr[i];
+            arr[i] = temp;
+        }
+
+    pivot++;
+    temp = arr[pivot];
+    arr[pivot] = arr[right];
+    arr[right] = temp;
+
+    return pivot;
+}
+
+Console.WriteLine("Применена быстрая сортировка");
+int[] sortArr = QuickSort(arr, 0, n - 1);
+PrintArr(sortArr);
