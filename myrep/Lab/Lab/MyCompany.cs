@@ -41,8 +41,8 @@ namespace Lab
             Positions.Add(new Position()
             {
                 Code = 5,
-                Name = "Директор",
-                BaseHourlyRate = 10000
+                Name = "Управляющий",
+                BaseHourlyRate = 20000
             });
             Positions.Add(new Position()
             {
