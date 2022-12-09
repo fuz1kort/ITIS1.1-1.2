@@ -10,7 +10,13 @@ namespace Lab
     {
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
-        public Timesheet Timesheet { get; set; }
+        public DateOnly Date { get; set; }
+        public int Hours { get; set; }
+        public void Timesheet(DateOnly data, int hours)
+        {
+            Date = data;
+            Hours = hours;
+        }
 
     }
 }
