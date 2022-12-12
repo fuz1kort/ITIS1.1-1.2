@@ -9,7 +9,7 @@ namespace Lab
 {
     public class MyCompany
     {
-        public List<Employee> Employees { get; set; } = new List<Employee>();
+        public static List<Employee> Employees { get; set; } = new List<Employee>();
         public List<Position> Positions { get; set; } = new List<Position>();
         
         public void Init()
@@ -52,7 +52,7 @@ namespace Lab
             });
         }
 
-        public List<Employee> PrintEmployees()
+        public List<Employee> GetAllEmployees()
         {
             return Employees;
         }

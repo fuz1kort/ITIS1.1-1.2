@@ -14,10 +14,11 @@
                 Console.WriteLine();
                 Console.WriteLine("***********************************");
                 Console.WriteLine("Выберите пункт меню:");
-                Console.WriteLine("1. Просмотреть всех сотрудников");
-                Console.WriteLine("2. Просмотреть табель рабочего времени");                 //Хз как реализовать пока что...
-                Console.WriteLine("3. Заполнить табель рабочего времени");
-                Console.WriteLine("4. Посчитать зарплату сотрудику");
+                Console.WriteLine("1. Добавить сотрудника");
+                Console.WriteLine("2. Просмотреть всех сотрудников");
+                Console.WriteLine("3. Просмотреть табель рабочего времени");                 //Хз как реализовать пока что...
+                Console.WriteLine("4. Заполнить табель рабочего времени");
+                Console.WriteLine("5. Посчитать зарплату сотрудику");
 
                 var k = int.Parse(Console.ReadLine());
                 Console.Clear();
@@ -26,23 +27,50 @@
                 {
                     case 1:
                         {
+                            Employee emp = new Employee();
+                            emp.Number = company.GetAllEmployees().Count+1;
+                            Console.WriteLine("Введите фамилию и имя сотрудника");
+                            emp.FullName = Console.ReadLine();
+                            Console.WriteLine("Введите разряд");
+                            emp.Rating = int.Parse(Console.ReadLine());
+                            emp.EmploymentDate = DateTime.Now;
+                            Console.WriteLine("Является ли сотрудник членом профсоюзе?(Да, Нет");
+                            if (Console.ReadLine() == "Да") emp.IsMemberOfLaborUnion = true;
+                            else emp.IsMemberOfLaborUnion = false;
+                            Console.WriteLine("Добавить еще одного сотрудника?(Да, Нет)");
+                            if (Console.ReadLine() == "Да") goto case 1;
+                            break;
+                        }
+                    case 2:
+                        {
                             Console.WriteLine("Список сотрудников:");
-                            foreach (var a in company.PrintEmployees())
+                            foreach (var a in company.GetAllEmployees())
                             {
                                 Console.WriteLine(a);
                             }
                             break;
                         }
-                    case 2:
+                    case 3:
                         {
                             var dict = timeboard.WriteTimesheet();
-                            foreach (var day in dict)
+                            foreach (KeyValuePair<DateOnly, Dictionary<int,int>> d in dict)
                             {
-                                Console.WriteLine($"Дата: {day}, работник - {}");
+                                foreach(KeyValuePair<int,int> e in d.Value)
+                                {
+                                    string s = string.Empty;
+                                    foreach (var a in company.GetAllEmployees())
+                                    {
+                                        if (a.Number == e.Key)
+                                        {
+                                            s = a.FullName;
+                                        } 
+                                    }
+                                    Console.WriteLine($"Дата: {d.Key},\nРаботник - {s},\nВремя работы: {e.Value}");
+                                }
                             }
                             break;
                         }
-                    case 3:
+                    case 4:
                         {
                             Console.Write("Введите год");
                             var y = int.Parse(Console.ReadLine());
