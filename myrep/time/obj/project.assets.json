@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\gafar\\OneDrive\\Документы\\GitHub\\itiscs\\myrep\\time\\time.csproj",
+      "projectUniqueName": "C:\\Users\\gafar\\Source\\Repos\\fuz1kort\\itiscs\\myrep\\time\\time.csproj",
       "projectName": "time",
-      "projectPath": "C:\\Users\\gafar\\OneDrive\\Документы\\GitHub\\itiscs\\myrep\\time\\time.csproj",
+      "projectPath": "C:\\Users\\gafar\\Source\\Repos\\fuz1kort\\itiscs\\myrep\\time\\time.csproj",
       "packagesPath": "C:\\Users\\gafar\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\gafar\\OneDrive\\Документы\\GitHub\\itiscs\\myrep\\time\\obj\\",
+      "outputPath": "C:\\Users\\gafar\\Source\\Repos\\fuz1kort\\itiscs\\myrep\\time\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -18,5 +18,10 @@ namespace Lab
         {
             return $"{FullName}, разряд - {Rating}, работает в этой компании с {EmploymentDate}";
         }
+        public string GetNamebyNumber(int n)
+        {
+
+            return 
+        }
     }
 }

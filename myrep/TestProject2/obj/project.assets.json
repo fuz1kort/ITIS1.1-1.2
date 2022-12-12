@@ -3948,11 +3948,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\gafar\\OneDrive\\Документы\\GitHub\\itiscs\\myrep\\TestProject2\\TestProject2.csproj",
+      "projectUniqueName": "C:\\Users\\gafar\\Source\\Repos\\fuz1kort\\itiscs\\myrep\\TestProject2\\TestProject2.csproj",
       "projectName": "TestProject2",
-      "projectPath": "C:\\Users\\gafar\\OneDrive\\Документы\\GitHub\\itiscs\\myrep\\TestProject2\\TestProject2.csproj",
+      "projectPath": "C:\\Users\\gafar\\Source\\Repos\\fuz1kort\\itiscs\\myrep\\TestProject2\\TestProject2.csproj",
       "packagesPath": "C:\\Users\\gafar\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\gafar\\OneDrive\\Документы\\GitHub\\itiscs\\myrep\\TestProject2\\obj\\",
+      "outputPath": "C:\\Users\\gafar\\Source\\Repos\\fuz1kort\\itiscs\\myrep\\TestProject2\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -3973,8 +3973,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\gafar\\OneDrive\\Документы\\GitHub\\itiscs\\myrep\\time\\time.csproj": {
-              "projectPath": "C:\\Users\\gafar\\OneDrive\\Документы\\GitHub\\itiscs\\myrep\\time\\time.csproj"
+            "C:\\Users\\gafar\\Source\\Repos\\fuz1kort\\itiscs\\myrep\\time\\time.csproj": {
+              "projectPath": "C:\\Users\\gafar\\Source\\Repos\\fuz1kort\\itiscs\\myrep\\time\\time.csproj"
             }
           }
         }

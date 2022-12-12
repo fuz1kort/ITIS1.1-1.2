@@ -973,16 +973,6 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
-      },
-      "Zadacha910/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "compile": {
-          "bin/placeholder/Zadacha910.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Zadacha910.dll": {}
-        }
       }
     }
   },
@@ -3924,20 +3914,15 @@
         "system.xml.xdocument.4.0.11.nupkg.sha512",
         "system.xml.xdocument.nuspec"
       ]
-    },
-    "Zadacha910/1.0.0": {
-      "type": "project",
-      "path": "../9-10/Zadacha910.csproj",
-      "msbuildProject": "../9-10/Zadacha910.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "C:\\Users\\gafar\\Source\\Repos\\fuz1kort\\itiscs\\9-10\\Zadacha910.csproj",
       "Microsoft.NET.Test.Sdk >= 17.3.2",
       "NUnit >= 3.13.3",
       "NUnit.Analyzers >= 3.3.0",
       "NUnit3TestAdapter >= 4.2.1",
-      "Zadacha910 >= 1.0.0",
       "coverlet.collector >= 3.1.2"
     ]
   },
@@ -3948,11 +3933,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\gafar\\OneDrive\\Документы\\GitHub\\itiscs\\TestProject1\\TestZadacha910.csproj",
+      "projectUniqueName": "C:\\Users\\gafar\\Source\\Repos\\fuz1kort\\itiscs\\TestProject1\\TestZadacha910.csproj",
       "projectName": "TestZadacha910",
-      "projectPath": "C:\\Users\\gafar\\OneDrive\\Документы\\GitHub\\itiscs\\TestProject1\\TestZadacha910.csproj",
+      "projectPath": "C:\\Users\\gafar\\Source\\Repos\\fuz1kort\\itiscs\\TestProject1\\TestZadacha910.csproj",
       "packagesPath": "C:\\Users\\gafar\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\gafar\\OneDrive\\Документы\\GitHub\\itiscs\\TestProject1\\obj\\",
+      "outputPath": "C:\\Users\\gafar\\Source\\Repos\\fuz1kort\\itiscs\\TestProject1\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -3973,8 +3958,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\gafar\\OneDrive\\Документы\\GitHub\\itiscs\\9-10\\Zadacha910.csproj": {
-              "projectPath": "C:\\Users\\gafar\\OneDrive\\Документы\\GitHub\\itiscs\\9-10\\Zadacha910.csproj"
+            "C:\\Users\\gafar\\Source\\Repos\\fuz1kort\\itiscs\\9-10\\Zadacha910.csproj": {
+              "projectPath": "C:\\Users\\gafar\\Source\\Repos\\fuz1kort\\itiscs\\9-10\\Zadacha910.csproj"
             }
           }
         }
@@ -4029,5 +4014,16 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1104",
+      "level": "Error",
+      "message": "Не удалось найти проект \"C:\\Users\\gafar\\Source\\Repos\\fuz1kort\\itiscs\\9-10\\Zadacha910.csproj\". Убедитесь, что ссылка на проект действительна и файл проекта существует.",
+      "libraryId": "C:\\Users\\gafar\\Source\\Repos\\fuz1kort\\itiscs\\9-10\\Zadacha910.csproj",
+      "targetGraphs": [
+        "net7.0"
+      ]
+    }
+  ]
 }

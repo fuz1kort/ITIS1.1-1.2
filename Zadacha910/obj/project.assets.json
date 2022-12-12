@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\gafar\\OneDrive\\Документы\\GitHub\\itiscs\\9-10\\Zadacha910.csproj",
+      "projectUniqueName": "C:\\Users\\gafar\\Source\\Repos\\fuz1kort\\itiscs\\Zadacha910\\Zadacha910.csproj",
       "projectName": "Zadacha910",
-      "projectPath": "C:\\Users\\gafar\\OneDrive\\Документы\\GitHub\\itiscs\\9-10\\Zadacha910.csproj",
+      "projectPath": "C:\\Users\\gafar\\Source\\Repos\\fuz1kort\\itiscs\\Zadacha910\\Zadacha910.csproj",
       "packagesPath": "C:\\Users\\gafar\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\gafar\\OneDrive\\Документы\\GitHub\\itiscs\\9-10\\obj\\",
+      "outputPath": "C:\\Users\\gafar\\Source\\Repos\\fuz1kort\\itiscs\\Zadacha910\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

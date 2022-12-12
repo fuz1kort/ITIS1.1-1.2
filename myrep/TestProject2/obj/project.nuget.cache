@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5zPa4SPEUpYp8K4Y8eEpF3KATXrvvbjxM2dNDZu50df3oDD+tpCppgFMp2mFprkmCyg4J6AydKU5bUxlXGwQkQ==",
+  "dgSpecHash": "pdOEMFDs5MU58pI+87nPfLoQuNXaHEOk/eqtvIb8fOiprfM+LaJL4PVJXN9fwB81v4r3qr5o27BhDRgDYaXfkg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\gafar\\OneDrive\\Документы\\GitHub\\itiscs\\myrep\\TestProject2\\TestProject2.csproj",
+  "projectFilePath": "C:\\Users\\gafar\\Source\\Repos\\fuz1kort\\itiscs\\myrep\\TestProject2\\TestProject2.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\gafar\\.nuget\\packages\\coverlet.collector\\3.1.2\\coverlet.collector.3.1.2.nupkg.sha512",
     "C:\\Users\\gafar\\.nuget\\packages\\microsoft.codecoverage\\17.3.2\\microsoft.codecoverage.17.3.2.nupkg.sha512",

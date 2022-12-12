@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "rw9j9OuF1eoF2ZeXY5VQ3tXTWpJfkFVrIcpK4HcS7Fj/hacumDWQShSkWqxl9Afk/lzhl7udsQzI5Y8MkcPQiw==",
-  "success": true,
-  "projectFilePath": "C:\\Users\\gafar\\OneDrive\\Документы\\GitHub\\itiscs\\TestProject1\\TestZadacha910.csproj",
+  "dgSpecHash": "dtupl6tjWeLrAGZZdDgq68pffLHxP8Rbit95cIBGxWqten9hb0fug7OszPXaUbxJhbuP2diXhFp9papEQZ71EQ==",
+  "success": false,
+  "projectFilePath": "C:\\Users\\gafar\\Source\\Repos\\fuz1kort\\itiscs\\TestProject1\\TestZadacha910.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\gafar\\.nuget\\packages\\coverlet.collector\\3.1.2\\coverlet.collector.3.1.2.nupkg.sha512",
     "C:\\Users\\gafar\\.nuget\\packages\\microsoft.codecoverage\\17.3.2\\microsoft.codecoverage.17.3.2.nupkg.sha512",
@@ -52,5 +52,15 @@
     "C:\\Users\\gafar\\.nuget\\packages\\system.xml.readerwriter\\4.0.11\\system.xml.readerwriter.4.0.11.nupkg.sha512",
     "C:\\Users\\gafar\\.nuget\\packages\\system.xml.xdocument\\4.0.11\\system.xml.xdocument.4.0.11.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1104",
+      "level": "Error",
+      "message": "Не удалось найти проект \"C:\\Users\\gafar\\Source\\Repos\\fuz1kort\\itiscs\\9-10\\Zadacha910.csproj\". Убедитесь, что ссылка на проект действительна и файл проекта существует.",
+      "libraryId": "C:\\Users\\gafar\\Source\\Repos\\fuz1kort\\itiscs\\9-10\\Zadacha910.csproj",
+      "targetGraphs": [
+        "net7.0"
+      ]
+    }
+  ]
 }
