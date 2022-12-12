@@ -18,37 +18,37 @@ namespace Lab
             {
                 Code = 1,
                 Name = "Директор",
-                BaseHourlyRate = 100000
+                BaseHourlyRate = 500
             });
             Positions.Add(new Position()
             {
                 Code = 2,
                 Name = "Заместитель директора",
-                BaseHourlyRate = 60000
+                BaseHourlyRate = 250
             });
             Positions.Add(new Position()
             {
                 Code = 3,
                 Name = "Бухгалтер",
-                BaseHourlyRate = 40000
+                BaseHourlyRate = 200
             });
             Positions.Add(new Position()
             {
                 Code = 4,
                 Name = "Менеджер по продажам",
-                BaseHourlyRate = 30000
+                BaseHourlyRate = 150
             });
             Positions.Add(new Position()
             {
                 Code = 5,
                 Name = "Управляющий",
-                BaseHourlyRate = 20000
+                BaseHourlyRate = 100
             });
             Positions.Add(new Position()
             {
                 Code = 6,
                 Name = "Рабочий",
-                BaseHourlyRate = 10000
+                BaseHourlyRate = 100
             });
         }
 

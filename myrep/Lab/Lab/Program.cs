@@ -16,9 +16,9 @@
                 Console.WriteLine("Выберите пункт меню:");
                 Console.WriteLine("1. Добавить сотрудника");
                 Console.WriteLine("2. Просмотреть всех сотрудников");
-                Console.WriteLine("3. Просмотреть табель рабочего времени");                 //Хз как реализовать пока что...
+                Console.WriteLine("3. Просмотреть табель рабочего времени");
                 Console.WriteLine("4. Заполнить табель рабочего времени");
-                Console.WriteLine("5. Посчитать зарплату сотрудику");
+                Console.WriteLine("5. Посчитать зарплату сотрудику");               //Хз как реализовать пока что...
 
                 var k = int.Parse(Console.ReadLine());
                 Console.Clear();
