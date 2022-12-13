@@ -22,23 +22,42 @@
 
                 var k = int.Parse(Console.ReadLine());
                 Console.Clear();
+                int cnt = 0;
 
                 switch (k)
                 {
                     case 1:
                         {
                             Employee emp = new Employee();
-                            emp.Number = company.GetAllEmployees().Count+1;
+                            cnt++;
+                            emp.Number = cnt;
                             Console.WriteLine("Введите фамилию и имя сотрудника");
                             emp.FullName = Console.ReadLine();
+                            Console.WriteLine("0. Электрик\n1. Плотник\n2.Резчик по дереву");
+                            Console.WriteLine("3. Столяр\n4. Маляр\n5. Каменщик");
+                            Console.WriteLine("Введите номер должности");
+                            var code = int.Parse(Console.ReadLine());
+                            foreach(var pos in company.Positions)
+                            {
+                                if (pos.Code == code)
+                                {
+                                    emp.SetPosition(pos);
+                                    break;
+                                }
+                            }
                             Console.WriteLine("Введите разряд");
                             emp.Rating = int.Parse(Console.ReadLine());
                             emp.EmploymentDate = DateTime.Now;
-                            Console.WriteLine("Является ли сотрудник членом профсоюзе?(Да, Нет");
+                            Console.WriteLine("Является ли сотрудник членом профсоюзе?(Да, Нет)");
                             if (Console.ReadLine() == "Да") emp.IsMemberOfLaborUnion = true;
                             else emp.IsMemberOfLaborUnion = false;
+                            emp.AddEmployee(emp);
                             Console.WriteLine("Добавить еще одного сотрудника?(Да, Нет)");
-                            if (Console.ReadLine() == "Да") goto case 1;
+                            if (Console.ReadLine() == "Да")
+                            {
+                                Console.Clear();
+                                goto case 1;
+                            }
                             break;
                         }
                     case 2:
@@ -65,19 +84,26 @@
                                             s = a.FullName;
                                         } 
                                     }
-                                    Console.WriteLine($"Дата: {d.Key},\nРаботник - {s},\nВремя работы: {e.Value}");
+                                    Console.WriteLine($"Дата: {d.Key},\nРаботник - {s},\nВремя работы в часах: {e.Value}");
                                 }
                             }
                             break;
                         }
                     case 4:
                         {
-                            Console.Write("Введите год");
+                            Console.WriteLine("Введите год");
                             var y = int.Parse(Console.ReadLine());
                             Console.WriteLine("Введите месяц");
                             var m = int.Parse(Console.ReadLine());
                             Console.WriteLine("Введите день");
                             var d = int.Parse(Console.ReadLine());
+                            var employees = company.GetAllEmployees();
+                            int cnt = 0;
+                            foreach(var employee in employees)
+                            {
+                                cnt++;
+                                Console.WriteLine($"{cnt}. {employee.FullName}, {employee.Position.Name}");
+                            }
                             Console.WriteLine("Введите табельный номер работника");
                             var n = int.Parse(Console.ReadLine());
                             Console.WriteLine("Введите количество отработанных часов");
