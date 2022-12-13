@@ -54,6 +54,7 @@ namespace Lab
 
         public List<Employee> GetAllEmployees()
         {
+            //Employees.Sort((x,y) => string.Compare(x.FullName, y.FullName));
             return Employees;
         }
     }

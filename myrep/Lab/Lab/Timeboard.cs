@@ -15,7 +15,7 @@ namespace Lab
         private static int eday { get; set; }
         private static int emonth { get; set; }
         private static int eyear { get; set; }
-        private static Dictionary<DateOnly, Dictionary<int, int>> Timesheet = new Dictionary<DateOnly, Dictionary<int, int>>();
+        private static SortedDictionary<DateOnly, SortedDictionary<int, int>> Timesheet = new SortedDictionary<DateOnly, SortedDictionary<int, int>>();
         public void ReadStartDate(int day, int month, int year)
         {
             sday = day;
@@ -33,9 +33,9 @@ namespace Lab
         public void ReadTimesheet(int year, int month, int day, int number, int hours)
         {
             DateOnly date = new DateOnly(year, month, day);
-            Timesheet.Add(date, new Dictionary<int, int> { [number] = hours });
+            Timesheet.Add(date, new SortedDictionary<int, int> { [number] = hours });
         }
-        public Dictionary<DateOnly, Dictionary<int,int>> WriteTimesheet()
+        public SortedDictionary<DateOnly, SortedDictionary<int,int>> WriteTimesheet()
         {
             return Timesheet;
         }

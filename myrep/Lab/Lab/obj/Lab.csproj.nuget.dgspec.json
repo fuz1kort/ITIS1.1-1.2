@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\gafar\\Source\\Repos\\fuz1kort\\itiscs\\myrep\\Lab\\Lab\\Lab.csproj": {}
+    "C:\\Users\\Marat\\Documents\\GitHub\\itiscs\\myrep\\Lab\\Lab\\Lab.csproj": {}
   },
   "projects": {
-    "C:\\Users\\gafar\\Source\\Repos\\fuz1kort\\itiscs\\myrep\\Lab\\Lab\\Lab.csproj": {
+    "C:\\Users\\Marat\\Documents\\GitHub\\itiscs\\myrep\\Lab\\Lab\\Lab.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\gafar\\Source\\Repos\\fuz1kort\\itiscs\\myrep\\Lab\\Lab\\Lab.csproj",
+        "projectUniqueName": "C:\\Users\\Marat\\Documents\\GitHub\\itiscs\\myrep\\Lab\\Lab\\Lab.csproj",
         "projectName": "Lab",
-        "projectPath": "C:\\Users\\gafar\\Source\\Repos\\fuz1kort\\itiscs\\myrep\\Lab\\Lab\\Lab.csproj",
-        "packagesPath": "C:\\Users\\gafar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\gafar\\Source\\Repos\\fuz1kort\\itiscs\\myrep\\Lab\\Lab\\obj\\",
+        "projectPath": "C:\\Users\\Marat\\Documents\\GitHub\\itiscs\\myrep\\Lab\\Lab\\Lab.csproj",
+        "packagesPath": "C:\\Users\\Marat\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Marat\\Documents\\GitHub\\itiscs\\myrep\\Lab\\Lab\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\gafar\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Marat\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

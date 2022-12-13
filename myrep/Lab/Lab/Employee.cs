@@ -21,9 +21,9 @@ namespace Lab
             return $"{FullName}, разряд - {Rating}, работает в этой компании с {EmploymentDate}";
         }
 
-        public void AddEmployee(Employee employee)
+        public void AddEmployee()
         {
-            MyCompany.Employees.Add(employee);
+            MyCompany.Employees.Add(this);
         }
 
         public void SetPosition(Position pos)
