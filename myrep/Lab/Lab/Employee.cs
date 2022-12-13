@@ -14,6 +14,7 @@ namespace Lab
         public int Rating { get; set; }
         public DateTime EmploymentDate { get; set; }
         public bool IsMemberOfLaborUnion { get; set; }
+        public Position Position { get; set; }
 
         public override string ToString()
         {
@@ -23,6 +24,11 @@ namespace Lab
         public void AddEmployee(Employee employee)
         {
             MyCompany.Employees.Add(employee);
+        }
+
+        public void SetPosition(Position pos)
+        {
+            Position = pos;
         }
     }
 }

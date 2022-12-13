@@ -32,10 +32,8 @@ namespace Lab
 
         public void ReadTimesheet(int year, int month, int day, int number, int hours)
         {
-            Dictionary<int, int> CaH = new Dictionary<int, int>();
-            CaH[number] = hours;
             DateOnly date = new DateOnly(year, month, day);
-            Timesheet.Add(date, CaH);
+            Timesheet.Add(date, new Dictionary<int, int> { [number] = hours });
         }
         public Dictionary<DateOnly, Dictionary<int,int>> WriteTimesheet()
         {
