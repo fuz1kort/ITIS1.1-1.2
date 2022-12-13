@@ -24,10 +24,5 @@ namespace Lab
         {
             MyCompany.Employees.Add(employee);
         }
-        public string GetNamebyNumber(int Number)
-        {
-            return FullName;
-        }
-
     }
 }
