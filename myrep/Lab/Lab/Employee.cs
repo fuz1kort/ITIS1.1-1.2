@@ -44,18 +44,24 @@
                 if (day.Key >= startdate)
                 {
                     var ratio = 1;
-                    if (day.Key.DayOfWeek == DayOfWeek.Saturday || day.Key.DayOfWeek == DayOfWeek.Sunday) ratio *= 2;
+                    if (day.Key.DayOfWeek == DayOfWeek.Saturday || day.Key.DayOfWeek == DayOfWeek.Sunday)
+                        ratio *= 2;
                     foreach (KeyValuePair<int, int> code_hours in day.Value)
                     {
                         if (code_hours.Key == Number)
                         {
-                            if (code_hours.Value > 8) salary += (((code_hours.Value - 8) * 2) + 8) * ratio * HourlyRate;
-                            else salary += code_hours.Value * ratio * HourlyRate;
+                            if (code_hours.Value > 8)
+                                salary += (((code_hours.Value - 8) * 2) + 8) * ratio * HourlyRate;
+                            else 
+                                salary += code_hours.Value * ratio * HourlyRate;
                         }
                     }
                 }
-                if (day.Key > enddate) break;
+
+                if (day.Key > enddate)
+                    break;
             }
+
             if (IsMemberOfLaborUnion)
                 return salary - ((salary * 0.13) + (salary * 0.02));
             return salary - (salary * 0.13);

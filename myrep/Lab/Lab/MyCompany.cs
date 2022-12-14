@@ -29,10 +29,9 @@
             foreach (var employee in GetAllEmployees())
             {
                 if (employee.GetNumber() == code_hours.Key)
-                {
                     return employee;
-                }
             }
+
             return new();
         }
     }

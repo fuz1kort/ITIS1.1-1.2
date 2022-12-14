@@ -41,8 +41,10 @@
                             DateOnly date = new(year, month, day);
                             bool ismemberoflaborunion;
                             Console.WriteLine("Является ли сотрудник членом профсоюза?(Да, Нет)");
-                            if (Console.ReadLine() == "Да") ismemberoflaborunion = true;
-                            else ismemberoflaborunion = false;
+                            if (Console.ReadLine() == "Да")
+                                ismemberoflaborunion = true;
+                            else
+                                ismemberoflaborunion = false;
                             Employee employee = new(number, name, rate, date, ismemberoflaborunion);
                             Console.WriteLine("0. Электрик\n1. Плотник\n2. Резчик по дереву");
                             Console.WriteLine("3. Столяр\n4. Маляр\n5. Каменщик");
@@ -57,6 +59,7 @@
                                     break;
                                 }
                             }
+
                             employee.AddEmployee(company);
                             Console.WriteLine("Добавить еще одного сотрудника?(Да, Нет)");
                             if (Console.ReadLine() == "Да")
@@ -64,7 +67,9 @@
                                 Console.Clear();
                                 goto case 1;
                             }
-                            else Console.Clear();
+
+                            else
+                                Console.Clear();
                             break;
                         }
 
@@ -82,10 +87,15 @@
                                 foreach (KeyValuePair<int, int> code_hours in day.Value)
                                 {
                                     var employee = company.GetEmploymentByCode(code_hours.Key, code_hours);
-                                    if (day.Key >= employee.GetEmploymentDate()) Console.WriteLine($"Дата: {day.Key} - {day.Key.DayOfWeek},\nРаботник - {employee.GetFullName()},\nВремя работы в часах: {code_hours.Value}\number");
+                                    if (day.Key >= employee.GetEmploymentDate())
+                                        Console.WriteLine($"Дата: {day.Key} - {day.Key.DayOfWeek}," +
+                                                          $"\nРаботник - {employee.GetFullName()}," +
+                                                          $"\nВремя работы в часах: {code_hours.Value}");
                                 }
+
                                 Console.WriteLine("***********************************");
                             }
+
                             break;
                         }
 
@@ -110,7 +120,8 @@
                             Employee currentemployee = new();
                             foreach (var employee in company.GetAllEmployees())
                             {
-                                if (employee.GetNumber() == number) currentemployee = employee;
+                                if (employee.GetNumber() == number)
+                                    currentemployee = employee;
                                 else
                                 {
                                     Console.WriteLine("Нет такого сотрудника");
@@ -132,7 +143,13 @@
                             break;
 
                         }
-                    case 6: { Console.Clear(); exit = true; break; }
+
+                    case 6: 
+                        { 
+                            Console.Clear();
+                            exit = true;
+                            break; 
+                        }
                 }
             }
 
@@ -145,6 +162,7 @@
                     number++;
                     Console.WriteLine($"{number}. {employee.GetFullName()}, {employee.GetPosition().GetName()}");
                 }
+
                 Console.WriteLine("Введите табельный номер работника");
             }
 
@@ -152,9 +170,7 @@
             {
                 Console.WriteLine("Список сотрудников:");
                 foreach (var employee in company.GetAllEmployees())
-                {
                     Console.WriteLine(employee);
-                }
             }
         }
     }
