@@ -57,5 +57,17 @@ namespace Lab
             //Employees.Sort((x,y) => string.Compare(x.FullName, y.FullName));
             return Employees;
         }
+
+        public Employee GetEmploymentByCode(int code, KeyValuePair<int, int> e)
+        {
+            foreach (var a in GetAllEmployees())
+            {
+                if (a.Number == e.Key)
+                {
+                    return a;
+                }
+            }
+            return null;
+        }
     }
 }

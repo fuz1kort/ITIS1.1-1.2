@@ -34,11 +34,14 @@ namespace Lab
 
         public void SetHourlyRate()
         {
-            HourlyRate = Position.BaseHourlyRate;
-            if (Rating > 1)
-            {
-                HourlyRate = ((((Rating - 1) * 10) + 100) / 100) * Position.BaseHourlyRate;
-            }
+            var pb = (double)Position.BaseHourlyRate;
+            var r = (double)Rating;
+            HourlyRate = (int)Math.Round(((((r - 1) * 10) + 100) / 100) * pb);
+        }
+
+        public double GetSalary
+        {
+
         }
     }
 }
