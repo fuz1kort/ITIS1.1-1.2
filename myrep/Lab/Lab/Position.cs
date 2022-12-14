@@ -1,15 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Lab
+﻿namespace Lab
 {
     public class Position
     {
-        public int Code { get; set; }
-        public string Name { get; set; } = string.Empty;
-        public int BaseHourlyRate { get; set; }
+        private int Code { get; set; }
+        private string Name { get; set; } = string.Empty;
+        private int BaseHourlyRate { get; set; }
+        public Position() { }
+        public Position(int code, string name, int baseHourlyRate)
+        {
+            Code = code;
+            Name = name;
+            BaseHourlyRate = baseHourlyRate;
+        }
+
+        public void SetCode(int code) => Code = code;
+        public int GetCode() => Code;
+        public string GetName() => Name;
+        public int GetBaseHourlyRate() => BaseHourlyRate;
     }
 }

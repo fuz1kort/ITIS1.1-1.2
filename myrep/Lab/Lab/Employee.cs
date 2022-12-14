@@ -1,40 +1,34 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Lab
+﻿namespace Lab
 {
     public class Employee
     {
-        public int Number { get; set; }
-        public string FullName { get; set; } = string.Empty;
-        public int Rating { get; set; }
-        public DateOnly EmploymentDate { get; set; }
-        public bool IsMemberOfLaborUnion { get; set; }
-        public Position Position { get; set; }
+        private int Number { get; set; }
+        private string FullName { get; set; } = string.Empty;
+        private int Rating { get; set; }
+        private DateOnly EmploymentDate { get; set; }
+        private bool IsMemberOfLaborUnion { get; set; }
+        private Position Position { get; set; } = new();
         private int HourlyRate { get; set; }
+        public Employee() { }
 
-        public override string ToString()
+        public Employee(int number, string fullName, int rating, DateOnly employmentDate, bool isMemberOfLaborUnion)
         {
-            return $"{FullName}, разряд - {Rating}, работает в этой компании с {EmploymentDate}, з/п - {HourlyRate}";
+            Number = number;
+            FullName = fullName;
+            Rating = rating;
+            EmploymentDate = employmentDate;
+            IsMemberOfLaborUnion = isMemberOfLaborUnion;
         }
 
-        public void AddEmployee()
-        {
-            MyCompany.Employees.Add(this);
-        }
+        public override string ToString() => $"{FullName}, разряд - {Rating}, работает в этой компании с {EmploymentDate}, з/п - {HourlyRate}";
 
-        public void SetPosition(Position pos)
-        {
-            Position = pos;
-        }
+        public void AddEmployee(MyCompany company) => company.GetAllEmployees().Add(this);
+
+        public void SetPosition(Position pos) => Position = pos;
 
         public void SetHourlyRate()
         {
-            var pb = (double)Position.BaseHourlyRate;
+            var pb = (double)Position.GetBaseHourlyRate();
             var r = (double)Rating;
             HourlyRate = (int)Math.Round(((((r - 1) * 10) + 100) / 100) * pb);
         }
@@ -67,6 +61,9 @@ namespace Lab
             return salary - salary * 0.13;
         }
 
-        
+        public string GetFullName() => FullName;
+        public int GetNumber() => Number;
+        public DateOnly GetEmploymentDate() => EmploymentDate;
+        public Position GetPosition() => Position;
     }
 }

@@ -1,6 +1,4 @@
-﻿using System.Security.Cryptography.X509Certificates;
-
-namespace Lab
+﻿namespace Lab
 {
     class Program
     {
@@ -23,43 +21,43 @@ namespace Lab
                 Console.WriteLine("5. Посчитать зарплату сотрудику");
                 Console.WriteLine("6. Выйти");
 
-                var k = int.Parse(Console.ReadLine());
+                var enter = int.Parse(Console.ReadLine());
                 Console.Clear();
                 int cnt = 0;
-                switch (k)
+                switch (enter)
                 {
                     case 1:
                         {
-                            Employee emp = new();
                             cnt++;
-                            emp.Number = cnt;
+                            var num = cnt;
                             Console.WriteLine("Введите ФИО сотрудника");
-                            emp.FullName = Console.ReadLine();
-                            Console.WriteLine("0. Электрик\n1. Плотник\n2. Резчик по дереву");
-                            Console.WriteLine("3. Столяр\n4. Маляр\n5. Каменщик");
-                            Console.WriteLine("Введите номер должности");
-                            var code = int.Parse(Console.ReadLine());
-                            foreach(var pos in company.Positions)
-                            {
-                                if (pos.Code == code)
-                                {
-                                    emp.SetPosition(pos);
-                                    break;
-                                }
-                            }
+                            var name = Console.ReadLine();                     
                             Console.WriteLine("Введите разряд");
-                            emp.Rating = int.Parse(Console.ReadLine());
-                            emp.SetHourlyRate();
+                            var rate = int.Parse(Console.ReadLine());
                             Console.WriteLine("Введите дату приёма на должность(год, месяц, день через Enter)");
                             var y = int.Parse(Console.ReadLine());
                             var m = int.Parse(Console.ReadLine());
                             var d = int.Parse(Console.ReadLine());
                             DateOnly date = new(y, m, d);
-                            emp.EmploymentDate = date;
+                            bool memb;
                             Console.WriteLine("Является ли сотрудник членом профсоюза?(Да, Нет)");
-                            if (Console.ReadLine() == "Да") emp.IsMemberOfLaborUnion = true;
-                            else emp.IsMemberOfLaborUnion = false;
-                            emp.AddEmployee();
+                            if (Console.ReadLine() == "Да") memb = true;
+                            else memb = false;
+                            Employee emp = new(num, name, rate, date, memb);
+                            Console.WriteLine("0. Электрик\n1. Плотник\n2. Резчик по дереву");
+                            Console.WriteLine("3. Столяр\n4. Маляр\n5. Каменщик");
+                            Console.WriteLine("Введите номер должности");
+                            var code = int.Parse(Console.ReadLine());
+                            foreach (var pos in company.GetAllPositions())
+                            {
+                                if (pos.GetCode() == code)
+                                {
+                                    emp.SetPosition(pos);
+                                    emp.SetHourlyRate();
+                                    break;
+                                }
+                            }
+                            emp.AddEmployee(company);
                             Console.WriteLine("Добавить еще одного сотрудника?(Да, Нет)");
                             if (Console.ReadLine() == "Да")
                             {
@@ -84,7 +82,7 @@ namespace Lab
                                 foreach(KeyValuePair<int,int> e in d.Value)
                                 {
                                     var s = company.GetEmploymentByCode(e.Key, e);
-                                    if (d.Key >= s.EmploymentDate) Console.WriteLine($"Дата: {d.Key} - {d.Key.DayOfWeek},\nРаботник - {s.FullName},\nВремя работы в часах: {e.Value}\n");
+                                    if (d.Key >= s.GetEmploymentDate()) Console.WriteLine($"Дата: {d.Key} - {d.Key.DayOfWeek},\nРаботник - {s.GetFullName()},\nВремя работы в часах: {e.Value}\n");
                                 }
                                 Console.WriteLine("***********************************");
                             }
@@ -94,7 +92,7 @@ namespace Lab
                     case 4:
                         {
                             PrintEmplNum();
-                            var n = int.Parse(Console.ReadLine());
+                            var n = ToInt32(Console.ReadLine());
                             Console.WriteLine("Введите дату(год, месяц, день через Enter)");
                             var y = int.Parse(Console.ReadLine());
                             var m = int.Parse(Console.ReadLine());
@@ -109,10 +107,10 @@ namespace Lab
                         {
                             PrintEmplNum();
                             var num = int.Parse(Console.ReadLine());
-                            Employee curemp = null;
+                            Employee curemp = new();
                             foreach(var emp in company.GetAllEmployees())
                             {
-                                if (emp.Number == num) curemp = emp;
+                                if (emp.GetNumber() == num) curemp = emp;
                                 else
                                 {
                                     Console.WriteLine("Нет такого сотрудника");
@@ -145,7 +143,7 @@ namespace Lab
                 foreach (var employee in employees)
                 {
                     num++;
-                    Console.WriteLine($"{num}. {employee.FullName}, {employee.Position.Name}");
+                    Console.WriteLine($"{num}. {employee.GetFullName()}, {employee.GetPosition().GetName()}");
                 }
                 Console.WriteLine("Введите табельный номер работника");
             }
