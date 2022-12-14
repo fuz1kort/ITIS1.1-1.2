@@ -80,7 +80,7 @@
 
                     case 3:
                         {
-                            var dict = timeboard.WriteTimesheet();
+                            var dict = timeboard.GetTimesheet();
                             foreach (KeyValuePair<DateOnly, SortedDictionary<int,int>> d in dict)
                             {
                                 foreach(KeyValuePair<int,int> e in d.Value)

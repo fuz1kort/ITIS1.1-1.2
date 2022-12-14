@@ -39,9 +39,22 @@ namespace Lab
             HourlyRate = (int)Math.Round(((((r - 1) * 10) + 100) / 100) * pb);
         }
 
-        public double GetSalary
+        public int GetSalary(Timeboard timeboard)
         {
+            var timesheet = timeboard.GetTimesheet();
+            double salary = 0;
+            foreach (KeyValuePair<DateOnly, SortedDictionary<int, int>> d in timesheet)
+            {
+                foreach (KeyValuePair<int, int> e in d.Value)
+                {
+                    if (d.Key >= EmploymentDate)
+                    {
 
+                    }
+                }
+                Console.WriteLine("***********************************");
+            }
+            return salary;
         }
     }
 }
