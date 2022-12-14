@@ -84,15 +84,8 @@
                             {
                                 foreach(KeyValuePair<int,int> e in d.Value)
                                 {
-                                    string s = string.Empty;
-                                    foreach (var a in company.GetAllEmployees())
-                                    {
-                                        if (a.Number == e.Key)
-                                        {
-                                            s = a.FullName;
-                                        } 
-                                    }
-                                    Console.WriteLine($"Дата: {d.Key},\nРаботник - {s},\nВремя работы в часах: {e.Value}\n");
+                                    var s = GetEmploymentByCode(e.Key, e);
+                                    if (d.Key >= s.EmploymentDate) Console.WriteLine($"Дата: {d.Key},\nРаботник - {s},\nВремя работы в часах: {e.Value}\n");
                                 }
                                 Console.WriteLine("***********************************");
                             }
@@ -122,9 +115,26 @@
                             break;
                         }
 
+                    //case 5:
+                    //    {
+
+                    //    }
                     case 6: { Console.Clear(); exit = true; break; }
                 }
             }
+            
+            Employee GetEmploymentByCode(int code, KeyValuePair<int, int> e)
+            {
+                foreach (var a in company.GetAllEmployees())
+                {
+                    if (a.Number == e.Key)
+                    {
+                        return a;
+                    }
+                }
+                return null;
+            }
+            
         }
     }
 }
