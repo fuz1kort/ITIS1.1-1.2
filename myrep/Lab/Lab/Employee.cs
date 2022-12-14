@@ -49,22 +49,22 @@ namespace Lab
             {
                 if (d.Key >= sdate)
                 {
-                    var addcoef = 1;
+                    var coef = 1;
+                    if (d.Key.DayOfWeek == DayOfWeek.Saturday || d.Key.DayOfWeek == DayOfWeek.Sunday) coef *= 2;
                     foreach (KeyValuePair<int, int> e in d.Value)
                     {
                         if (e.Key == Number)
                         {
-                            if (d.Key.DayOfWeek == DayOfWeek.Saturday || d.Key.DayOfWeek == DayOfWeek.Sunday) addcoef *= 2;
-                            if (e.Value > 8) salary += ((e.Value - 8) * 2) * addcoef * HourlyRate;
-                            else salary += e.Value * addcoef * HourlyRate;
+                            if (e.Value > 8) salary += (((e.Value - 8) * 2) + 8) * coef * HourlyRate;
+                            else salary += e.Value * coef * HourlyRate;
                         }
                     }
                 }
                 if (d.Key > edate) break;
             }
             if (IsMemberOfLaborUnion)
-                return salary * 0.87 * 0.98;
-            return salary * 0.87;
+                return salary - (salary * 0.13 + salary * 0.02);
+            return salary - salary * 0.13;
         }
 
         

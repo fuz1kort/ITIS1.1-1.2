@@ -50,7 +50,7 @@ namespace Lab
                             Console.WriteLine("Введите разряд");
                             emp.Rating = int.Parse(Console.ReadLine());
                             emp.SetHourlyRate();
-                            Console.WriteLine("Введите дату приёма на должность(год, месяц, день через пробел)");
+                            Console.WriteLine("Введите дату приёма на должность(год, месяц, день через Enter)");
                             var y = int.Parse(Console.ReadLine());
                             var m = int.Parse(Console.ReadLine());
                             var d = int.Parse(Console.ReadLine());
@@ -84,7 +84,7 @@ namespace Lab
                                 foreach(KeyValuePair<int,int> e in d.Value)
                                 {
                                     var s = company.GetEmploymentByCode(e.Key, e);
-                                    if (d.Key >= s.EmploymentDate) Console.WriteLine($"Дата: {d.Key},\nРаботник - {s},\nВремя работы в часах: {e.Value}\n");
+                                    if (d.Key >= s.EmploymentDate) Console.WriteLine($"Дата: {d.Key} - {d.Key.DayOfWeek},\nРаботник - {s.FullName},\nВремя работы в часах: {e.Value}\n");
                                 }
                                 Console.WriteLine("***********************************");
                             }
@@ -95,7 +95,7 @@ namespace Lab
                         {
                             PrintEmplNum();
                             var n = int.Parse(Console.ReadLine());
-                            Console.WriteLine("Введите дату(год, месяц, день через пробел)");
+                            Console.WriteLine("Введите дату(год, месяц, день через Enter)");
                             var y = int.Parse(Console.ReadLine());
                             var m = int.Parse(Console.ReadLine());
                             var d = int.Parse(Console.ReadLine());
@@ -120,26 +120,17 @@ namespace Lab
                                 }
                             }
 
-                            Console.WriteLine("Введите дату начальной даты(год, месяц, день через пробел)");
+                            Console.WriteLine("Введите дату начальной даты(год, месяц, день через Enter)");
                             var sy = int.Parse(Console.ReadLine());
                             var sm = int.Parse(Console.ReadLine());
                             var sd = int.Parse(Console.ReadLine());
                             timeboard.ReadStartDate(sy,sm,sd);
-                            Console.WriteLine("Введите дату конечной даты(год, месяц, день через пробел)");
+                            Console.WriteLine("Введите дату конечной даты(год, месяц, день через Enter)");
                             var ey = int.Parse(Console.ReadLine());
                             var em = int.Parse(Console.ReadLine());
                             var ed = int.Parse(Console.ReadLine());
                             timeboard.ReadEndDate(ey, em, ed);
-                            Console.WriteLine(curemp.GetSalary(timeboard));
-
-                            //PrintEmplReadNum();
-                            //var code = int.Parse(Console.ReadLine());
-                            //var dict = timeboard.GetTimesheet();
-                            //foreach (KeyValuePair<DateOnly, SortedDictionary<int, int>> d in dict)
-                            //{
-                            //    foreach (KeyValuePair<int, int> e in d.Value)
-                            //    {
-                            //        if(e.Key == code);
+                            Console.Write($"Заработная плата сотрудника равна - {curemp.GetSalary(timeboard)} рублей");
                             break;
 
                         }
