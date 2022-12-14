@@ -31,7 +31,7 @@
                             count++;
                             var number = count;
                             Console.WriteLine("Введите ФИО сотрудника");
-                            var name = Console.ReadLine();
+                            var name = Console.ReadLine() ?? string.Empty;
                             Console.WriteLine("Введите разряд");
                             var rate = Convert.ToInt32(Console.ReadLine());
                             Console.WriteLine("Введите дату приёма на должность(год, месяц, день через Enter)");

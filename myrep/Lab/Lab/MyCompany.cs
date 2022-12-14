@@ -2,8 +2,8 @@
 {
     public class MyCompany
     {
-        private List<Employee> Employees { get; set; } = new List<Employee>();
-        private List<Position> Positions { get; set; } = new List<Position>();
+        private static List<Employee> Employees { get; set; } = new List<Employee>();
+        private static List<Position> Positions { get; set; } = new List<Position>();
 
         public void Init()
         {
@@ -24,7 +24,7 @@
         }
 
 
-                public Employee GetEmploymentByCode(int code, KeyValuePair<int, int> code_hours)
+        public Employee GetEmploymentByCode(int code, KeyValuePair<int, int> code_hours)
         {
             foreach (var employee in GetAllEmployees())
             {
