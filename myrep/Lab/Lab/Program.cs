@@ -24,7 +24,6 @@
                 var k = int.Parse(Console.ReadLine());
                 Console.Clear();
                 int cnt = 0;
-
                 switch (k)
                 {
                     case 1:
@@ -48,7 +47,12 @@
                             }
                             Console.WriteLine("Введите разряд");
                             emp.Rating = int.Parse(Console.ReadLine());
-                            emp.EmploymentDate = DateTime.Now;
+                            Console.WriteLine("Введите дату приёма на должность(год, месяц, день через пробел)");
+                            var y = int.Parse(Console.ReadLine());
+                            var m = int.Parse(Console.ReadLine());
+                            var d = int.Parse(Console.ReadLine());
+                            DateOnly date = new DateOnly(y,m, d);
+                            emp.EmploymentDate = date;
                             Console.WriteLine("Является ли сотрудник членом профсоюзе?(Да, Нет)");
                             if (Console.ReadLine() == "Да") emp.IsMemberOfLaborUnion = true;
                             else emp.IsMemberOfLaborUnion = false;
@@ -59,6 +63,7 @@
                                 Console.Clear();
                                 goto case 1;
                             }
+                            else Console.Clear();
                             break;
                         }
 
@@ -87,8 +92,9 @@
                                             s = a.FullName;
                                         } 
                                     }
-                                    Console.WriteLine($"Дата: {d.Key},\nРаботник - {s},\nВремя работы в часах: {e.Value}");
+                                    Console.WriteLine($"Дата: {d.Key},\nРаботник - {s},\nВремя работы в часах: {e.Value}\n");
                                 }
+                                Console.WriteLine("***********************************");
                             }
                             break;
                         }

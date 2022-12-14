@@ -12,7 +12,7 @@ namespace Lab
         public int Number { get; set; }
         public string FullName { get; set; } = string.Empty;
         public int Rating { get; set; }
-        public DateTime EmploymentDate { get; set; }
+        public DateOnly EmploymentDate { get; set; }
         public bool IsMemberOfLaborUnion { get; set; }
         public Position Position { get; set; }
 
