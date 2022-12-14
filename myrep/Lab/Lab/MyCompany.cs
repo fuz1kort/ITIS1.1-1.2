@@ -4,28 +4,33 @@
     {
         private List<Employee> Employees { get; set; } = new List<Employee>();
         private List<Position> Positions { get; set; } = new List<Position>();
-        
+
         public void Init()
         {
-            Positions.Add(new Position(0,"Электрик", 90));
+            Positions.Add(new Position(0, "Электрик", 90));
             Positions.Add(new Position(1, "Плотник", 110));
-            Positions.Add(new Position(2, "Резчик по дереву", 140));
+            Positions.Add(new Position(2, "Разработчик", 140));
             Positions.Add(new Position(3, "Столяр", 120));
             Positions.Add(new Position(4, "Маляр", 80));
             Positions.Add(new Position(5, "Каменщик", 130));
         }
         public List<Position> GetAllPositions() => Positions;
 
-        public List<Employee> GetAllEmployees() => Employees;
-        //Employees.Sort((x,y) => string.Compare(x.FullName, y.FullName));
-
-        public Employee GetEmploymentByCode(int code, KeyValuePair<int, int> e)
+        public List<Employee> GetAllEmployees()
         {
-            foreach (var a in GetAllEmployees())
+            TimeOnly time = new(0, 0);
+            Employees.Sort((x, y) => DateTime.Compare(x.GetEmploymentDate().ToDateTime(time), y.GetEmploymentDate().ToDateTime(time)));
+            return Employees;
+        }
+
+
+                public Employee GetEmploymentByCode(int code, KeyValuePair<int, int> code_hours)
+        {
+            foreach (var employee in GetAllEmployees())
             {
-                if (a.GetNumber() == e.Key)
+                if (employee.GetNumber() == code_hours.Key)
                 {
-                    return a;
+                    return employee;
                 }
             }
             return new();

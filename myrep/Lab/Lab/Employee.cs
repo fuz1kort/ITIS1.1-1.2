@@ -20,45 +20,45 @@
             IsMemberOfLaborUnion = isMemberOfLaborUnion;
         }
 
-        public override string ToString() => $"{FullName}, разряд - {Rating}, работает в этой компании с {EmploymentDate}, з/п - {HourlyRate}";
+        public override string ToString() => $"{FullName}, должность - {Position.GetName()}, разряд - {Rating}, работает в компании с {EmploymentDate}, з/п - {HourlyRate}";
 
         public void AddEmployee(MyCompany company) => company.GetAllEmployees().Add(this);
 
-        public void SetPosition(Position pos) => Position = pos;
+        public void SetPosition(Position position) => Position = position;
 
         public void SetHourlyRate()
         {
-            var pb = (double)Position.GetBaseHourlyRate();
-            var r = (double)Rating;
-            HourlyRate = (int)Math.Round(((((r - 1) * 10) + 100) / 100) * pb);
+            var basehourlyrate = (double)Position.GetBaseHourlyRate();
+            var rating = (double)Rating;
+            HourlyRate = (int)Math.Round((((rating - 1) * 10) + 100) / 100 * basehourlyrate);
         }
 
         public double GetSalary(Timeboard timeboard)
         {
             var timesheet = timeboard.GetTimesheet();
             double salary = 0;
-            var sdate = timeboard.GetStartDate();
-            var edate = timeboard.GetEndDate();
-            foreach (KeyValuePair<DateOnly, SortedDictionary<int, int>> d in timesheet)
+            var startdate = timeboard.GetStartDate();
+            var enddate = timeboard.GetEndDate();
+            foreach (KeyValuePair<DateOnly, SortedDictionary<int, int>> day in timesheet)
             {
-                if (d.Key >= sdate)
+                if (day.Key >= startdate)
                 {
-                    var coef = 1;
-                    if (d.Key.DayOfWeek == DayOfWeek.Saturday || d.Key.DayOfWeek == DayOfWeek.Sunday) coef *= 2;
-                    foreach (KeyValuePair<int, int> e in d.Value)
+                    var ratio = 1;
+                    if (day.Key.DayOfWeek == DayOfWeek.Saturday || day.Key.DayOfWeek == DayOfWeek.Sunday) ratio *= 2;
+                    foreach (KeyValuePair<int, int> code_hours in day.Value)
                     {
-                        if (e.Key == Number)
+                        if (code_hours.Key == Number)
                         {
-                            if (e.Value > 8) salary += (((e.Value - 8) * 2) + 8) * coef * HourlyRate;
-                            else salary += e.Value * coef * HourlyRate;
+                            if (code_hours.Value > 8) salary += (((code_hours.Value - 8) * 2) + 8) * ratio * HourlyRate;
+                            else salary += code_hours.Value * ratio * HourlyRate;
                         }
                     }
                 }
-                if (d.Key > edate) break;
+                if (day.Key > enddate) break;
             }
             if (IsMemberOfLaborUnion)
-                return salary - (salary * 0.13 + salary * 0.02);
-            return salary - salary * 0.13;
+                return salary - ((salary * 0.13) + (salary * 0.02));
+            return salary - (salary * 0.13);
         }
 
         public string GetFullName() => FullName;

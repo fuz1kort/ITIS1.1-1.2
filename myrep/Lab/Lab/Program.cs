@@ -1,6 +1,6 @@
 ﻿namespace Lab
 {
-    class Program
+    internal class Program
     {
         public static void Main()
         {
@@ -21,43 +21,43 @@
                 Console.WriteLine("5. Посчитать зарплату сотрудику");
                 Console.WriteLine("6. Выйти");
 
-                var enter = int.Parse(Console.ReadLine());
+                var enter = Convert.ToInt32(Console.ReadLine());
                 Console.Clear();
-                int cnt = 0;
+                int count = 0;
                 switch (enter)
                 {
                     case 1:
                         {
-                            cnt++;
-                            var num = cnt;
+                            count++;
+                            var number = count;
                             Console.WriteLine("Введите ФИО сотрудника");
-                            var name = Console.ReadLine();                     
+                            var name = Console.ReadLine();
                             Console.WriteLine("Введите разряд");
-                            var rate = int.Parse(Console.ReadLine());
+                            var rate = Convert.ToInt32(Console.ReadLine());
                             Console.WriteLine("Введите дату приёма на должность(год, месяц, день через Enter)");
-                            var y = int.Parse(Console.ReadLine());
-                            var m = int.Parse(Console.ReadLine());
-                            var d = int.Parse(Console.ReadLine());
-                            DateOnly date = new(y, m, d);
-                            bool memb;
+                            var year = Convert.ToInt32(Console.ReadLine());
+                            var month = Convert.ToInt32(Console.ReadLine());
+                            var day = Convert.ToInt32(Console.ReadLine());
+                            DateOnly date = new(year, month, day);
+                            bool ismemberoflaborunion;
                             Console.WriteLine("Является ли сотрудник членом профсоюза?(Да, Нет)");
-                            if (Console.ReadLine() == "Да") memb = true;
-                            else memb = false;
-                            Employee emp = new(num, name, rate, date, memb);
+                            if (Console.ReadLine() == "Да") ismemberoflaborunion = true;
+                            else ismemberoflaborunion = false;
+                            Employee employee = new(number, name, rate, date, ismemberoflaborunion);
                             Console.WriteLine("0. Электрик\n1. Плотник\n2. Резчик по дереву");
                             Console.WriteLine("3. Столяр\n4. Маляр\n5. Каменщик");
                             Console.WriteLine("Введите номер должности");
-                            var code = int.Parse(Console.ReadLine());
-                            foreach (var pos in company.GetAllPositions())
+                            var code = Convert.ToInt32(Console.ReadLine());
+                            foreach (var position in company.GetAllPositions())
                             {
-                                if (pos.GetCode() == code)
+                                if (position.GetCode() == code)
                                 {
-                                    emp.SetPosition(pos);
-                                    emp.SetHourlyRate();
+                                    employee.SetPosition(position);
+                                    employee.SetHourlyRate();
                                     break;
                                 }
                             }
-                            emp.AddEmployee(company);
+                            employee.AddEmployee(company);
                             Console.WriteLine("Добавить еще одного сотрудника?(Да, Нет)");
                             if (Console.ReadLine() == "Да")
                             {
@@ -76,13 +76,13 @@
 
                     case 3:
                         {
-                            var dict = timeboard.GetTimesheet();
-                            foreach (KeyValuePair<DateOnly, SortedDictionary<int,int>> d in dict)
+                            var timesheet = timeboard.GetTimesheet();
+                            foreach (KeyValuePair<DateOnly, SortedDictionary<int, int>> day in timesheet)
                             {
-                                foreach(KeyValuePair<int,int> e in d.Value)
+                                foreach (KeyValuePair<int, int> code_hours in day.Value)
                                 {
-                                    var s = company.GetEmploymentByCode(e.Key, e);
-                                    if (d.Key >= s.GetEmploymentDate()) Console.WriteLine($"Дата: {d.Key} - {d.Key.DayOfWeek},\nРаботник - {s.GetFullName()},\nВремя работы в часах: {e.Value}\n");
+                                    var employee = company.GetEmploymentByCode(code_hours.Key, code_hours);
+                                    if (day.Key >= employee.GetEmploymentDate()) Console.WriteLine($"Дата: {day.Key} - {day.Key.DayOfWeek},\nРаботник - {employee.GetFullName()},\nВремя работы в часах: {code_hours.Value}\number");
                                 }
                                 Console.WriteLine("***********************************");
                             }
@@ -92,25 +92,25 @@
                     case 4:
                         {
                             PrintEmplNum();
-                            var n = ToInt32(Console.ReadLine());
+                            var number = Convert.ToInt32(Console.ReadLine());
                             Console.WriteLine("Введите дату(год, месяц, день через Enter)");
-                            var y = int.Parse(Console.ReadLine());
-                            var m = int.Parse(Console.ReadLine());
-                            var d = int.Parse(Console.ReadLine());
+                            var year = Convert.ToInt32(Console.ReadLine());
+                            var month = Convert.ToInt32(Console.ReadLine());
+                            var day = Convert.ToInt32(Console.ReadLine());
                             Console.WriteLine("Введите количество отработанных часов");
-                            var h = int.Parse(Console.ReadLine());
-                            timeboard.ReadTimesheet(y, m, d, n, h);
+                            var hours = Convert.ToInt32(Console.ReadLine());
+                            timeboard.ReadTimesheet(year, month, day, number, hours);
                             break;
                         }
 
                     case 5:
                         {
                             PrintEmplNum();
-                            var num = int.Parse(Console.ReadLine());
-                            Employee curemp = new();
-                            foreach(var emp in company.GetAllEmployees())
+                            var number = Convert.ToInt32(Console.ReadLine());
+                            Employee currentemployee = new();
+                            foreach (var employee in company.GetAllEmployees())
                             {
-                                if (emp.GetNumber() == num) curemp = emp;
+                                if (employee.GetNumber() == number) currentemployee = employee;
                                 else
                                 {
                                     Console.WriteLine("Нет такого сотрудника");
@@ -119,31 +119,31 @@
                             }
 
                             Console.WriteLine("Введите дату начальной даты(год, месяц, день через Enter)");
-                            var sy = int.Parse(Console.ReadLine());
-                            var sm = int.Parse(Console.ReadLine());
-                            var sd = int.Parse(Console.ReadLine());
-                            timeboard.ReadStartDate(sy,sm,sd);
+                            var startyear = Convert.ToInt32(Console.ReadLine());
+                            var startmonth = Convert.ToInt32(Console.ReadLine());
+                            var startday = Convert.ToInt32(Console.ReadLine());
+                            timeboard.ReadStartDate(startyear, startmonth, startday);
                             Console.WriteLine("Введите дату конечной даты(год, месяц, день через Enter)");
-                            var ey = int.Parse(Console.ReadLine());
-                            var em = int.Parse(Console.ReadLine());
-                            var ed = int.Parse(Console.ReadLine());
-                            timeboard.ReadEndDate(ey, em, ed);
-                            Console.Write($"Заработная плата сотрудника равна - {curemp.GetSalary(timeboard)} рублей");
+                            var endyear = Convert.ToInt32(Console.ReadLine());
+                            var endmonth = Convert.ToInt32(Console.ReadLine());
+                            var endday = Convert.ToInt32(Console.ReadLine());
+                            timeboard.ReadEndDate(endyear, endmonth, endday);
+                            Console.Write($"Заработная плата сотрудника равна - {currentemployee.GetSalary(timeboard)} рублей");
                             break;
 
                         }
                     case 6: { Console.Clear(); exit = true; break; }
                 }
             }
-            
+
             void PrintEmplNum()
             {
                 var employees = company.GetAllEmployees();
-                var num = 0;
+                var number = 0;
                 foreach (var employee in employees)
                 {
-                    num++;
-                    Console.WriteLine($"{num}. {employee.GetFullName()}, {employee.GetPosition().GetName()}");
+                    number++;
+                    Console.WriteLine($"{number}. {employee.GetFullName()}, {employee.GetPosition().GetName()}");
                 }
                 Console.WriteLine("Введите табельный номер работника");
             }
@@ -151,9 +151,9 @@
             void PrintEmp()
             {
                 Console.WriteLine("Список сотрудников:");
-                foreach (var a in company.GetAllEmployees())
+                foreach (var employee in company.GetAllEmployees())
                 {
-                    Console.WriteLine(a);
+                    Console.WriteLine(employee);
                 }
             }
         }
