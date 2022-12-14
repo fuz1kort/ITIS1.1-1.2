@@ -33,7 +33,7 @@ namespace Lab
                             Employee emp = new();
                             cnt++;
                             emp.Number = cnt;
-                            Console.WriteLine("Введите фамилию и имя сотрудника");
+                            Console.WriteLine("Введите ФИО сотрудника");
                             emp.FullName = Console.ReadLine();
                             Console.WriteLine("0. Электрик\n1. Плотник\n2. Резчик по дереву");
                             Console.WriteLine("3. Столяр\n4. Маляр\n5. Каменщик");
@@ -94,11 +94,11 @@ namespace Lab
                     case 4:
                         {
                             PrintEmplNum();
+                            var n = int.Parse(Console.ReadLine());
                             Console.WriteLine("Введите дату(год, месяц, день через пробел)");
                             var y = int.Parse(Console.ReadLine());
                             var m = int.Parse(Console.ReadLine());
                             var d = int.Parse(Console.ReadLine());
-                            var n = int.Parse(Console.ReadLine());
                             Console.WriteLine("Введите количество отработанных часов");
                             var h = int.Parse(Console.ReadLine());
                             timeboard.ReadTimesheet(y, m, d, n, h);

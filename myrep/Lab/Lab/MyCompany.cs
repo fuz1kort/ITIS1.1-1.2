@@ -18,7 +18,7 @@ namespace Lab
             {
                 Code = 0,
                 Name = "Электрик",
-                BaseHourlyRate = 90
+                BaseHourlyRate = 300
             });
             Positions.Add(new Position()
             {
