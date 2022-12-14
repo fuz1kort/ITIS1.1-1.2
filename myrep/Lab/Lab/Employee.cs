@@ -39,22 +39,26 @@ namespace Lab
             HourlyRate = (int)Math.Round(((((r - 1) * 10) + 100) / 100) * pb);
         }
 
-        public int GetSalary(Timeboard timeboard)
+        public double GetSalary(Timeboard timeboard)
         {
             var timesheet = timeboard.GetTimesheet();
             double salary = 0;
+            var sdate = timeboard.GetStartDate();
+            var edate = timeboard.GetEndDate();
             foreach (KeyValuePair<DateOnly, SortedDictionary<int, int>> d in timesheet)
             {
-                foreach (KeyValuePair<int, int> e in d.Value)
+                if (d.Key >= sdate)
                 {
-                    if (d.Key >= EmploymentDate)
+                    foreach (KeyValuePair<int, int> e in d.Value)
                     {
-
+                        if (e.Key == Number) salary += e.Value * HourlyRate;
                     }
                 }
-                Console.WriteLine("***********************************");
+                if (d.Key > edate) break;
             }
-            return salary;
+            if (IsMemberOfLaborUnion)
+                return salary * 0.87 * 0.98;
+            return salary * 0.87;
         }
     }
 }

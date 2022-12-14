@@ -1,12 +1,14 @@
-﻿namespace Lab
+﻿using System.Security.Cryptography.X509Certificates;
+
+namespace Lab
 {
     class Program
     {
         public static void Main()
         {
-            MyCompany company = new MyCompany();
+            MyCompany company = new();
             company.Init();
-            Timeboard timeboard = new Timeboard();
+            Timeboard timeboard = new();
             bool exit = false;
 
             while (!exit)
@@ -28,7 +30,7 @@
                 {
                     case 1:
                         {
-                            Employee emp = new Employee();
+                            Employee emp = new();
                             cnt++;
                             emp.Number = cnt;
                             Console.WriteLine("Введите фамилию и имя сотрудника");
@@ -52,7 +54,7 @@
                             var y = int.Parse(Console.ReadLine());
                             var m = int.Parse(Console.ReadLine());
                             var d = int.Parse(Console.ReadLine());
-                            DateOnly date = new DateOnly(y,m, d);
+                            DateOnly date = new(y, m, d);
                             emp.EmploymentDate = date;
                             Console.WriteLine("Является ли сотрудник членом профсоюза?(Да, Нет)");
                             if (Console.ReadLine() == "Да") emp.IsMemberOfLaborUnion = true;
@@ -70,11 +72,7 @@
 
                     case 2:
                         {
-                            Console.WriteLine("Список сотрудников:");
-                            foreach (var a in company.GetAllEmployees())
-                            {
-                                Console.WriteLine(a);
-                            }
+                            PrintEmp();
                             break;
                         }
 
@@ -95,20 +93,11 @@
 
                     case 4:
                         {
-                            Console.WriteLine("Введите год");
+                            PrintEmplNum();
+                            Console.WriteLine("Введите дату(год, месяц, день через пробел)");
                             var y = int.Parse(Console.ReadLine());
-                            Console.WriteLine("Введите месяц");
                             var m = int.Parse(Console.ReadLine());
-                            Console.WriteLine("Введите день");
                             var d = int.Parse(Console.ReadLine());
-                            var employees = company.GetAllEmployees();
-                            var num = 0;
-                            foreach(var employee in employees)
-                            {
-                                num++;
-                                Console.WriteLine($"{num}. {employee.FullName}, {employee.Position.Name}");
-                            }
-                            Console.WriteLine("Введите табельный номер работника");
                             var n = int.Parse(Console.ReadLine());
                             Console.WriteLine("Введите количество отработанных часов");
                             var h = int.Parse(Console.ReadLine());
@@ -116,13 +105,68 @@
                             break;
                         }
 
-                    //case 5:
-                    //    {
+                    case 5:
+                        {
+                            PrintEmplNum();
+                            var num = int.Parse(Console.ReadLine());
+                            Employee curemp = null;
+                            foreach(var emp in company.GetAllEmployees())
+                            {
+                                if (emp.Number == num) curemp = emp;
+                                else
+                                {
+                                    Console.WriteLine("Нет такого сотрудника");
+                                    goto case 5;
+                                }
+                            }
 
-                    //    }
+                            Console.WriteLine("Введите дату начальной даты(год, месяц, день через пробел)");
+                            var sy = int.Parse(Console.ReadLine());
+                            var sm = int.Parse(Console.ReadLine());
+                            var sd = int.Parse(Console.ReadLine());
+                            timeboard.ReadStartDate(sy,sm,sd);
+                            Console.WriteLine("Введите дату конечной даты(год, месяц, день через пробел)");
+                            var ey = int.Parse(Console.ReadLine());
+                            var em = int.Parse(Console.ReadLine());
+                            var ed = int.Parse(Console.ReadLine());
+                            timeboard.ReadEndDate(ey, em, ed);
+                            Console.WriteLine(curemp.GetSalary(timeboard));
+
+                            //PrintEmplReadNum();
+                            //var code = int.Parse(Console.ReadLine());
+                            //var dict = timeboard.GetTimesheet();
+                            //foreach (KeyValuePair<DateOnly, SortedDictionary<int, int>> d in dict)
+                            //{
+                            //    foreach (KeyValuePair<int, int> e in d.Value)
+                            //    {
+                            //        if(e.Key == code);
+                            break;
+
+                        }
                     case 6: { Console.Clear(); exit = true; break; }
                 }
-            }    
+            }
+            
+            void PrintEmplNum()
+            {
+                var employees = company.GetAllEmployees();
+                var num = 0;
+                foreach (var employee in employees)
+                {
+                    num++;
+                    Console.WriteLine($"{num}. {employee.FullName}, {employee.Position.Name}");
+                }
+                Console.WriteLine("Введите табельный номер работника");
+            }
+
+            void PrintEmp()
+            {
+                Console.WriteLine("Список сотрудников:");
+                foreach (var a in company.GetAllEmployees())
+                {
+                    Console.WriteLine(a);
+                }
+            }
         }
     }
 }
