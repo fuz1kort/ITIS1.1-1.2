@@ -49,11 +49,11 @@ namespace Lab
             {
                 if (d.Key >= sdate)
                 {
+                    var addcoef = 1;
                     foreach (KeyValuePair<int, int> e in d.Value)
                     {
                         if (e.Key == Number)
                         {
-                            var addcoef = 1;
                             if (d.Key.DayOfWeek == DayOfWeek.Saturday || d.Key.DayOfWeek == DayOfWeek.Sunday) addcoef *= 2;
                             if (e.Value > 8) salary += ((e.Value - 8) * 2) * addcoef * HourlyRate;
                             else salary += e.Value * addcoef * HourlyRate;
