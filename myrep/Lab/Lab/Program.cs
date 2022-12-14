@@ -47,13 +47,14 @@
                             }
                             Console.WriteLine("Введите разряд");
                             emp.Rating = int.Parse(Console.ReadLine());
+                            emp.SetHourlyRate();
                             Console.WriteLine("Введите дату приёма на должность(год, месяц, день через пробел)");
                             var y = int.Parse(Console.ReadLine());
                             var m = int.Parse(Console.ReadLine());
                             var d = int.Parse(Console.ReadLine());
                             DateOnly date = new DateOnly(y,m, d);
                             emp.EmploymentDate = date;
-                            Console.WriteLine("Является ли сотрудник членом профсоюзе?(Да, Нет)");
+                            Console.WriteLine("Является ли сотрудник членом профсоюза?(Да, Нет)");
                             if (Console.ReadLine() == "Да") emp.IsMemberOfLaborUnion = true;
                             else emp.IsMemberOfLaborUnion = false;
                             emp.AddEmployee();

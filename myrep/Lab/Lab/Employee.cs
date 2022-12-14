@@ -15,10 +15,11 @@ namespace Lab
         public DateOnly EmploymentDate { get; set; }
         public bool IsMemberOfLaborUnion { get; set; }
         public Position Position { get; set; }
+        private int HourlyRate { get; set; }
 
         public override string ToString()
         {
-            return $"{FullName}, разряд - {Rating}, работает в этой компании с {EmploymentDate}";
+            return $"{FullName}, разряд - {Rating}, работает в этой компании с {EmploymentDate}, з/п - {HourlyRate}";
         }
 
         public void AddEmployee()
@@ -29,6 +30,15 @@ namespace Lab
         public void SetPosition(Position pos)
         {
             Position = pos;
+        }
+
+        public void SetHourlyRate()
+        {
+            HourlyRate = Position.BaseHourlyRate;
+            if (Rating > 1)
+            {
+                HourlyRate = ((((Rating - 1) * 10) + 100) / 100) * Position.BaseHourlyRate;
+            }
         }
     }
 }
