@@ -1,0 +1,5 @@
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\MyVehicle\obj\Debug\net7.0\MyVehicle.csproj.AssemblyReference.cache
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\MyVehicle\obj\Debug\net7.0\MyVehicle.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\MyVehicle\obj\Debug\net7.0\MyVehicle.AssemblyInfoInputs.cache
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\MyVehicle\obj\Debug\net7.0\MyVehicle.AssemblyInfo.cs
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\MyVehicle\obj\Debug\net7.0\MyVehicle.csproj.CoreCompileInputs.cache
