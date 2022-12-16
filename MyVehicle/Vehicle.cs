@@ -8,28 +8,28 @@ namespace MyVehicle
 {
     public class Vehicle
     {
-        protected readonly int maxSpeed;
+        protected readonly int MaxSpeed;
         protected int currSpeed;
 
-        int CurrSpeed
+        protected int CurrSpeed
         {
             get => currSpeed;
             set
             {
                 currSpeed = value;
-                if (value > maxSpeed) currSpeed = maxSpeed;
+                if (value > MaxSpeed) currSpeed = MaxSpeed;
                 if (value < 0) currSpeed = 0;
             }
         }
 
         Vehicle() { }
-        Vehicle(int maxSpeed, int currSpeed)
+        public Vehicle(int maxSpeed, int currSpeed)
         {
-            this.maxSpeed = maxSpeed;
+            MaxSpeed = maxSpeed;
             CurrSpeed = currSpeed;
         }
 
-        public void SpeedUp(int speed) => CurrSpeed += speed;
-        public void SpeedDown(int speed) => CurrSpeed -= speed;
+        public virtual void SpeedUp() => Console.WriteLine("Ускорение");
+        public virtual void SpeedDown() => Console.WriteLine("Торможение");
     }
 }
