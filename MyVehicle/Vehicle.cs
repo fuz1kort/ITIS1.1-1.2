@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MyVehicle
 {
-    public class Vehicle
+    abstract public class Vehicle
     {
         protected readonly int MaxSpeed;
         protected int currSpeed;
