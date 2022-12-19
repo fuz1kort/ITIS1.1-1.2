@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\MyVehicle"
   ],
-  "SelectedNode": "\\C:\\Users\\Marat\\Documents\\GitHub\\itiscs",
+  "SelectedNode": "\\MyVehicle\\Car.cs",
   "PreviewInSolutionExplorer": false
 }
