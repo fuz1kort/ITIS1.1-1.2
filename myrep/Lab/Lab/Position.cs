@@ -13,7 +13,6 @@
             BaseHourlyRate = baseHourlyRate;
         }
 
-        public void SetCode(int code) => Code = code;
         public int GetCode() => Code;
         public string GetName() => Name;
         public int GetBaseHourlyRate() => BaseHourlyRate;
