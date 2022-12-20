@@ -18,3 +18,13 @@ C:\Users\Marat\Documents\GitHub\itiscs\MyVehicle\obj\Debug\net7.0\refint\MyVehic
 C:\Users\Marat\Documents\GitHub\itiscs\MyVehicle\obj\Debug\net7.0\MyVehicle.pdb
 C:\Users\Marat\Documents\GitHub\itiscs\MyVehicle\obj\Debug\net7.0\MyVehicle.genruntimeconfig.cache
 C:\Users\Marat\Documents\GitHub\itiscs\MyVehicle\obj\Debug\net7.0\ref\MyVehicle.dll
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\MyVehicle\bin\Debug\net7.0\MyVehicle.exe
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\MyVehicle\bin\Debug\net7.0\MyVehicle.deps.json
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\MyVehicle\bin\Debug\net7.0\MyVehicle.runtimeconfig.json
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\MyVehicle\bin\Debug\net7.0\MyVehicle.dll
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\MyVehicle\bin\Debug\net7.0\MyVehicle.pdb
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\MyVehicle\obj\Debug\net7.0\MyVehicle.dll
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\MyVehicle\obj\Debug\net7.0\refint\MyVehicle.dll
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\MyVehicle\obj\Debug\net7.0\MyVehicle.pdb
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\MyVehicle\obj\Debug\net7.0\MyVehicle.genruntimeconfig.cache
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\MyVehicle\obj\Debug\net7.0\ref\MyVehicle.dll

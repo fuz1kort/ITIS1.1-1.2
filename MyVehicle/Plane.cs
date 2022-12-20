@@ -8,16 +8,30 @@ namespace MyVehicle
 {
     public class Plane : Vehicle
     {
-        private string cityFrom;
-        private string cityTo;
+        private readonly string cityFrom;
+        private readonly string cityTo;
         public Plane(int ms, int cs, string from, string to) : base(ms, cs)
         {
             cityFrom = from;
             cityTo = to;
         }
 
-        public override void SpeedDown() => CurrSpeed -= 50;
-        public override void SpeedUp() => CurrSpeed += 50;
-        public override string ToString() => $"Самолет летит со скоростью {CurrSpeed} км/ч из {cityFrom} в {cityTo}";
+        protected override int Maxspeed { get => maxSpeed; set { } }
+        protected override int Currspeed
+        {
+            get => currSpeed;
+            set
+            {
+                if (value > Maxspeed)
+                    currSpeed = Maxspeed;
+                else if (value < 0)
+                    currSpeed = 0;
+                currSpeed = value;
+            }
+        }
+
+        public override void SpeedDown() => Currspeed -= 50;
+        public override void SpeedUp() => Currspeed += 50;
+        public override string ToString() => $"Самолет летит со скоростью {Currspeed} км/ч из {cityFrom} в {cityTo}";
     }
 }
