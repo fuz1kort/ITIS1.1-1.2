@@ -8,35 +8,32 @@ namespace Geometry
 {
     public class Circle : IRotatable, IMovable
     {
-        public double R { get; set; }
-        public double x;
-        public double y;
-        double X { get => x; set { x = Math.Round(value, 5); } }
-        double Y { get => y; set { y = Math.Round(value, 5); } }
-        public Circle(double r, double xs, double ys) 
+        public double Radius { get; set; }
+        public Point Center { get; set; }
+        public Circle(double radius, double x, double y) 
         {
-            R = r;
-            X = xs;
-            Y = ys;
+            Radius = radius;
+            Center.X = x;
+            Center.Y = y;
         }
-        public void Move(double xm, double ym)
+        public void Move(double x, double y)
         {
-            X += xm;
-            Y += ym;
+            Center.X += x;
+            Center.Y += y;
         }
         public void Rotate(double angle)
         {
-            var xr = Rectangle.GetRotatedX(X, Y, angle);
-            Y = Rectangle.GetRotatedY(X, Y, angle);
-            X = xr;
+            var xr = Rectangle.GetRotatedX(Center.X, Center.Y, angle);
+            Center.Y = Rectangle.GetRotatedY(Center.X, Center.Y, angle);
+            Center.X = xr;
         }
 
         public override string ToString()
         {
-            if (X<0 && Y<0) return $"Координаты точек:\n(x + {-X})^2 + (y + {-Y})^2 = {R}";
-            if (X>0 && Y<0) return $"Координаты точек:\n(x - {X})^2 + (y + {-Y})^2 = {R}";
-            if (X<0 && Y>0) return $"Координаты точек:\n(x + {-X})^2 + (y - {Y})^2 = {R}";
-            return $"Координаты точек:\n(x- {X})^2 + (y - {Y})^2 = {R}";
+            if (Center.X < 0 && Center.Y < 0) return $"Координаты точек:\n(x + {-Center.X})^2 + (y + {-Center.Y})^2 = {Radius}";
+            if (Center.X >0 && Center.Y <0) return $"Координаты точек:\n(x - {Center.X})^2 + (y + {-Center.Y})^2 = {Radius}";
+            if (Center.X <0 && Center.Y >0) return $"Координаты точек:\n(x + {-Center.X})^2 + (y - {Center.Y})^2 = {Radius}";
+            return $"Координаты точек:\n(x- {Center.X})^2 + (y - {Center.Y})^2 = {Radius}";
         }
     }
 }
