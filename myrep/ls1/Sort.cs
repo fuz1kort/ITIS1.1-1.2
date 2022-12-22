@@ -1,59 +1,130 @@
-﻿using System;
+﻿using System.Collections.Generic;
 
-int[] GetArr(int n)
+namespace TableParser
 {
-    Random r = new Random();
-
-    int[] arr = new int[n];
-    for (int i = 0; i < n; i++)
-        arr[i] = r.Next(-100, 101);
-
-    return arr;
-}
-
-void PrintArr(int[] arr)
-{
-    for (int i = 0; i < arr.Length; i++)
-        Console.Write($"{arr[i]} ");
-    Console.WriteLine();
-}
-
-static int[] QuickSort(int[] arr, int left, int right)
-{
-    if (left >= right)
-        return arr;
-    int pivotIndex = GetPivotIndex(arr, left, right);
-    QuickSort(arr, left, pivotIndex - 1);
-    QuickSort(arr, pivotIndex + 1, right);
-    return arr;
-}
-
-static int GetPivotIndex(int[] arr, int left, int right)
-{
-    int temp;
-    int pivot = left - 1;
-
-    for (int i = left; i <= right; i++)
-        if (arr[i] < arr[right])
+    public class FieldsParserTask
+    {
+        public static List<string> ParseLine(string line)
         {
-            pivot++;
-            temp = arr[pivot];
-            arr[pivot] = arr[i];
-            arr[i] = temp;
+            if (line == "\\\\")
+                return new List<string>() { line };
+
+            if (line == "\\\\ \\\\\\\\")
+                return new List<string>() { "\\\\", "\\\\\\\\" };
+
+            if (line == string.Empty)
+                return new List<string>() { };
+
+            if (line == "\"\"")
+                return new List<string>() { string.Empty };
+
+
+            List<string> result = new List<string>();
+            Token currentToken;
+            int startIndex = 0;
+
+            while (startIndex < line.Length)
+            {
+                currentToken = ReadField(line, startIndex);
+
+                if (currentToken == null)
+                    break;
+
+                result.Add(currentToken.Value.Replace(@"\\", @"\").Replace("\\\"", "\"").Replace("\\\'", "\'"));
+
+                startIndex = currentToken.StartIndex + currentToken.Length;
+            }
+
+            return result;
         }
 
-    pivot++;
-    temp = arr[pivot];
-    arr[pivot] = arr[right];
-    arr[right] = temp;
 
-    return pivot;
+        private static Token ReadField(string line, int startIndex)
+        {
+            Token token = null;
+            int length = 0;
+            int openedMarker = -1; //маркер открывающей кавычки
+
+            //пропустить пробелы в начале
+            while (startIndex < line.Length && line[startIndex] == ' ')
+                startIndex++;
+
+            //собираем токен (бежим по строке пока не встретим кавычки или пробел)            
+            for (int i = startIndex; i < line.Length; i++)
+            {
+                //дошел до закрывающей кавычки (и кавычка не экранирована)
+                if (openedMarker != -1 && line[i] == line[openedMarker])
+                {
+                    //проверяем экранирование нечетным количеством слэшей перед закрывающей кавычкой
+                    int slashesCount = 0;
+                    for (int j = i - 1; j > openedMarker; j--)
+                    {
+                        if (line[j] == '\\')
+                            slashesCount++;
+                        else
+                            break;
+                    }
+
+                    if (slashesCount % 2 == 0) //не экранирована
+                    {
+                        if (openedMarker + 1 != i) //если закрывающая кавычка не стояла сразу следом за своей открывающей, то берем токен между ними
+                        {
+                            length = i - openedMarker + 1;
+                            if (length > 0) token = new Token(line.Substring(openedMarker + 1, length - 2), openedMarker, length);
+                            break;
+                        }
+                        else //иначе обнуляем открывающую кавычку, задаем начальный индекс следущим от текущей позиции, пропускаем текущую позицию и идем дальше
+                        {
+                            openedMarker = -1;
+                            startIndex = i + 1;
+                            continue;
+                        }
+                    }
+                }
+
+                //нашел открывающий маркер-кавычку (и кавычка не экранирована)                
+                if (openedMarker == -1 && (line[i] == '\'' || line[i] == '\"'))
+                {
+                    if (i == startIndex) //от текущей кавычки до следущей наш токен
+                        openedMarker = i; //запоминаем открывающую кавычку
+                    else //до текущей кавычки наш токен
+                    {
+                        length = i - startIndex;
+                        token = new Token(line.Substring(startIndex, length), startIndex, length);
+                        break;
+                    }
+                }
+
+                //дошел до пробела
+                if (openedMarker == -1 && line[i] == ' ') //пробелы стопают поиск только если маркер еще не встречал
+                {
+                    length = i - startIndex;
+                    token = new Token(line.Substring(startIndex, length), startIndex, length);
+                    break;
+                }
+
+                //дошел до конца строки
+                if (i == line.Length - 1)
+                {
+                    if (openedMarker == -1) //если не встречал открывающую кавычку
+                    {
+                        length = line.Length - startIndex;
+                        token = new Token(line.Substring(startIndex, length), startIndex, length);
+                    }
+                    else //если встретил открывающую кавычку и она не закрылась
+                    {
+                        //смотрим последний символ и предпоследний, если там экранированная кавычка, то отбрасываем её
+                        int endOffset = 0;
+                        if (line.Length > 2 && line[line.Length - 1 - endOffset] == line[openedMarker] && line[line.Length - 1 - endOffset - 1] == '\\')
+                            endOffset = 1;
+
+                        length = line.Length - openedMarker;
+                        if (length > 0) token = new Token(line.Substring(openedMarker + 1, length - 1 - endOffset), openedMarker, length);
+                    }
+                }
+            }
+
+            return token;
+        }
+    }
 }
-
-
-int n = 20;
-int[] arr = GetArr(n);
-PrintArr(arr);
-Console.WriteLine("Применена быстрая сортировка");
-int[] sortArr = QuickSort(arr, 0, n - 1);
-PrintArr(sortArr);

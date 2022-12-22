@@ -8,34 +8,24 @@ namespace Geometry
 {
     public class Rectangle : IRotatable, IMovable
     {
-        public Point BottomLeft { get; set; }
-        public Point TopRight { get; set; }
+        public Point BottomLeft { get; set; } = new();
+        public Point TopRight { get; set; } = new();
         public Rectangle(double x1, double y1, double x2, double y2)
         {
-            BottomLeft.X = x1;
-            BottomLeft.Y = y1;
-            TopRight.X = x2;
-            TopRight.Y = y2;
+            BottomLeft = new Point(x1, y1);
+            TopRight = new Point(x2, y2);
         }
 
-        public static double GetRotatedX(double x, double y, double angle) => x * Math.Cos(angle) - y * Math.Sin(angle);
-        public static double GetRotatedY(double x, double y, double angle) => x * Math.Sin(angle) + y * Math.Cos(angle);
         public void Move(double x, double y) 
         {
-            BottomLeft.X += x;
-            BottomLeft.Y += y;
-            TopRight.X += x;
-            TopRight.Y += y; 
+            BottomLeft.Move(x, y);
+            TopRight.Move(x, y);
         }
 
         public void Rotate(double angle) 
         {
-            var xr1 = GetRotatedX(BottomLeft.X, BottomLeft.Y, angle);
-            BottomLeft.Y = GetRotatedY(BottomLeft.X, BottomLeft.Y, angle);
-            BottomLeft.X = xr1;
-            var xr2 = GetRotatedX(TopRight.X, TopRight.Y, angle);
-            TopRight.Y = GetRotatedY(TopRight.X, TopRight.Y, angle);
-            TopRight.X = xr2;
+            BottomLeft.Rotate(angle);
+            TopRight.Rotate(angle);
         }
         
         public override string ToString() => $"Координаты прямоугольника:\n({BottomLeft.X},{BottomLeft.Y})\n({BottomLeft.X},{TopRight.Y})\n({TopRight.X},{TopRight.Y})\n({TopRight.X},{BottomLeft.Y})";

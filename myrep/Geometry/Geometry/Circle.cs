@@ -9,24 +9,15 @@ namespace Geometry
     public class Circle : IRotatable, IMovable
     {
         public double Radius { get; set; }
-        public Point Center { get; set; }
+        public Point Center { get; set; } = new();
         public Circle(double radius, double x, double y) 
         {
             Radius = radius;
-            Center.X = x;
-            Center.Y = y;
+            Center = new Point(x, y);
         }
-        public void Move(double x, double y)
-        {
-            Center.X += x;
-            Center.Y += y;
-        }
-        public void Rotate(double angle)
-        {
-            var xr = Rectangle.GetRotatedX(Center.X, Center.Y, angle);
-            Center.Y = Rectangle.GetRotatedY(Center.X, Center.Y, angle);
-            Center.X = xr;
-        }
+
+        public void Move(double x, double y) => Center.Move(x, y);
+        public void Rotate(double angle) => Center.Rotate(angle);
 
         public override string ToString()
         {
