@@ -1,11 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\myrep",
-    "\\myrep\\Geometry",
-    "\\myrep\\Geometry\\Geometry",
-    "\\myrep\\Geometry\\Geometry\\bin"
+    ""
   ],
-  "SelectedNode": "\\myrep\\Geometry\\Geometry\\bin",
+  "SelectedNode": "\\Geometry.sln",
   "PreviewInSolutionExplorer": false
 }
