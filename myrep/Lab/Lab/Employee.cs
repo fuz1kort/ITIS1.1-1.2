@@ -36,8 +36,8 @@
         public double GetSalary(Timeboard timeboard, MyCompany company)
         {
             double salary = 0;
-            int num = NumberOfScheme;
-            switch (num)
+            int numberOfScheme = NumberOfScheme;
+            switch (numberOfScheme)
             {
                 case 1:
                     {
@@ -48,7 +48,7 @@
                         {
                             if (day.Key >= startdate)
                             {
-                                if (num == 2)
+                                if (numberOfScheme == 2)
                                 {
                                     foreach (var contract in company.GetAllContracts())
                                         salary += company.GetAmountByDate(day.Key) * 0.05;
@@ -103,7 +103,7 @@
 
                         if (IsMemberOfLaborUnion)
                         {
-                            if(num == 5)
+                            if(numberOfScheme == 5)
                                 salary -= (salary * 0.13) + (salary * 0.01);
                             else 
                                 salary -= (salary * 0.13) + (salary * 0.015);
@@ -121,7 +121,7 @@
                         {
                             if (day.Key >= startdate)
                             {
-                                if (num == 5)
+                                if (numberOfScheme == 5)
                                 {
                                     foreach (var contract in company.GetAllContracts())
                                         salary += company.GetAmountByDate(day.Key) * 0.07;
@@ -138,7 +138,7 @@
                         }
 
                         if (IsMemberOfLaborUnion)
-                            if (num == 5)
+                            if (numberOfScheme == 5)
                                 salary -= (salary * 0.13) + (salary * 0.01);
                             else
                                 salary -= (salary * 0.13) + (salary * 0.005);
