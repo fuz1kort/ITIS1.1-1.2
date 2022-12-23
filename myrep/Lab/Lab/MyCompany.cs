@@ -16,7 +16,7 @@
             Positions.Add(new Position(5, "Каменщик", 130));
         }
         public List<Position> GetAllPositions() => Positions;
-        public List<Contract> GetContracts()
+        public List<Contract> GetAllContracts()
         {
             TimeOnly time = new(0, 0);
             Contracts.Sort((x, y) => DateTime.Compare(x.GetContractDate().ToDateTime(time), y.GetContractDate().ToDateTime(time)));
@@ -29,7 +29,7 @@
             return Employees;
         }
 
-        public Employee GetEmploymentByCode(int code, KeyValuePair<int, int> code_hours)
+        public Employee GetEmploymentByCode(KeyValuePair<int, int> code_hours)
         {
             foreach (var employee in GetAllEmployees())
             {
@@ -38,6 +38,16 @@
             }
 
             return new();
+        }
+
+        public double GetAmountByDate(DateOnly date)
+        {
+            foreach (var contract in GetAllContracts())
+            {
+                if (contract.GetContractDate() == date)
+                    return contract.GetContractAmount();
+            }
+            return 0;
         }
 
         public void AddEmployee(Employee employee) => Employees.Add(employee);

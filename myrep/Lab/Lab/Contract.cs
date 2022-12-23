@@ -24,6 +24,7 @@ namespace Lab
         }
 
         public DateOnly GetContractDate() => Date;
+        public double GetContractAmount() => Amount;
         public override string ToString() => $"*****\n{Date}\n{Number}. {Client} - {Amount} рублей\nКомментарий: {Comment}\n*****";
     }
 }

@@ -48,7 +48,17 @@
                                 ismemberoflaborunion = true;
                             else
                                 ismemberoflaborunion = false;
-                            Employee employee = new(number, name, rate, date, ismemberoflaborunion);
+                            Console.WriteLine("Введите номер схемы начисления заработной платы:");
+                            Console.WriteLine("1. Сумма базовой почасовой ставки, определяемой должностью, и надбавкой за разряд (по 10% за каждый разряд)" +
+                                            "\nПереработки (т.е. превышение 8-часового рабочего дня), а также работу в выходные дни (субботу и воскресенье) компания оплачивает по двойному тарифу." +
+                                            "\nИтоговая  сумма, выплачиваемая сотруднику на руки, складывается из оплаты отработанного им времени, из которой удерживается 13% подоходного налога, а также 2% профсоюзных отчислений (если сотрудник является членом профсоюза);");
+                            Console.WriteLine("2. Сумма базовой заработной платы (п.1) с учетом переработок и работы в выходные, а так же за заключенные контракты 5% комиссионныхот суммы контрактов;");
+                            Console.WriteLine("3. Заработная плата начисляется за фактически отработанное время (вне зависимости оттого, превышена ли норма рабочего времени в день,и былали  работа  в  выходные  дни) с  учетом  должности  и  разряда  сотрудника;профсоюзные отчисления составляют 1,5%;");
+                            Console.WriteLine("4. Заработная плата начисляется за фактически отработанное время с учетом только должности сотрудника; профсоюзные отчисления составляют 0,5%;");
+                            Console.WriteLine("5. Заработная плата начисляется за фактически отработанное время с учетом только должности сотрудника, за заключенные контракты 7% комиссионныхот суммы контрактов; профсоюзные отчисления составляют 1%;;");
+                            Console.WriteLine("6. Сотрудник получает только комиссионные в размере 10% от суммы заключенных контрактов; профсоюзные отчисления не производятся;");
+                            var num = Convert.ToInt32(Console.ReadLine());
+                            Employee employee = new(number, name, rate, date, ismemberoflaborunion, num);
                             Console.WriteLine("0. Электрик\n1. Плотник\n2. Резчик по дереву");
                             Console.WriteLine("3. Столяр\n4. Маляр\n5. Каменщик");
                             Console.WriteLine("Введите номер должности");
@@ -103,7 +113,7 @@
                             {
                                 foreach (KeyValuePair<int, int> code_hours in day.Value)
                                 {
-                                    var employee = company.GetEmploymentByCode(code_hours.Key, code_hours);
+                                    var employee = company.GetEmploymentByCode(code_hours);
                                     if (day.Key >= employee.GetEmploymentDate())
                                         Console.WriteLine($"Дата: {day.Key} - {day.Key.DayOfWeek}," +
                                                           $"\nРаботник - {employee.GetFullName()}," +
@@ -168,7 +178,7 @@
                             var endmonth = Convert.ToInt32(Console.ReadLine());
                             var endday = Convert.ToInt32(Console.ReadLine());
                             timeboard.ReadEndDate(endyear, endmonth, endday);
-                            Console.Write($"Заработная плата сотрудника равна - {currentemployee.GetSalary(timeboard)} рублей");
+                            Console.Write($"Заработная плата сотрудника равна - {currentemployee.GetSalary(timeboard, company)} рублей");
                             break;
                         }
 
@@ -204,7 +214,7 @@
             void PrintContr()
             {
                 Console.WriteLine("Список контрактов:");
-                foreach (var contract in company.GetContracts())
+                foreach (var contract in company.GetAllContracts())
                     Console.WriteLine(contract);
             }
         }
