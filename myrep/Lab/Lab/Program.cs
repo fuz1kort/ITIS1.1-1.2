@@ -16,20 +16,23 @@
                 Console.WriteLine("Выберите пункт меню:");
                 Console.WriteLine("1. Добавить сотрудника");
                 Console.WriteLine("2. Просмотреть всех сотрудников");
-                Console.WriteLine("3. Просмотреть табель рабочего времени");
-                Console.WriteLine("4. Заполнить табель рабочего времени");
-                Console.WriteLine("5. Посчитать зарплату сотрудику");
-                Console.WriteLine("6. Выйти");
+                Console.WriteLine("3. Заполнить табель рабочего времени");
+                Console.WriteLine("4. Просмотреть табель рабочего времени");
+                Console.WriteLine("5. Добавить контракт");
+                Console.WriteLine("6. Просмотреть заключенные контракты");
+                Console.WriteLine("7. Посчитать зарплату сотрудику");
+                Console.WriteLine("8. Выйти");
 
                 var enter = Convert.ToInt32(Console.ReadLine());
                 Console.Clear();
-                int count = 0;
+                int countE = 0;
+                int countC = 0;
                 switch (enter)
                 {
                     case 1:
                         {
-                            count++;
-                            var number = count;
+                            countE++;
+                            var number = countE;
                             Console.WriteLine("Введите ФИО сотрудника");
                             var name = Console.ReadLine() ?? string.Empty;
                             Console.WriteLine("Введите разряд");
@@ -60,7 +63,7 @@
                                 }
                             }
 
-                            employee.AddEmployee(company);
+                            company.AddEmployee(employee);
                             Console.WriteLine("Добавить еще одного сотрудника?(Да, Нет)");
                             if (Console.ReadLine() == "Да")
                             {
@@ -81,6 +84,20 @@
 
                     case 3:
                         {
+                            PrintEmplNum();
+                            var number = Convert.ToInt32(Console.ReadLine());
+                            Console.WriteLine("Введите дату рабочего дня(год, месяц, день через Enter)");
+                            var year = Convert.ToInt32(Console.ReadLine());
+                            var month = Convert.ToInt32(Console.ReadLine());
+                            var day = Convert.ToInt32(Console.ReadLine());
+                            Console.WriteLine("Введите количество отработанных часов");
+                            var hours = Convert.ToInt32(Console.ReadLine());
+                            timeboard.ReadTimesheet(year, month, day, number, hours);
+                            break;
+                        }
+
+                    case 4:
+                        {
                             var timesheet = timeboard.GetTimesheet();
                             foreach (KeyValuePair<DateOnly, SortedDictionary<int, int>> day in timesheet)
                             {
@@ -99,21 +116,33 @@
                             break;
                         }
 
-                    case 4:
+                    case 5:
                         {
-                            PrintEmplNum();
-                            var number = Convert.ToInt32(Console.ReadLine());
-                            Console.WriteLine("Введите дату(год, месяц, день через Enter)");
+                            countC++;
+                            var number = countC;
+                            Console.WriteLine("Введите дату заключения контракта(год, месяц, день через Enter)");
                             var year = Convert.ToInt32(Console.ReadLine());
                             var month = Convert.ToInt32(Console.ReadLine());
                             var day = Convert.ToInt32(Console.ReadLine());
-                            Console.WriteLine("Введите количество отработанных часов");
-                            var hours = Convert.ToInt32(Console.ReadLine());
-                            timeboard.ReadTimesheet(year, month, day, number, hours);
+                            Console.WriteLine("Введите ФИО клиента");
+                            var name = Console.ReadLine() ?? string.Empty;
+                            Console.WriteLine("Введите сумму");
+                            var amount = Convert.ToInt32(Console.ReadLine());
+                            Console.WriteLine("Введите комментарий клиента");
+                            var comment = Console.ReadLine() ?? string.Empty;
+                            DateOnly date = new(year, month, day);
+                            Contract contract = new(number, date, name, amount, comment);
+                            company.AddContract(contract);
                             break;
                         }
 
-                    case 5:
+                    case 6:
+                        {
+                            PrintContr();
+                            break;
+                        }
+
+                    case 7:
                         {
                             PrintEmplNum();
                             var number = Convert.ToInt32(Console.ReadLine());
@@ -141,10 +170,9 @@
                             timeboard.ReadEndDate(endyear, endmonth, endday);
                             Console.Write($"Заработная плата сотрудника равна - {currentemployee.GetSalary(timeboard)} рублей");
                             break;
-
                         }
 
-                    case 6: 
+                    case 8: 
                         { 
                             Console.Clear();
                             exit = true;
@@ -171,6 +199,13 @@
                 Console.WriteLine("Список сотрудников:");
                 foreach (var employee in company.GetAllEmployees())
                     Console.WriteLine(employee);
+            }
+
+            void PrintContr()
+            {
+                Console.WriteLine("Список контрактов:");
+                foreach (var contract in company.GetContracts())
+                    Console.WriteLine(contract);
             }
         }
     }

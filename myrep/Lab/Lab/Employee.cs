@@ -10,7 +10,6 @@
         private Position Position { get; set; } = new();
         private int HourlyRate { get; set; }
         public Employee() { }
-
         public Employee(int number, string fullName, int rating, DateOnly employmentDate, bool isMemberOfLaborUnion)
         {
             Number = number;
@@ -20,12 +19,8 @@
             IsMemberOfLaborUnion = isMemberOfLaborUnion;
         }
 
-        public override string ToString() => $"{FullName}, должность - {Position.GetName()}, разряд - {Rating}, работает в компании с {EmploymentDate}, з/п - {HourlyRate}";
-
-        public void AddEmployee(MyCompany company) => company.GetAllEmployees().Add(this);
-
+        public override string ToString() => $"*****\n{FullName}, должность - {Position.GetName()}, разряд - {Rating}, работает в компании с {EmploymentDate}, з/п - {HourlyRate}\n*****";
         public void SetPosition(Position position) => Position = position;
-
         public void SetHourlyRate()
         {
             var basehourlyrate = (double)Position.GetBaseHourlyRate();

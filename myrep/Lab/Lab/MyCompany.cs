@@ -4,6 +4,7 @@
     {
         private static List<Employee> Employees { get; set; } = new List<Employee>();
         private static List<Position> Positions { get; set; } = new List<Position>();
+        private static List<Contract> Contracts { get; set; } = new List<Contract>();
 
         public void Init()
         {
@@ -15,14 +16,18 @@
             Positions.Add(new Position(5, "Каменщик", 130));
         }
         public List<Position> GetAllPositions() => Positions;
-
+        public List<Contract> GetContracts()
+        {
+            TimeOnly time = new(0, 0);
+            Contracts.Sort((x, y) => DateTime.Compare(x.GetContractDate().ToDateTime(time), y.GetContractDate().ToDateTime(time)));
+            return Contracts;
+        }
         public List<Employee> GetAllEmployees()
         {
             TimeOnly time = new(0, 0);
             Employees.Sort((x, y) => DateTime.Compare(x.GetEmploymentDate().ToDateTime(time), y.GetEmploymentDate().ToDateTime(time)));
             return Employees;
         }
-
 
         public Employee GetEmploymentByCode(int code, KeyValuePair<int, int> code_hours)
         {
@@ -34,5 +39,8 @@
 
             return new();
         }
+
+        public void AddEmployee(Employee employee) => Employees.Add(employee);
+        public void AddContract(Contract contract) => Contracts.Add(contract);
     }
 }
