@@ -4,7 +4,7 @@
     {
         private int Code { get; set; }
         private string Name { get; set; } = string.Empty;
-        private int BaseHourlyRate { get; set; }
+        private double BaseHourlyRate { get; set; }
         public Position() { }
         public Position(int code, string name, int baseHourlyRate)
         {
@@ -15,6 +15,6 @@
 
         public int GetCode() => Code;
         public string GetName() => Name;
-        public int GetBaseHourlyRate() => BaseHourlyRate;
+        public double GetBaseHourlyRate() => BaseHourlyRate;
     }
 }
