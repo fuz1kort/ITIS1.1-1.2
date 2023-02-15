@@ -1,0 +1,5 @@
+C:\Users\Marat\Documents\GitHub\itiscs\myrep\2sem\2sem\obj\Debug\net7.0\2sem.csproj.AssemblyReference.cache
+C:\Users\Marat\Documents\GitHub\itiscs\myrep\2sem\2sem\obj\Debug\net7.0\2sem.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Marat\Documents\GitHub\itiscs\myrep\2sem\2sem\obj\Debug\net7.0\2sem.AssemblyInfoInputs.cache
+C:\Users\Marat\Documents\GitHub\itiscs\myrep\2sem\2sem\obj\Debug\net7.0\2sem.AssemblyInfo.cs
+C:\Users\Marat\Documents\GitHub\itiscs\myrep\2sem\2sem\obj\Debug\net7.0\2sem.csproj.CoreCompileInputs.cache
