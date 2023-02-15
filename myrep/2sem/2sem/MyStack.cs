@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace _2sem
 {
-    internal class MyStack
+    class MyStack
     {
+
     }
 }
