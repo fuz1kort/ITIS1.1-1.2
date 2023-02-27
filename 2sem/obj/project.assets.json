@@ -14,9 +14,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\gafar\\OneDrive\\Документы\\GitHub\\itiscs\\2sem\\2sem.csproj",
-      "projectName": "2sem",
-      "projectPath": "C:\\Users\\gafar\\OneDrive\\Документы\\GitHub\\itiscs\\2sem\\2sem.csproj",
+      "projectUniqueName": "C:\\Users\\gafar\\OneDrive\\Документы\\GitHub\\itiscs\\2sem\\Lab2.csproj",
+      "projectName": "Lab2",
+      "projectPath": "C:\\Users\\gafar\\OneDrive\\Документы\\GitHub\\itiscs\\2sem\\Lab2.csproj",
       "packagesPath": "C:\\Users\\gafar\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\gafar\\OneDrive\\Документы\\GitHub\\itiscs\\2sem\\obj\\",
       "projectStyle": "PackageReference",
@@ -66,7 +66,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
       }
     }
   }
