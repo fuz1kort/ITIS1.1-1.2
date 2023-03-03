@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\gafar\\OneDrive\\Документы\\GitHub\\itiscs\\2sem\\Lab2.csproj": {}
+    "C:\\Users\\gafar\\OneDrive\\Документы\\GitHub\\itiscs\\QueueApp\\QueueApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\gafar\\OneDrive\\Документы\\GitHub\\itiscs\\2sem\\Lab2.csproj": {
+    "C:\\Users\\gafar\\OneDrive\\Документы\\GitHub\\itiscs\\QueueApp\\QueueApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\gafar\\OneDrive\\Документы\\GitHub\\itiscs\\2sem\\Lab2.csproj",
-        "projectName": "Lab2",
-        "projectPath": "C:\\Users\\gafar\\OneDrive\\Документы\\GitHub\\itiscs\\2sem\\Lab2.csproj",
+        "projectUniqueName": "C:\\Users\\gafar\\OneDrive\\Документы\\GitHub\\itiscs\\QueueApp\\QueueApp.csproj",
+        "projectName": "QueueApp",
+        "projectPath": "C:\\Users\\gafar\\OneDrive\\Документы\\GitHub\\itiscs\\QueueApp\\QueueApp.csproj",
         "packagesPath": "C:\\Users\\gafar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\gafar\\OneDrive\\Документы\\GitHub\\itiscs\\2sem\\obj\\",
+        "outputPath": "C:\\Users\\gafar\\OneDrive\\Документы\\GitHub\\itiscs\\QueueApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
