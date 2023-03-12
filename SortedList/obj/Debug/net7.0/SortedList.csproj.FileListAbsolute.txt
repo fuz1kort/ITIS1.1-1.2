@@ -1,0 +1,15 @@
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\SortedList\bin\Debug\net7.0\SortedList.exe
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\SortedList\bin\Debug\net7.0\SortedList.deps.json
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\SortedList\bin\Debug\net7.0\SortedList.runtimeconfig.json
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\SortedList\bin\Debug\net7.0\SortedList.dll
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\SortedList\bin\Debug\net7.0\SortedList.pdb
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\SortedList\obj\Debug\net7.0\SortedList.csproj.AssemblyReference.cache
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\SortedList\obj\Debug\net7.0\SortedList.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\SortedList\obj\Debug\net7.0\SortedList.AssemblyInfoInputs.cache
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\SortedList\obj\Debug\net7.0\SortedList.AssemblyInfo.cs
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\SortedList\obj\Debug\net7.0\SortedList.csproj.CoreCompileInputs.cache
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\SortedList\obj\Debug\net7.0\SortedList.dll
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\SortedList\obj\Debug\net7.0\refint\SortedList.dll
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\SortedList\obj\Debug\net7.0\SortedList.pdb
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\SortedList\obj\Debug\net7.0\SortedList.genruntimeconfig.cache
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\SortedList\obj\Debug\net7.0\ref\SortedList.dll
