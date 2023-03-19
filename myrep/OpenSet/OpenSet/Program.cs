@@ -4,15 +4,23 @@
     {
         static void Main()
         {
-            Console.WriteLine("set1, IsContains, ToString");
+            Console.WriteLine("set1, Add, ToString,");
             var set1 = new MySet();
             set1.Add(1);
             set1.Add(2);
             set1.Add(3);
             set1.Add(4);
             set1.Add(2);
+            Console.WriteLine(set1);
+            Console.WriteLine("--------------");
+            Console.WriteLine("Delete");
+            Console.WriteLine(set1);
             set1.Delete(2);
             Console.WriteLine(set1);
+            set1.Add(2);
+            Console.WriteLine("--------------");
+            Console.WriteLine(set1);
+            Console.WriteLine("IsContains 1");
             Console.WriteLine(set1.IsContains(1));
             Console.WriteLine("--------------");
             Console.WriteLine("ToArray");

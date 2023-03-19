@@ -7,7 +7,7 @@ namespace OpenSet
     {
         public Hashtable hashtable = new Hashtable();
 
-        private int count = 0;
+        private int index = 0;
 
         public MySet() { }
 
@@ -17,7 +17,7 @@ namespace OpenSet
         {
             if (IsContains(s))
                 return;
-            hashtable.Add(++count, s);
+            hashtable.Add(++index, s);
         }
 
         public void Delete(int s)
@@ -25,7 +25,6 @@ namespace OpenSet
             if (!IsContains(s))
                 return;
             hashtable.Remove(s);
-            count--;
         }
 
         public override string ToString()
@@ -38,7 +37,7 @@ namespace OpenSet
 
         public int[] ToArray()
         {
-            var array = new int[count];
+            var array = new int[hashtable.Count];
             var i = 0;
             foreach (int s in hashtable.Values)
                 array[i++] = s;
