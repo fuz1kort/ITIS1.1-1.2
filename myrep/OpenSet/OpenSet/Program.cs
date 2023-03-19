@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.Design;
-
-namespace OpenSet
+﻿namespace OpenSet
 {
     class Program
     {
