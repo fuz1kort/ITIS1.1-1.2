@@ -1,0 +1,15 @@
+C:\Users\Marat\Documents\GitHub\itiscs\myrep\OpenSet\OpenSet\bin\Debug\net7.0\OpenSet.exe
+C:\Users\Marat\Documents\GitHub\itiscs\myrep\OpenSet\OpenSet\bin\Debug\net7.0\OpenSet.deps.json
+C:\Users\Marat\Documents\GitHub\itiscs\myrep\OpenSet\OpenSet\bin\Debug\net7.0\OpenSet.runtimeconfig.json
+C:\Users\Marat\Documents\GitHub\itiscs\myrep\OpenSet\OpenSet\bin\Debug\net7.0\OpenSet.dll
+C:\Users\Marat\Documents\GitHub\itiscs\myrep\OpenSet\OpenSet\bin\Debug\net7.0\OpenSet.pdb
+C:\Users\Marat\Documents\GitHub\itiscs\myrep\OpenSet\OpenSet\obj\Debug\net7.0\OpenSet.csproj.AssemblyReference.cache
+C:\Users\Marat\Documents\GitHub\itiscs\myrep\OpenSet\OpenSet\obj\Debug\net7.0\OpenSet.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Marat\Documents\GitHub\itiscs\myrep\OpenSet\OpenSet\obj\Debug\net7.0\OpenSet.AssemblyInfoInputs.cache
+C:\Users\Marat\Documents\GitHub\itiscs\myrep\OpenSet\OpenSet\obj\Debug\net7.0\OpenSet.AssemblyInfo.cs
+C:\Users\Marat\Documents\GitHub\itiscs\myrep\OpenSet\OpenSet\obj\Debug\net7.0\OpenSet.csproj.CoreCompileInputs.cache
+C:\Users\Marat\Documents\GitHub\itiscs\myrep\OpenSet\OpenSet\obj\Debug\net7.0\OpenSet.dll
+C:\Users\Marat\Documents\GitHub\itiscs\myrep\OpenSet\OpenSet\obj\Debug\net7.0\refint\OpenSet.dll
+C:\Users\Marat\Documents\GitHub\itiscs\myrep\OpenSet\OpenSet\obj\Debug\net7.0\OpenSet.pdb
+C:\Users\Marat\Documents\GitHub\itiscs\myrep\OpenSet\OpenSet\obj\Debug\net7.0\OpenSet.genruntimeconfig.cache
+C:\Users\Marat\Documents\GitHub\itiscs\myrep\OpenSet\OpenSet\obj\Debug\net7.0\ref\OpenSet.dll
