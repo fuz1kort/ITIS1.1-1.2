@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Diagnostics;
+using System.Text;
 
 namespace Semestr1
 {
@@ -6,24 +7,24 @@ namespace Semestr1
     {
         public static void Main()
         {
-            FileInfo file;
-            int pcount = 0;
-            var r = new Random();
-            for (int i = 0; i < 100; i++)
-            {
-                pcount += 100;
-                file = new FileInfo($@"C:\MySet\Set{i + 1}.txt");
-                var stringpoint = new StringBuilder();
-                for (int j = 0; j < pcount; j++)
-                {
-                    stringpoint.AppendLine($"{r.Next(-100, 100)}, {r.Next(-100, 100)}");
-                }
+            //FileInfo file;
+            //int pcount = 0;
+            //var r = new Random();
+            //for (int i = 0; i < 100; i++)
+            //{
+            //    pcount += 100;
+            //    file = new FileInfo($@"C:\MySet\Set{i + 1}.txt");
+            //    var stringpoint = new StringBuilder();
+            //    for (int j = 0; j < pcount; j++)
+            //    {
+            //        stringpoint.AppendLine($"{r.Next(-100, 100)}, {r.Next(-100, 100)}");
+            //    }
 
-                using (var sw = file.AppendText())
-                {
-                    sw.WriteLine(stringpoint.ToString());
-                }
-            }
+            //    using (var sw = file.AppendText())
+            //    {
+            //        sw.WriteLine(stringpoint.ToString());
+            //    }
+                //}
 
             //var r = new Random();
             string[] Points;
@@ -33,7 +34,7 @@ namespace Semestr1
                 Points = File.ReadAllLines($@"C:\MySet\Set{i + 1}.txt");
                 listofsets.Add(Points);
             }
-            var set1 = listofsets[99];
+            var set1 = listofsets[74];
             List<Point> points = new();
             foreach (var p in set1)
             {
@@ -54,10 +55,14 @@ namespace Semestr1
             //    new Point(0, 0),
             //    new Point(3, -3)
             //};
-
+            var time = new Stopwatch();
+            time.Start();
             var list = GrahamScan.ConvexHull(points);
+            time.Stop();
             foreach (var item in list)
                 Console.WriteLine($"({item.X},{item.Y})");
+            Console.WriteLine($"Время - {time.ElapsedMilliseconds}");
+            Console.WriteLine($"Количество итераций - {GrahamScan.iteration}");
         }
     }
 }

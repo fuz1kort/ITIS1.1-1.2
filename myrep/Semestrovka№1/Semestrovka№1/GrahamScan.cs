@@ -12,6 +12,7 @@
         private static double Distance(Point p1, Point p2) => Math.Sqrt(Math.Pow((p2.Y - p1.Y), 2) + Math.Pow((p2.X - p1.X), 2));
 
         private static Point p0;
+        public static int iteration;
 
         public static List<Point> ConvexHull(List<Point> points)
         {
@@ -33,6 +34,8 @@
                     ymin = points[i].Y;
                     min = i;
                 }
+
+                iteration++;
             }
 
             Point temp = points[0];
@@ -56,6 +59,8 @@
                 while (hull.Count > 1 && Orientation(hull[hull.Count - 2], hull[hull.Count - 1], points[i]) != 2)
                     hull.RemoveAt(hull.Count - 1);
                 hull.Add(points[i]);
+
+                iteration++;
             }
 
             return hull;
