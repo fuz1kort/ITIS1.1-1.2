@@ -7,6 +7,7 @@ namespace Semestr1
     {
         public static void Main()
         {
+            //Запись файлов
             //FileInfo file;
             //int pcount = 0;
             //var r = new Random();
@@ -24,9 +25,9 @@ namespace Semestr1
             //    {
             //        sw.WriteLine(stringpoint.ToString());
             //    }
-                //}
+            //}
 
-            //var r = new Random();
+
             string[] Points;
             List<string[]> listofsets = new List<string[]>();
             for (int i = 0; i < 100; i++)
