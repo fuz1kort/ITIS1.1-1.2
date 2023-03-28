@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "C:\\Users\\gafar\\OneDrive\\Документы\\GitHub\\itiscs\\myrep\\EnumeratorApp\\EnumeratorApp\\YieldApp.csproj": {}
   },
   "projects": {
@@ -12,6 +13,19 @@
         "projectPath": "C:\\Users\\gafar\\OneDrive\\Документы\\GitHub\\itiscs\\myrep\\EnumeratorApp\\EnumeratorApp\\YieldApp.csproj",
         "packagesPath": "C:\\Users\\gafar\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\gafar\\OneDrive\\Документы\\GitHub\\itiscs\\myrep\\EnumeratorApp\\EnumeratorApp\\obj\\",
+=======
+    "C:\\Users\\gafar\\Source\\Repos\\fuz1kort\\itiscs\\myrep\\EnumeratorApp\\EnumeratorApp\\YieldApp.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\gafar\\Source\\Repos\\fuz1kort\\itiscs\\myrep\\EnumeratorApp\\EnumeratorApp\\YieldApp.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\gafar\\Source\\Repos\\fuz1kort\\itiscs\\myrep\\EnumeratorApp\\EnumeratorApp\\YieldApp.csproj",
+        "projectName": "YieldApp",
+        "projectPath": "C:\\Users\\gafar\\Source\\Repos\\fuz1kort\\itiscs\\myrep\\EnumeratorApp\\EnumeratorApp\\YieldApp.csproj",
+        "packagesPath": "C:\\Users\\gafar\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\gafar\\Source\\Repos\\fuz1kort\\itiscs\\myrep\\EnumeratorApp\\EnumeratorApp\\obj\\",
+>>>>>>> w
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

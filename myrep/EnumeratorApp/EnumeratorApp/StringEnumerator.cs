@@ -1,12 +1,16 @@
 ﻿using System.Collections;
-using YieldApp;
 
 namespace YieldApp;
 
 public class StringEnumerator : IEnumerable<string>
 {
+<<<<<<< HEAD
     private string[] Words;
     //public WordsEnumerator WordsOrderedByLength;
+=======
+    private readonly string[] Words;
+    public WordsEnumerator WordsOrderedByLength;
+>>>>>>> w
     private bool IfOrdered = false;
 
     public StringEnumerator(string words)
