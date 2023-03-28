@@ -27,7 +27,7 @@ namespace Semestr1
             //    }
             //}
 
-
+            //Чтение файлов
             string[] Points;
             List<string[]> listofsets = new List<string[]>();
             for (int i = 0; i < 100; i++)

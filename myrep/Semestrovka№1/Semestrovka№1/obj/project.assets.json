@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\gafar\\Source\\Repos\\fuz1kort\\itiscs\\myrep\\Semestrovka№1\\Semestrovka№1\\Semestr1.csproj",
+      "projectUniqueName": "C:\\Users\\gafar\\OneDrive\\Документы\\GitHub\\itiscs\\myrep\\Semestrovka№1\\Semestrovka№1\\Semestr1.csproj",
       "projectName": "Semestr1",
-      "projectPath": "C:\\Users\\gafar\\Source\\Repos\\fuz1kort\\itiscs\\myrep\\Semestrovka№1\\Semestrovka№1\\Semestr1.csproj",
+      "projectPath": "C:\\Users\\gafar\\OneDrive\\Документы\\GitHub\\itiscs\\myrep\\Semestrovka№1\\Semestrovka№1\\Semestr1.csproj",
       "packagesPath": "C:\\Users\\gafar\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\gafar\\Source\\Repos\\fuz1kort\\itiscs\\myrep\\Semestrovka№1\\Semestrovka№1\\obj\\",
+      "outputPath": "C:\\Users\\gafar\\OneDrive\\Документы\\GitHub\\itiscs\\myrep\\Semestrovka№1\\Semestrovka№1\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
