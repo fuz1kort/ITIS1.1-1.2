@@ -14,9 +14,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\gafar\\OneDrive\\Документы\\GitHub\\itiscs\\MyIEnumerable\\YieldApp.csproj",
-      "projectName": "YieldApp",
-      "projectPath": "C:\\Users\\gafar\\OneDrive\\Документы\\GitHub\\itiscs\\MyIEnumerable\\YieldApp.csproj",
+      "projectUniqueName": "C:\\Users\\gafar\\OneDrive\\Документы\\GitHub\\itiscs\\MyIEnumerable\\LINQ.csproj",
+      "projectName": "LINQ",
+      "projectPath": "C:\\Users\\gafar\\OneDrive\\Документы\\GitHub\\itiscs\\MyIEnumerable\\LINQ.csproj",
       "packagesPath": "C:\\Users\\gafar\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\gafar\\OneDrive\\Документы\\GitHub\\itiscs\\MyIEnumerable\\obj\\",
       "projectStyle": "PackageReference",
@@ -66,7 +66,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

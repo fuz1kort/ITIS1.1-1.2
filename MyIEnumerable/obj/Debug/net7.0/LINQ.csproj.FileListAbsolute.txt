@@ -1,0 +1,15 @@
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\MyIEnumerable\bin\Debug\net7.0\LINQ.exe
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\MyIEnumerable\bin\Debug\net7.0\LINQ.deps.json
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\MyIEnumerable\bin\Debug\net7.0\LINQ.runtimeconfig.json
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\MyIEnumerable\bin\Debug\net7.0\LINQ.dll
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\MyIEnumerable\bin\Debug\net7.0\LINQ.pdb
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\MyIEnumerable\obj\Debug\net7.0\LINQ.csproj.AssemblyReference.cache
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\MyIEnumerable\obj\Debug\net7.0\LINQ.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\MyIEnumerable\obj\Debug\net7.0\LINQ.AssemblyInfoInputs.cache
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\MyIEnumerable\obj\Debug\net7.0\LINQ.AssemblyInfo.cs
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\MyIEnumerable\obj\Debug\net7.0\LINQ.csproj.CoreCompileInputs.cache
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\MyIEnumerable\obj\Debug\net7.0\LINQ.dll
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\MyIEnumerable\obj\Debug\net7.0\refint\LINQ.dll
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\MyIEnumerable\obj\Debug\net7.0\LINQ.pdb
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\MyIEnumerable\obj\Debug\net7.0\LINQ.genruntimeconfig.cache
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\MyIEnumerable\obj\Debug\net7.0\ref\LINQ.dll

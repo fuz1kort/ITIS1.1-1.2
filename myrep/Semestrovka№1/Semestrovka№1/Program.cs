@@ -35,7 +35,7 @@ namespace Semestr1
                 Points = File.ReadAllLines($@"C:\MySet\Set{i + 1}.txt");
                 listofsets.Add(Points);
             }
-            var set1 = listofsets[99];
+            var set1 = listofsets[0];
             List<Point> points = new();
             foreach (var p in set1)
             {
