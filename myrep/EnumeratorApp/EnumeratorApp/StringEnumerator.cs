@@ -26,6 +26,7 @@ public class StringEnumerator : IEnumerable<string>
         }
     }
 
+<<<<<<< HEAD
     //public IEnumerable<string> GetOrderedByLength()
     //{
     //    if (!IfOrdered)
@@ -33,6 +34,20 @@ public class StringEnumerator : IEnumerable<string>
     //        WordsOrderedByLength = new WordsEnumerator(Words);
     //        IfOrdered = true;
     //    }
+=======
+    public IEnumerable<string> GetOrderedByLength()
+    {
+        if (!IfOrdered)
+        {
+
+            WordsOrderedByLength = new WordsEnumerator(Words);
+            IfOrdered = true;
+        }
+
+        return WordsOrderedByLength;
+
+    }
+>>>>>>> s
 
     //    return WordsOrderedByLength;
     //}
