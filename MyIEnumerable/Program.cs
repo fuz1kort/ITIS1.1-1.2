@@ -37,18 +37,26 @@
 
             //Console.WriteLine("-------------------");
 
-            Console.WriteLine("№46 Введите последовательность A и B");
+            //Console.WriteLine("№46 Введите последовательность A и B");
 
-            var A = Console.ReadLine().Split(" ").Select(x => Convert.ToInt32(x));
-            var B = Console.ReadLine().Split(" ").Select(x => Convert.ToInt32(x));
-            var pairs = from a in A
-                        from b in B
-                        where a % 10 == b % 10
-                        orderby a, b
-                        select $"{a}-{b}";
+            //var A = Console.ReadLine().Split(" ").Select(x => Convert.ToInt32(x));
+            //var B = Console.ReadLine().Split(" ").Select(x => Convert.ToInt32(x));
+            //var pairs = from a in A
+            //            from b in B
+            //            where a % 10 == b % 10
+            //            orderby a, b
+            //            select $"{a}-{b}";
 
-            var result = string.Join(" ", pairs);
-            Console.WriteLine(result);
+            //foreach (var pair in pairs)
+            //{
+            //    Console.Write($"{pair} ");
+            //}
+
+            //Console.WriteLine("-------------------");
+
+            Console.WriteLine("№56 Введите целочисленную последовательность");
+
+            var A = Console.ReadLine().Split(" ");
 
         }
     }
