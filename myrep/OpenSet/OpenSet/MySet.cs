@@ -5,7 +5,7 @@ namespace OpenSet
 {
     public class MySet
     {
-        public Hashtable hashtable = new Hashtable();
+        public Hashtable hashtable = new();
 
         private int index = 0;
 

@@ -6,7 +6,7 @@ namespace YieldApp
     {
         public static void Main() 
         {
-            var str = "one two three four five six seven eight nine ten eleven twelve";
+            var str = "ber ike och durt bish alty jide sigez tugiz un";
             var test = new StringEnumerator(str);
 
             foreach (var item in test)
@@ -14,12 +14,12 @@ namespace YieldApp
                 Console.WriteLine(item);
             }
 
-            Console.WriteLine("-------");
+            Console.WriteLine("-----------------------------------");
 
-            foreach (var item in test.GetOrderedByLength())
-            {
-                Console.WriteLine(item);
-            }
+            //foreach (var item in test.GetOrderedByLength())
+            //{
+            //    Console.WriteLine(item);
+            //}
         }
     }
 }

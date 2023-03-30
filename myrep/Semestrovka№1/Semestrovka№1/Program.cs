@@ -27,7 +27,7 @@ namespace Semestr1
             //    }
             //}
 
-
+            //Чтение файлов
             string[] Points;
             List<string[]> listofsets = new List<string[]>();
             for (int i = 0; i < 100; i++)
@@ -35,7 +35,7 @@ namespace Semestr1
                 Points = File.ReadAllLines($@"C:\MySet\Set{i + 1}.txt");
                 listofsets.Add(Points);
             }
-            var set1 = listofsets[74];
+            var set1 = listofsets[0];
             List<Point> points = new();
             foreach (var p in set1)
             {
