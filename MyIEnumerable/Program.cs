@@ -1,4 +1,6 @@
-﻿namespace LINQ
+﻿using System.Security.Cryptography.X509Certificates;
+
+namespace LINQ
 {
     class Program
     {
@@ -59,11 +61,54 @@
 
             //var A = Console.ReadLine().Split(" ");
 
+
+
+
             //LinQObj
 
+            //6
+
+            //List<Client> clients = new()
+            //{
+            //    new Client { Code = 1, Hours = 20, Year = 2020, Month = 2 },
+            //    new Client { Code = 2, Hours = 100, Year = 2021, Month = 3 },
+            //    new Client { Code = 3, Hours = 7, Year = 2022, Month = 1 },
+            //    new Client { Code = 4, Hours = 10, Year = 2019, Month = 6},
+            //    new Client { Code = 5, Hours = 20, Year = 2000, Month = 4}
+            //};
+
+            //var results = clients.GroupBy(x => x.Month).OrderByDescending(x => x.Sum(y => y.Hours)).ThenBy(x => x.Key);
+            //foreach (var result in results)
+            //{
+            //    Console.WriteLine($"{result.Sum(x => x.Hours)}\t{result.Key}");
+            //}
 
 
+            //for (int i = 1; i < 13; i++)
+            //{
+            //    if (!results.Select(x => x.Key).Contains(i))
+            //        Console.WriteLine($"0\t{i}");
+            //}
 
+            //16
+
+            //List<Entrant> entrants = new()
+            //{
+            //    new Entrant{ Year = 2021, SchoolNumber = 1, Surname = "Bulkin" },
+            //    new Entrant{ Year = 2021, SchoolNumber= 2, Surname = "Lastochkina"},
+            //    new Entrant{ Year = 2022, SchoolNumber = 1, Surname = "Popov"},
+            //    new Entrant{ Year = 2020, SchoolNumber = 3, Surname = "Zotov"},
+            //    new Entrant{ Year = 2019, SchoolNumber = 4, Surname = "Molotova"},
+            //    new Entrant{ Year = 2022, SchoolNumber = 3, Surname = "Kuplinov"},
+            //    new Entrant{Year = 2015, SchoolNumber = 10, Surname = "Zaitcev"},
+            //};
+
+            //foreach (var year in entrants.GroupBy(x => x.Year).OrderByDescending(x => x.Count()).ThenBy(x => x.Key))
+            //{
+            //    Console.WriteLine($"{year.Count()}\t{year.Key}");
+            //}
+
+            //26
         }
     }
 }
