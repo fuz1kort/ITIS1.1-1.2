@@ -23,7 +23,7 @@ namespace Semestr1
 
             //    using (var sw = file.AppendText())
             //    {
-            //        sw.WriteLine(stringpoint.ToString());
+            //        sw.WriteLine(stringpoint.ToString().Trim());
             //    }
             //}
 
@@ -56,13 +56,14 @@ namespace Semestr1
             //    new Point(0, 0),
             //    new Point(3, -3)
             //};
+
             var time = new Stopwatch();
             time.Start();
             var list = GrahamScan.ConvexHull(points);
             time.Stop();
             foreach (var item in list)
                 Console.WriteLine($"({item.X},{item.Y})");
-            Console.WriteLine($"Время - {time.ElapsedMilliseconds}");
+            Console.WriteLine($"Время - {time.Elapsed}");
             Console.WriteLine($"Количество итераций - {GrahamScan.iteration}");
         }
     }
