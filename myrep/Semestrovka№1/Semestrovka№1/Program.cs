@@ -30,41 +30,55 @@ namespace Semestr1
             //Чтение файлов
             string[] Points;
             List<string[]> listofsets = new List<string[]>();
+
             for (int i = 0; i < 100; i++)
             {
                 Points = File.ReadAllLines($@"C:\MySet\Set{i + 1}.txt");
                 listofsets.Add(Points);
-            }
-            var set1 = listofsets[0];
-            List<Point> points = new();
-            foreach (var p in set1)
-            {
-                if (p != "")
+                var set1 = listofsets[i];
+                List<Point> points = new();
+                foreach (var p in set1)
                 {
-                    points.Add(new Point(Convert.ToInt32((p.Split(",")[0])), Convert.ToInt32((p.Split(",")[1]))));
+                    if (p != "")
+                    {
+                        points.Add(new Point(Convert.ToInt32((p.Split(",")[0])), Convert.ToInt32((p.Split(",")[1]))));
+                    }
+                    else break;
                 }
-                else break;
+
+                var time = new Stopwatch();
+                time.Start();
+                GrahamScan.iteration = 0;
+                var list = GrahamScan.ConvexHull(points);
+                time.Stop();
+                Console.WriteLine(GrahamScan.iteration);
             }
 
-            //List<Point> points = new List<Point>
+            //var set1 = listofsets[0];
+            //List<Point> points = new();
+            //foreach (var p in set1)
             //{
-            //    new Point(0, 3),
-            //    new Point(2, 2),
-            //    new Point(-1, 1),
-            //    new Point(2, 1),
-            //    new Point(-300, 0),
-            //    new Point(0, 0),
-            //    new Point(3, -3)
-            //};
+            //    if (p != "")
+            //    {
+            //        points.Add(new Point(Convert.ToInt32((p.Split(",")[0])), Convert.ToInt32((p.Split(",")[1]))));
+            //    }
+            //    else break;
+            //}
 
-            var time = new Stopwatch();
-            time.Start();
-            var list = GrahamScan.ConvexHull(points);
-            time.Stop();
-            foreach (var item in list)
-                Console.WriteLine($"({item.X},{item.Y})");
-            Console.WriteLine($"Время - {time.Elapsed}");
-            Console.WriteLine($"Количество итераций - {GrahamScan.iteration}");
+
+            //foreach (var point in points)
+            //{
+
+            //    Console.WriteLine($"Количество итераций - {GrahamScan.iteration}");
+            //}
+            //var time = new Stopwatch();
+            //time.Start();
+            //var list = GrahamScan.ConvexHull(points);
+            //time.Stop();
+            //foreach (var item in list)
+            //    Console.WriteLine($"({item.X},{item.Y})");
+            //Console.WriteLine($"Время - {time.Elapsed}");
+            //Console.WriteLine($"Количество итераций - {GrahamScan.iteration}");
         }
     }
 }

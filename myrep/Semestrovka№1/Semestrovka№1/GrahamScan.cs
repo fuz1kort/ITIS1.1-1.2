@@ -9,18 +9,15 @@
             return (val > 0) ? 1 : 2;
         }
 
-        private static double Distance(Point p1, Point p2) => Math.Sqrt(Math.Pow((p2.Y - p1.Y), 2) + Math.Pow((p2.X - p1.X), 2));
-
-        private static Point p0;
+        private static Point? p0;
         public static int iteration;
 
-        public static List<Point> ConvexHull(List<Point> points)
+        public static List<Point>? ConvexHull(List<Point> points)
         {
             int n = points.Count;
 
             if (n < 3) return null;
 
-            List<Point> hull = new();
 
             int ymin = points[0].Y;
             int min = 0;
@@ -50,20 +47,25 @@
                 return angle1.CompareTo(angle2);
             });
 
-            hull.Add(points[0]);
-            hull.Add(points[1]);
-            hull.Add(points[2]);
+            Stack<Point> stack = new Stack<Point>();
+            stack.Push(points[0]);
+            stack.Push(points[1]);
 
-            for (int i = 3; i < n; i++)
+            for (int i = 2; i < points.Count; i++)
             {
-                while (hull.Count > 1 && Orientation(hull[hull.Count - 2], hull[hull.Count - 1], points[i]) != 2)
-                    hull.RemoveAt(hull.Count - 1);
-                hull.Add(points[i]);
+                Point top = stack.Pop();
+                while (Orientation(stack.Peek(), top, points[i]) != 2 && stack.Count >= 2)
+                {
+                    top = stack.Pop();
+                    iteration++;
+                }
 
+                stack.Push(top);
+                stack.Push(points[i]);
                 iteration++;
             }
 
-            return hull;
+            return new(stack.ToArray());
         }
     }
 }
