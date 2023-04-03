@@ -1,4 +1,5 @@
-﻿using System.Security.Cryptography.X509Certificates;
+﻿using System.Numerics;
+using System.Security.Cryptography.X509Certificates;
 
 namespace LINQ
 {
@@ -109,6 +110,37 @@ namespace LINQ
             //}
 
             //26
+
+            //List<Debtor> debtors = new()
+            //{
+            //    new Debtor {Flat = 13, Surname = "Likhachov", Debt = 1543.32},
+            //    new Debtor {Flat = 56, Surname = "Lisenkova", Debt = 43009.44},
+            //    new Debtor {Flat = 70, Surname = "Mohova", Debt = 544.21},
+            //    new Debtor {Flat = 109, Surname = "Golovin", Debt = 666.66},
+            //    new Debtor {Flat = 143, Surname = "Mayakovskii", Debt = 95.79},
+            //};
+
+            //foreach (var debtorG in debtors.OrderBy(x => x.Flat).GroupBy(x => x.Flat / 36 + 1))
+            //{
+            //    Console.WriteLine($"{debtorG.Key} {debtorG.Count()} {Math.Round(debtorG.Average(x => x.Debt),2)}");
+            //}
+
+            //36
+
+            List<Debtor> debtors = new()
+            {
+                new Debtor {Flat = 13, Surname = "Likhachov", Debt = 1543.32},
+                new Debtor {Flat = 56, Surname = "Lisenkova", Debt = 43009.44},
+                new Debtor {Flat = 70, Surname = "Mohova", Debt = 544.21},
+                new Debtor {Flat = 109, Surname = "Golovin", Debt = 666.66},
+                new Debtor {Flat = 143, Surname = "Mayakovskii", Debt = 95.79},
+            };
+
+            foreach (var debtor in debtors.OrderBy(x => (x.Flat / 4) % 9 + 1).ThenBy(x => x.Flat))
+            {
+                Console.WriteLine($"{(debtor.Flat / 4) % 9 + 1} {Math.Round(debtor.Debt, 2)} {debtor.Surname} {debtor.Flat}");
+            }
+
         }
     }
 }
