@@ -1,7 +1,4 @@
-﻿using System.Numerics;
-using System.Security.Cryptography.X509Certificates;
-
-namespace LINQ
+﻿namespace LINQ
 {
     class Program
     {
@@ -122,24 +119,112 @@ namespace LINQ
 
             //foreach (var debtorG in debtors.OrderBy(x => x.Flat).GroupBy(x => x.Flat / 36 + 1))
             //{
-            //    Console.WriteLine($"{debtorG.Key} {debtorG.Count()} {Math.Round(debtorG.Average(x => x.Debt),2)}");
+            //    Console.WriteLine($"{debtorG.Key} {debtorG.Count()} {Examiner.Round(debtorG.Average(x => x.Debt),2)}");
             //}
 
             //36
 
-            List<Debtor> debtors = new()
-            {
-                new Debtor {Flat = 13, Surname = "Likhachov", Debt = 1543.32},
-                new Debtor {Flat = 56, Surname = "Lisenkova", Debt = 43009.44},
-                new Debtor {Flat = 70, Surname = "Mohova", Debt = 544.21},
-                new Debtor {Flat = 109, Surname = "Golovin", Debt = 666.66},
-                new Debtor {Flat = 143, Surname = "Mayakovskii", Debt = 95.79},
-            };
+            //List<Debtor> debtors = new()
+            //{
+            //    new Debtor {Flat = 13, Surname = "Likhachov", Debt = 1543.32},
+            //    new Debtor {Flat = 56, Surname = "Lisenkova", Debt = 43009.44},
+            //    new Debtor {Flat = 70, Surname = "Mohova", Debt = 544.21},
+            //    new Debtor {Flat = 109, Surname = "Golovin", Debt = 666.66},
+            //    new Debtor {Flat = 143, Surname = "Mayakovskii", Debt = 95.79},
+            //};
 
-            foreach (var debtor in debtors.OrderBy(x => (x.Flat / 4) % 9 + 1).ThenBy(x => x.Flat))
-            {
-                Console.WriteLine($"{(debtor.Flat / 4) % 9 + 1} {Math.Round(debtor.Debt, 2)} {debtor.Surname} {debtor.Flat}");
-            }
+            //foreach (var debtor in debtors.OrderBy(x => (x.Flat / 4) % 9 + 1).ThenBy(x => x.Flat))
+            //{
+            //    Console.WriteLine($"{(debtor.Flat / 4) % 9 + 1} {Examiner.Round(debtor.Debt, 2)} {debtor.Surname} {debtor.Flat}");
+            //}
+
+            //46
+
+            //List<GAS_station> stations = new()
+            //{ 
+            //    new GAS_station {Street = "1", FuelType = 92, Price = 4550, Company = "TatNeft"},
+            //    new GAS_station {Street = "2", FuelType = 92, Price = 4490, Company = "RosNeft"},
+            //    new GAS_station {Street = "2", FuelType = 98, Price = 5010, Company = "Irbis"},
+            //    new GAS_station {Street = "3", FuelType = 98, Price = 5030, Company = "TatNeft"},
+            //    new GAS_station {Street = "1", FuelType = 95, Price = 4750, Company = "Irbis"},
+            //    new GAS_station {Street = "2", FuelType = 95, Price = 4850, Company = "TatNeft"},
+            //    new GAS_station {Street = "3", FuelType = 95, Price = 4490, Company = "RosNeft"},
+            //    new GAS_station {Street = "3", FuelType = 92, Price = 4400, Company = "Irbis"},
+            //    new GAS_station {Street = "1", FuelType = 98, Price = 5500, Company = "RosNeft"},
+            //};
+
+
+            //var stationsByCompany = from station in stations
+            //                        group station by station.Company into companyGroup
+            //                        let countAll = companyGroup.Count()
+            //                        let count92 = companyGroup.Count(s => s.FuelType == 92)
+            //                        let count95 = companyGroup.Count(s => s.FuelType == 95)
+            //                        let count98 = companyGroup.Count(s => s.FuelType == 98)
+            //                        where count92 > 0 && count95 > 0 && count98 > 0
+            //                        orderby countAll descending, companyGroup.Key
+            //                        select new
+            //                        {
+            //                            Company = companyGroup.Key,
+            //                            CountAll = countAll,
+            //                            Count92 = count92,
+            //                            Count95 = count95,
+            //                            Count98 = count98
+            //                        };
+
+            //foreach (var company in stationsByCompany)
+            //{
+            //    Console.WriteLine($"{company.CountAll} {company.Company}");
+            //}
+
+            //56
+
+            //List<Examiner> examiners = new()
+            //{
+            //    new Examiner{ SchoolNumber = 1, Surname = "Bulkin" , Initials = "A A", Scores = "93 56 34"},
+            //    new Examiner{ SchoolNumber= 2, Surname = "Lastochkina", Initials = "B N", Scores = "60 64 76"},
+            //    new Examiner{ SchoolNumber = 1, Surname = "Popov", Initials = "R K" , Scores = "90 92 100"},
+            //    new Examiner{ SchoolNumber = 3, Surname = "Zotov", Initials = "D V", Scores = "72 86 95"},
+            //    new Examiner{ SchoolNumber = 4, Surname = "Molotova", Initials = "S C", Scores = "100 100 100"},
+            //    new Examiner{ SchoolNumber = 3, Surname = "Kuplinov", Initials = "F F", Scores = "43 20 50"},
+            //    new Examiner{ SchoolNumber = 10, Surname = "Zaitcev", Initials = "K A", Scores = "63 25 65"},
+            //};
+
+
+            //var examiners90 = from examiner in examiners
+            //                  let scores = examiner.Scores.Split(" ").ToList()
+            //                  where scores.Any(x => Convert.ToInt32(x) > 90)
+            //                  orderby examiner.Surname, examiner.Initials, examiner.SchoolNumber
+            //                  select examiner;
+
+
+            //foreach(var examiner in examiners90)
+            //{
+            //    Console.WriteLine($"{examiner.Surname} {examiner.Initials} {examiner.SchoolNumber}");
+            //}
+
+            //66
+
+            //List<Score> scores = new()
+            //{
+            //    new Score{ Mark = 3, Surname = "Bulkin" , Initials = "A A", Class = 4, Subject = "Informatics"},
+            //    new Score{ Mark= 2, Surname = "Lastochkina", Initials = "B N", Class = 2, Subject = "Geometry"},
+            //    new Score{ Mark = 5, Surname = "Popov", Initials = "R K" , Class = 1, Subject = "Algebra"},
+            //    new Score{ Mark = 5, Surname = "Zotov", Initials = "D V", Class = 5, Subject = "Geometry"},
+            //    new Score{ Mark = 4, Surname = "Molotova", Initials = "S C", Class = 3, Subject = "Algebra"},
+            //    new Score{ Mark = 4, Surname = "Kuplinov", Initials = "F F", Class = 2, Subject = "Informatics"},
+            //    new Score{ Mark = 5, Surname = "Zaitcev", Initials = "K A", Class = 1, Subject = "Informatics"},
+            //};
+
+            //var subjectread = Console.ReadLine();
+            //var result = scores.GroupBy(m => m.Class).OrderBy(g => g.Key)
+            //                  .Select(g => new { Class = g.Key, Count = g.Where(x => x.Subject == subjectread && x.Mark >= 3.5).Count() });
+
+
+            //foreach (var _class in result)
+            //{
+            //    Console.WriteLine($"{_class.Class} {_class.Count}");
+            //}
+
 
         }
     }
