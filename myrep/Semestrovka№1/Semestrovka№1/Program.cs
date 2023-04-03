@@ -46,12 +46,10 @@ namespace Semestr1
                     else break;
                 }
 
-                var time = new Stopwatch();
-                time.Start();
-                GrahamScan.iteration = 0;
-                var list = GrahamScan.ConvexHull(points);
-                time.Stop();
-                Console.WriteLine(GrahamScan.iteration);
+                var grahamlist = GrahamScan.ConvexHull(points);
+                foreach (var item in grahamlist)
+                    Console.WriteLine($"({item.X},{item.Y})");
+                Console.WriteLine("-------------");
             }
 
             //var set1 = listofsets[0];
@@ -73,9 +71,9 @@ namespace Semestr1
             //}
             //var time = new Stopwatch();
             //time.Start();
-            //var list = GrahamScan.ConvexHull(points);
+            //var grahamlist = GrahamScan.ConvexHull(points);
             //time.Stop();
-            //foreach (var item in list)
+            //foreach (var item in grahamlist)
             //    Console.WriteLine($"({item.X},{item.Y})");
             //Console.WriteLine($"Время - {time.Elapsed}");
             //Console.WriteLine($"Количество итераций - {GrahamScan.iteration}");
