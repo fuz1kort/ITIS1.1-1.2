@@ -1,5 +1,4 @@
-﻿using System.Security.Cryptography.X509Certificates;
-using static System.Runtime.InteropServices.JavaScript.JSType;
+﻿using System.Numerics;
 
 namespace LINQ
 {
@@ -125,49 +124,21 @@ namespace LINQ
             //    Console.WriteLine($"{debtorG.Key} {debtorG.Count()} {Math.Round(debtorG.Average(x => x.Debt), 2)}");
             //}
 
-            //36
-
-            //List<Debtor> debtors = new()
-            //{
-            //    new Debtor {Flat = 13, Surname = "Likhachov", Debt = 1543.32},
-            //    new Debtor {Flat = 56, Surname = "Lisenkova", Debt = 43009.44},
-            //    new Debtor {Flat = 70, Surname = "Mohova", Debt = 544.21},
-            //    new Debtor {Flat = 109, Surname = "Golovin", Debt = 666.66},
-            //    new Debtor {Flat = 143, Surname = "Mayakovskii", Debt = 95.79},
-            //};
-
-
-            //var debtorsFl = from debtor in debtors
-            //                group debtor by debtor.Flat / 4 % 9 + 1 into groupFloor
-            //                let avgfl = groupFloor.Where(x => x.Debt > 0 ).Average(x => x.Debt)
-            //                from item in groupFloor
-            //                orderby item.Flat / 4 % 9 + 1, item.Debt
-            //                where item.Debt <= avgfl
-            //                select new
-            //                {
-            //                    Floor = groupFloor.Key,
-            //                    Debt = item.Debt,
-            //                    Surname = item.Surname,
-            //                    Flat = item.Flat
-            //                };
-            //foreach (var debtor in debtorsFl)
-            //{
-            //    Console.WriteLine($"{debtor.Floor} {Math.Round(debtor.Debt, 2)} {debtor.Surname} {debtor.Flat}");
-            //}
+            //...
 
             //46
 
             //List<GAS_station> stations = new()
             //{
-            //    new GAS_station {Street = "1", FuelType = 92, Price = 4550, Company = "TatNeft"},
-            //    new GAS_station {Street = "2", FuelType = 92, Price = 4490, Company = "RosNeft"},
-            //    new GAS_station {Street = "2", FuelType = 98, Price = 5010, Company = "Irbis"},
-            //    new GAS_station {Street = "3", FuelType = 98, Price = 5030, Company = "TatNeft"},
-            //    new GAS_station {Street = "1", FuelType = 95, Price = 4750, Company = "Irbis"},
-            //    new GAS_station {Street = "2", FuelType = 95, Price = 4850, Company = "TatNeft"},
-            //    new GAS_station {Street = "3", FuelType = 95, Price = 4490, Company = "RosNeft"},
-            //    new GAS_station {Street = "3", FuelType = 92, Price = 4400, Company = "Irbis"},
-            //    new GAS_station {Street = "1", FuelType = 98, Price = 5500, Company = "RosNeft"},
+            //    new GAS_station {Street = "1", FuelType = 92, Item = 4550, Company = "TatNeft"},
+            //    new GAS_station {Street = "2", FuelType = 92, Item = 4490, Company = "RosNeft"},
+            //    new GAS_station {Street = "2", FuelType = 98, Item = 5010, Company = "Irbis"},
+            //    new GAS_station {Street = "3", FuelType = 98, Item = 5030, Company = "TatNeft"},
+            //    new GAS_station {Street = "1", FuelType = 95, Item = 4750, Company = "Irbis"},
+            //    new GAS_station {Street = "2", FuelType = 95, Item = 4850, Company = "TatNeft"},
+            //    new GAS_station {Street = "3", FuelType = 95, Item = 4490, Company = "RosNeft"},
+            //    new GAS_station {Street = "3", FuelType = 92, Item = 4400, Company = "Irbis"},
+            //    new GAS_station {Street = "1", FuelType = 98, Item = 5500, Company = "RosNeft"},
             //};
 
 
@@ -219,33 +190,198 @@ namespace LINQ
             //    Console.WriteLine($"{examiner.Surname} {examiner.Initials} {examiner.SchoolNumber}");
             //}
 
+            //36
+
+            //List<Debtor> debtors = new()
+            //{
+            //    new Debtor {Flat = 13, Surname = "Likhachov", Debt = 1543.32},
+            //    new Debtor {Flat = 56, Surname = "Lisenkova", Debt = 43009.44},
+            //    new Debtor {Flat = 70, Surname = "Mohova", Debt = 544.21},
+            //    new Debtor {Flat = 109, Surname = "Golovin", Debt = 666.66},
+            //    new Debtor {Flat = 143, Surname = "Mayakovskii", Debt = 95.79},
+            //};
+
+
+            //var debtorsFl = from debtor in debtors
+            //                group debtor by debtor.Flat / 4 % 9 + 1 into groupFloor
+            //                let avgfl = groupFloor.Where(x => x.Debt > 0 ).Average(x => x.Debt)
+            //                from item in groupFloor
+            //                orderby item.Flat / 4 % 9 + 1, item.Debt
+            //                where item.Debt <= avgfl
+            //                select new
+            //                {
+            //                    Floor = groupFloor.Key,
+            //                    Debt = item.Debt,
+            //                    Surname = item.Surname,
+            //                    Flat = item.Flat
+            //                };
+            //foreach (var debtor in debtorsFl)
+            //{
+            //    Console.WriteLine($"{debtor.Floor} {Math.Round(debtor.Debt, 2)} {debtor.Surname} {debtor.Flat}");
+            //}
+
             //66
 
-            List<Score> scores = new()
+            //List<Score> scores = new()
+            //{
+            //    new Score{ Mark = 3, Surname = "Bulkin" , Initials = "A A", Class = 4, Subject = "Informatics"},
+            //    new Score{ Mark= 2, Surname = "Lastochkina", Initials = "B N", Class = 2, Subject = "Geometry"},
+            //    new Score{ Mark = 5, Surname = "Popov", Initials = "R K" , Class = 1, Subject = "Algebra"},
+            //    new Score{ Mark = 5, Surname = "Zotov", Initials = "D V", Class = 5, Subject = "Geometry"},
+            //    new Score{ Mark = 4, Surname = "Molotova", Initials = "S C", Class = 3, Subject = "Algebra"},
+            //    new Score{ Mark = 4, Surname = "Kuplinov", Initials = "F F", Class = 2, Subject = "Informatics"},
+            //    new Score{ Mark = 5, Surname = "Zaitcev", Initials = "K A", Class = 1, Subject = "Informatics"},
+            //};
+
+            //var subjectread = Console.ReadLine();
+            //var result = scores
+            //     .Where(x => x.Mark != 2)
+            //     .GroupBy(x => x.Class)
+            //     .OrderBy(x => x.Key)
+            //     .Select(x => new { Class = x.Key, Count = x.Count(y => y.Subject == subjectread && y.Mark >= 3.5) });
+
+
+
+            //foreach (var _class in result)
+            //{
+            //    Console.WriteLine($"{_class.Class} {_class.Count}");
+            //}
+
+            //76
+
+            //List<Product> products = new()
+            //{
+            //    new Product { Id = "MI343-9874", Category = "Milk", Country = "Russia"},
+            //    new Product { Id = "BR954-7564", Category = "Bread", Country = "USA"},
+            //    new Product { Id = "ME111-3645", Category = "Meat", Country = "USA"},
+            //    new Product { Id = "VE254-8645", Category = "Vegetables", Country = "Russia"},
+            //    new Product { Id = "FR987-1345", Category = "Fruits", Country = "Turkey"},
+            //    new Product { Id = "DE246-5342", Category = "Dessert", Country = "France"},
+            //    new Product { Id = "EG5875-5325", Category = "Eggs", Country = "Russia"},
+            //    new Product { Id = "SS785-9874", Category = "Seasonings", Country = "Italy"},
+            //    new Product { Id = "TE543-9274" , Category = "Tea", Country = "China"},
+            //    new Product { Id = "AL452-9543", Category = "Alcohol", Country = "Germany"},
+            //};
+
+            //List<Item> items = new()
+            //{
+            //    new Item { Id = products[0].Id, Price = 100, Shop = "Pyaterka"},
+            //    new Item { Id = products[1].Id, Price = 45, Shop = "Magnit"},
+            //    new Item { Id = products[2].Id, Price = 120, Shop = "Eurospar"},
+            //    new Item { Id = products[3].Id, Price = 30, Shop = "Pyaterka"},
+            //    new Item { Id = products[4].Id, Price = 40, Shop = "Eurospar"},
+            //    new Item { Id = products[5].Id, Price = 75, Shop = "Pyaterka"},
+            //    new Item { Id = products[6].Id, Price = 20, Shop = "Magnit"},
+            //    new Item { Id = products[7].Id, Price = 80, Shop = "Magnit"},
+            //    new Item { Id = products[8].Id, Price = 70, Shop = "Eurospar"},
+            //    new Item { Id = products[9].Id, Price = 150, Shop = "Pyaterka"},
+            //};
+
+            //var prodprice = from item in items
+            //                join prod in products on item.Id equals prod.Id
+            //                select new
+            //                {
+            //                    Id = item.Id,
+            //                    Item = item.Price,
+            //                    Shop = item.Shop,
+            //                    Country = prod.Country,
+            //                };
+            //var prodpricecountry = from prod in prodprice
+            //                       group prod by prod.Country into prodcountrygroup
+            //                       orderby prodcountrygroup.Count(), prodcountrygroup.Key
+            //                       let minprice = prodcountrygroup.Select(x => x.Item).Min()
+            //                       select new
+            //                       {
+            //                           Count = prodcountrygroup.Count(),
+            //                           Country = prodcountrygroup.Key,
+            //                           MinPrice = minprice,
+            //                       };
+
+            //foreach (var country in prodpricecountry)
+            //{
+            //    Console.WriteLine($"{country.Count} {country.Country} {country.MinPrice}");
+            //}
+
+            //86
+
+            List<Discount> discounts = new()
             {
-                new Score{ Mark = 3, Surname = "Bulkin" , Initials = "A A", Class = 4, Subject = "Informatics"},
-                new Score{ Mark= 2, Surname = "Lastochkina", Initials = "B N", Class = 2, Subject = "Geometry"},
-                new Score{ Mark = 5, Surname = "Popov", Initials = "R K" , Class = 1, Subject = "Algebra"},
-                new Score{ Mark = 5, Surname = "Zotov", Initials = "D V", Class = 5, Subject = "Geometry"},
-                new Score{ Mark = 4, Surname = "Molotova", Initials = "S C", Class = 3, Subject = "Algebra"},
-                new Score{ Mark = 4, Surname = "Kuplinov", Initials = "F F", Class = 2, Subject = "Informatics"},
-                new Score{ Mark = 5, Surname = "Zaitcev", Initials = "K A", Class = 1, Subject = "Informatics"},
+                new Discount { DiscountPercent = 5, Code = 0, Shop = "Pyaterka" },
+                new Discount { DiscountPercent = 3, Code = 0, Shop = "Magnit" },
+                new Discount { DiscountPercent = 10, Code = 1, Shop = "Eurospar" },
+                new Discount { DiscountPercent = 7, Code = 2, Shop = "Pyaterka" },
+                new Discount { DiscountPercent = 8, Code = 3, Shop = "Magnit" },
+                new Discount { DiscountPercent = 2, Code = 3, Shop = "Eutospar" },
+                new Discount { DiscountPercent = 1, Code = 4, Shop = "Magnit" },
+                new Discount { DiscountPercent = 0, Code = 4, Shop = "Pyaterka" },
+                new Discount { DiscountPercent = 2, Code = 5, Shop = "Pyaterka" },
             };
 
-            var subjectread = Console.ReadLine();
-            var result = scores
-                 .Where(x => x.Mark != 2)
-                 .GroupBy(x => x.Class)
-                 .OrderBy(x => x.Key)
-                 .Select(x => new { Class = x.Key, Count = x.Count(y => y.Subject == subjectread && y.Mark >= 3.5) });
-
-
-
-            foreach (var _class in result)
+            List<Item> items = new()
             {
-                Console.WriteLine($"{_class.Class} {_class.Count}");
-            }
+                new Item { Id = "MI343-9874", Price = 100, Shop = "Pyaterka"},
+                new Item { Id = "VE254-8645", Price = 30, Shop = "Pyaterka"},
+                new Item { Id = "DE246-5342", Price = 75, Shop = "Pyaterka"},
+                new Item { Id = "AL452-9543", Price = 150, Shop = "Pyaterka"},
+                new Item { Id = "BR954-7564", Price = 40, Shop = "Pyaterka"},
+                new Item { Id = "EG5875-5325", Price = 15, Shop = "Pyaterka"},
+                new Item { Id = "SS785-9874", Price = 70, Shop = "Pyaterka"},
+                new Item { Id = "ME111-3645", Price = 105, Shop = "Pyaterka"},
+                new Item { Id = "FR987-1345", Price = 35, Shop = "Pyaterka"},
+                new Item { Id = "TE543-9274", Price = 60, Shop = "Pyaterka"},
 
+
+
+                new Item { Id = "BR954-7564", Price = 45, Shop = "Magnit"},
+                new Item { Id = "EG5875-5325", Price = 20, Shop = "Magnit"},
+                new Item { Id = "SS785-9874", Price = 80, Shop = "Magnit"},
+
+
+
+                new Item { Id = "ME111-3645", Price = 120, Shop = "Eurospar"},
+                new Item { Id = "FR987-1345", Price = 40, Shop = "Eurospar"},
+                new Item { Id = "TE543-9274", Price = 70, Shop = "Eurospar"},
+
+            };
+
+            List<Purchase> purchases = new()
+            {
+                new Purchase { Id = "VE254-8645", Code = 0, Shop = "Pyaterka"},
+                new Purchase { Id = "SS785-9874", Code = 4, Shop = "Magnit"},
+                new Purchase { Id = "BR954-7564", Code = 2, Shop = "Magnit"},
+                new Purchase { Id = "TE543-9274", Code = 1, Shop = "Eurospar"}, 
+                new Purchase { Id = "MI343-9874", Code = 3, Shop = "Pyaterka"},
+                new Purchase { Id = "ME111-3645", Code = 5, Shop = "Eurospar"},
+            };
+
+            var item_shop = from item in items
+                            join purchase in purchases on new { item.Id, item.Shop } equals new { purchase.Id, purchase.Shop }
+                            select new
+                            {
+                                Id = item.Id,
+                                Shop = item.Shop,
+                                Code = purchase.Code,
+                            };
+
+            foreach (var item in item_shop.OrderBy(x => x.Id).ThenBy(x => x.Shop))
+            {
+                Console.WriteLine($"{item.Id} {item.Shop}");
+            }
+            Console.WriteLine();
+
+            var disc_shop = from discount in discounts
+                            join itempur in item_shop on new { discount.Code, discount.Shop } equals new { itempur.Code, itempur.Shop }
+                            select new
+                            {
+                                Id = itempur.Id,
+                                Shop = itempur.Shop,
+                                MaxDiscount = discount.DiscountPercent,
+                            };
+
+            foreach (var item in disc_shop.OrderBy(x => x.Id).ThenBy(x => x.Shop))
+            {
+                Console.WriteLine($"{item.Id} {item.Shop} {item.MaxDiscount}%");
+            }
 
         }
     }
