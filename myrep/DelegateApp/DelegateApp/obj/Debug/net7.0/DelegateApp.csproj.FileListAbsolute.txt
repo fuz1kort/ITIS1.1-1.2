@@ -1,0 +1,15 @@
+C:\Users\Marat\Documents\GitHub\itiscs\myrep\DelegateApp\DelegateApp\bin\Debug\net7.0\DelegateApp.exe
+C:\Users\Marat\Documents\GitHub\itiscs\myrep\DelegateApp\DelegateApp\bin\Debug\net7.0\DelegateApp.deps.json
+C:\Users\Marat\Documents\GitHub\itiscs\myrep\DelegateApp\DelegateApp\bin\Debug\net7.0\DelegateApp.runtimeconfig.json
+C:\Users\Marat\Documents\GitHub\itiscs\myrep\DelegateApp\DelegateApp\bin\Debug\net7.0\DelegateApp.dll
+C:\Users\Marat\Documents\GitHub\itiscs\myrep\DelegateApp\DelegateApp\bin\Debug\net7.0\DelegateApp.pdb
+C:\Users\Marat\Documents\GitHub\itiscs\myrep\DelegateApp\DelegateApp\obj\Debug\net7.0\DelegateApp.csproj.AssemblyReference.cache
+C:\Users\Marat\Documents\GitHub\itiscs\myrep\DelegateApp\DelegateApp\obj\Debug\net7.0\DelegateApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Marat\Documents\GitHub\itiscs\myrep\DelegateApp\DelegateApp\obj\Debug\net7.0\DelegateApp.AssemblyInfoInputs.cache
+C:\Users\Marat\Documents\GitHub\itiscs\myrep\DelegateApp\DelegateApp\obj\Debug\net7.0\DelegateApp.AssemblyInfo.cs
+C:\Users\Marat\Documents\GitHub\itiscs\myrep\DelegateApp\DelegateApp\obj\Debug\net7.0\DelegateApp.csproj.CoreCompileInputs.cache
+C:\Users\Marat\Documents\GitHub\itiscs\myrep\DelegateApp\DelegateApp\obj\Debug\net7.0\DelegateApp.dll
+C:\Users\Marat\Documents\GitHub\itiscs\myrep\DelegateApp\DelegateApp\obj\Debug\net7.0\refint\DelegateApp.dll
+C:\Users\Marat\Documents\GitHub\itiscs\myrep\DelegateApp\DelegateApp\obj\Debug\net7.0\DelegateApp.pdb
+C:\Users\Marat\Documents\GitHub\itiscs\myrep\DelegateApp\DelegateApp\obj\Debug\net7.0\DelegateApp.genruntimeconfig.cache
+C:\Users\Marat\Documents\GitHub\itiscs\myrep\DelegateApp\DelegateApp\obj\Debug\net7.0\ref\DelegateApp.dll
