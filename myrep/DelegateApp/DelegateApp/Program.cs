@@ -8,7 +8,7 @@
         public delegate bool BoolDelegate<T>(T x);
         static void Main()
         {
-            MyList<int> intlist = new() {  };
+            MyList<int> intlist = new();
             intlist.Add(1);
             intlist.Add(2);
             intlist.Add(3);
@@ -18,8 +18,8 @@
             
 
 
-            DelOper deloper = new DelOper();
-            BoolDelegate<int> booldeleg = new BoolDelegate<int>(deloper.IsEven);
+            DelOper deloper = new();
+            BoolDelegate<int> booldeleg = new(deloper.IsEven);
 
             
             Console.WriteLine(intlist.Count(x => !booldeleg(x)));

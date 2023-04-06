@@ -192,60 +192,60 @@ namespace LINQ
 
             //36
 
-            //List<Debtor> debtors = new()
-            //{
-            //    new Debtor {Flat = 13, Surname = "Likhachov", Debt = 1543.32},
-            //    new Debtor {Flat = 56, Surname = "Lisenkova", Debt = 43009.44},
-            //    new Debtor {Flat = 70, Surname = "Mohova", Debt = 544.21},
-            //    new Debtor {Flat = 109, Surname = "Golovin", Debt = 666.66},
-            //    new Debtor {Flat = 143, Surname = "Mayakovskii", Debt = 95.79},
-            //};
+            List<Debtor> debtors = new()
+            {
+                new Debtor {Flat = 13, Surname = "Likhachov", Debt = 1543.32},
+                new Debtor {Flat = 56, Surname = "Lisenkova", Debt = 43009.44},
+                new Debtor {Flat = 70, Surname = "Mohova", Debt = 544.21},
+                new Debtor {Flat = 109, Surname = "Golovin", Debt = 666.66},
+                new Debtor {Flat = 143, Surname = "Mayakovskii", Debt = 95.79},
+            };
 
 
-            //var debtorsFl = from debtor in debtors
-            //                group debtor by debtor.Flat / 4 % 9 + 1 into groupFloor
-            //                let avgfl = groupFloor.Where(x => x.Debt > 0 ).Average(x => x.Debt)
-            //                from item in groupFloor
-            //                orderby item.Flat / 4 % 9 + 1, item.Debt
-            //                where item.Debt <= avgfl
-            //                select new
-            //                {
-            //                    Floor = groupFloor.Key,
-            //                    Debt = item.Debt,
-            //                    Surname = item.Surname,
-            //                    Flat = item.Flat
-            //                };
-            //foreach (var debtor in debtorsFl)
-            //{
-            //    Console.WriteLine($"{debtor.Floor} {Math.Round(debtor.Debt, 2)} {debtor.Surname} {debtor.Flat}");
-            //}
+            var debtorsFl = from debtor in debtors
+                            group debtor by debtor.Flat / 4 % 9 + 1 into groupFloor
+                            let avgfl = groupFloor.Where(x => x.Debt > 0).Average(x => x.Debt)
+                            from item in groupFloor
+                            orderby item.Flat / 4 % 9 + 1, item.Debt
+                            where item.Debt <= avgfl
+                            select new
+                            {
+                                Floor = groupFloor.Key,
+                                Debt = item.Debt,
+                                Surname = item.Surname,
+                                Flat = item.Flat
+                            };
+            foreach (var debtor in debtorsFl)
+            {
+                Console.WriteLine($"{debtor.Floor} {Math.Round(debtor.Debt, 2)} {debtor.Surname} {debtor.Flat}");
+            }
 
             //66
 
-            //List<Score> scores = new()
-            //{
-            //    new Score{ Mark = 3, Surname = "Bulkin" , Initials = "A A", Class = 4, Subject = "Informatics"},
-            //    new Score{ Mark= 2, Surname = "Lastochkina", Initials = "B N", Class = 2, Subject = "Geometry"},
-            //    new Score{ Mark = 5, Surname = "Popov", Initials = "R K" , Class = 1, Subject = "Algebra"},
-            //    new Score{ Mark = 5, Surname = "Zotov", Initials = "D V", Class = 5, Subject = "Geometry"},
-            //    new Score{ Mark = 4, Surname = "Molotova", Initials = "S C", Class = 3, Subject = "Algebra"},
-            //    new Score{ Mark = 4, Surname = "Kuplinov", Initials = "F F", Class = 2, Subject = "Informatics"},
-            //    new Score{ Mark = 5, Surname = "Zaitcev", Initials = "K A", Class = 1, Subject = "Informatics"},
-            //};
+            List<Score> scores = new()
+            {
+                new Score{ Mark = 3, Surname = "Bulkin" , Initials = "A A", Class = 4, Subject = "Informatics"},
+                new Score{ Mark= 2, Surname = "Lastochkina", Initials = "B N", Class = 2, Subject = "Geometry"},
+                new Score{ Mark = 5, Surname = "Popov", Initials = "R K" , Class = 1, Subject = "Algebra"},
+                new Score{ Mark = 5, Surname = "Zotov", Initials = "D V", Class = 5, Subject = "Geometry"},
+                new Score{ Mark = 4, Surname = "Molotova", Initials = "S C", Class = 3, Subject = "Algebra"},
+                new Score{ Mark = 4, Surname = "Kuplinov", Initials = "F F", Class = 2, Subject = "Informatics"},
+                new Score{ Mark = 5, Surname = "Zaitcev", Initials = "K A", Class = 1, Subject = "Informatics"},
+            };
 
-            //var subjectread = Console.ReadLine();
-            //var result = scores
-            //     .Where(x => x.Mark != 2)
-            //     .GroupBy(x => x.Class)
-            //     .OrderBy(x => x.Key)
-            //     .Select(x => new { Class = x.Key, Count = x.Count(y => y.Subject == subjectread && y.Mark >= 3.5) });
+            var subjectread = Console.ReadLine();
+            var result = scores
+                 .Where(x => x.Mark != 2)
+                 .GroupBy(x => x.Class)
+                 .OrderBy(x => x.Key)
+                 .Select(x => new { Class = x.Key, Count = x.Count(y => y.Subject == subjectread && y.Mark >= 3.5) });
 
 
 
-            //foreach (var _class in result)
-            //{
-            //    Console.WriteLine($"{_class.Class} {_class.Count}");
-            //}
+            foreach (var _class in result)
+            {
+                Console.WriteLine($"{_class.Class} {_class.Count}");
+            }
 
             //76
 
@@ -399,7 +399,7 @@ namespace LINQ
 
             //96
 
-            List
+
         }
     }
 }
