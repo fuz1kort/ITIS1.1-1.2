@@ -303,78 +303,75 @@ namespace LINQ
 
             //86
 
-            //List<Discount> C = new()
-            //{
-            //    new Discount { DiscountPercent = 5, Code = 0, Shop = "Pyaterka" },
-            //    new Discount { DiscountPercent = 3, Code = 0, Shop = "Magnit" },
-            //    new Discount { DiscountPercent = 2, Code = 0, Shop = "Eurospar" },
-            //    new Discount { DiscountPercent = 10, Code = 1, Shop = "Eurospar" },
-            //    new Discount { DiscountPercent = 3, Code = 1, Shop = "Magnit" },
-            //    new Discount { DiscountPercent = 0, Code = 1, Shop = "Pyaterka" },
-            //    new Discount { DiscountPercent = 7, Code = 2, Shop = "Pyaterka" },
-            //    new Discount { DiscountPercent = 1, Code = 2, Shop = "Magnit" },
-            //    new Discount { DiscountPercent = 12, Code = 2, Shop = "Eurospar" },
-            //    new Discount { DiscountPercent = 4, Code = 3, Shop = "Pyaterka" },
-            //    new Discount { DiscountPercent = 0, Code = 3, Shop = "Magnit" },
-            //    new Discount { DiscountPercent = 2, Code = 3, Shop = "Eutospar" },
-            //};
+            List<Discount> C = new()
+            {
+                new Discount { DiscountPercent = 5, Code = 0, Shop = "Magnit" },
+                new Discount { DiscountPercent = 2, Code = 0, Shop = "Eurospar" },
+                new Discount { DiscountPercent = 10, Code = 1, Shop = "Eurospar" },
+                new Discount { DiscountPercent = 3, Code = 1, Shop = "Magnit" },
+                new Discount { DiscountPercent = 0, Code = 1, Shop = "Pyaterka" },
+                new Discount { DiscountPercent = 7, Code = 2, Shop = "Eurospar" },
+                new Discount { DiscountPercent = 4, Code = 3, Shop = "Pyaterka" },
+                new Discount { DiscountPercent = 2, Code = 3, Shop = "Eurospar" },
+            };
 
-            //List<Item> D = new()
-            //{
-            //    new Item { Id = "MI343-9874", Price = 100, Shop = "Pyaterka"},
-            //    new Item { Id = "VE254-8645", Price = 30, Shop = "Pyaterka"},
-            //    new Item { Id = "DE246-5342", Price = 75, Shop = "Pyaterka"},
-            //    new Item { Id = "AL452-9543", Price = 150, Shop = "Pyaterka"},
-            //    new Item { Id = "BR954-7564", Price = 40, Shop = "Pyaterka"},
-            //    new Item { Id = "EG5875-5325", Price = 15, Shop = "Pyaterka"},
-            //    new Item { Id = "SS785-9874", Price = 70, Shop = "Pyaterka"},
-            //    new Item { Id = "ME111-3645", Price = 105, Shop = "Pyaterka"},
-            //    new Item { Id = "FR987-1345", Price = 35, Shop = "Pyaterka"},
-            //    new Item { Id = "TE543-9274", Price = 60, Shop = "Pyaterka"},
+            List<Item> D = new()
+            {
+                new Item { Id = "MI343-9874", Price = 100, Shop = "Pyaterka"},
+                new Item { Id = "VE254-8645", Price = 30, Shop = "Pyaterka"},
+                new Item { Id = "DE246-5342", Price = 75, Shop = "Pyaterka"},
+                new Item { Id = "AL452-9543", Price = 150, Shop = "Pyaterka"},
+                new Item { Id = "BR954-7564", Price = 40, Shop = "Pyaterka"},
+                new Item { Id = "EG5875-5325", Price = 15, Shop = "Pyaterka"},
+                new Item { Id = "SS785-9874", Price = 70, Shop = "Pyaterka"},
+                new Item { Id = "ME111-3645", Price = 105, Shop = "Pyaterka"},
+                new Item { Id = "FR987-1345", Price = 35, Shop = "Pyaterka"},
+                new Item { Id = "TE543-9274", Price = 60, Shop = "Pyaterka"},
 
 
 
-            //    new Item { Id = "BR954-7564", Price = 45, Shop = "Magnit"},
-            //    new Item { Id = "EG5875-5325", Price = 20, Shop = "Magnit"},
-            //    new Item { Id = "SS785-9874", Price = 80, Shop = "Magnit"},
+                new Item { Id = "BR954-7564", Price = 45, Shop = "Magnit"},
+                new Item { Id = "EG5875-5325", Price = 20, Shop = "Magnit"},
+                new Item { Id = "SS785-9874", Price = 80, Shop = "Magnit"},
 
 
 
-            //    new Item { Id = "ME111-3645", Price = 120, Shop = "Eurospar"},
-            //    new Item { Id = "FR987-1345", Price = 40, Shop = "Eurospar"},
-            //    new Item { Id = "TE543-9274", Price = 70, Shop = "Eurospar"},
+                new Item { Id = "ME111-3645", Price = 120, Shop = "Eurospar"},
+                new Item { Id = "FR987-1345", Price = 40, Shop = "Eurospar"},
+                new Item { Id = "TE543-9274", Price = 70, Shop = "Eurospar"},
 
-            //};
+            };
 
-            //List<Purchase> E = new()
-            //{
-            //    new Purchase { Id = "VE254-8645", Code = 0, Shop = "Pyaterka"},
-            //    new Purchase { Id = "SS785-9874", Code = 2, Shop = "Magnit"},
-            //    new Purchase { Id = "BR954-7564", Code = 2, Shop = "Magnit"},
-            //    new Purchase { Id = "TE543-9274", Code = 1, Shop = "Eurospar"},
-            //    new Purchase { Id = "MI343-9874", Code = 3, Shop = "Pyaterka"},
-            //    new Purchase { Id = "ME111-3645", Code = 3, Shop = "Eurospar"},
-            //};
+            List<Purchase> E = new()
+            {
+                new Purchase { Id = "VE254-8645", Code = 0, Shop = "Pyaterka"},
+                new Purchase { Id = "SS785-9874", Code = 2, Shop = "Magnit"},
+                new Purchase { Id = "BR954-7564", Code = 2, Shop = "Magnit"},
+                new Purchase { Id = "TE543-9274", Code = 1, Shop = "Eurospar"},
+                new Purchase { Id = "MI343-9874", Code = 3, Shop = "Pyaterka"},
+                new Purchase { Id = "ME111-3645", Code = 3, Shop = "Eurospar"},
+            };
 
 
-            //var result = E.Join(C, e => e.Code, c => c.Code,
-            //(e, c) => new { e.Id, e.Shop, c.DiscountPercent })
-            //.Join(D, ec => new { ec.Id, ec.Shop }, d => new { d.Id, d.Shop },
-            //(ec, d) => new { ec.Id, ec.Shop, DiscountedPrice = d.Price * (100 - ec.DiscountPercent) / 100 })
-            //.GroupBy(x => new { x.Id, x.Shop })
-            //.Select(g => new
-            //{
-            //    g.Key.Id,
-            //    g.Key.Shop,
-            //    MaxDiscount = g.Any() ? g.Max(x => x.DiscountedPrice) : 0
-            //})
-            //.OrderBy(x => x.Id)
-            //.ThenBy(x => x.Shop);
+            var result = E.Join(C, e => e.Code, c => c.Code,
+            (e, c) => new { e.Id, e.Shop, c.DiscountPercent })
+            .Join(D, ec => new { ec.Id, ec.Shop }, d => new { d.Id, d.Shop },
+            (ec, d) => new { ec.Id, ec.Shop, DiscountedPrice = d.Price * (100 - ec.DiscountPercent) / 100 })
+            .GroupBy(x => new { x.Id, x.Shop })
+            .DefaultIfEmpty()
+            .Select(g => new
+            {
+                g.Key.Id,
+                g.Key.Shop,
+                MaxDiscount = g.Any() ? g.Max(x => x.DiscountedPrice) : 0
+            })
+            .OrderBy(x => x.Id)
+            .ThenBy(x => x.Shop);
 
-            //foreach (var item in result)
-            //{
-            //    Console.WriteLine($"{item.Id} {item.Shop} {item.MaxDiscount}");
-            //}
+            foreach (var item in result)
+            {
+                Console.WriteLine($"{item.Id} {item.Shop} {item.MaxDiscount}");
+            }
 
 
             //96
