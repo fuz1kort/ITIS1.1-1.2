@@ -452,8 +452,7 @@ namespace LINQ
             //             e.Code,
             //             Discount = ec.DiscountPercent != 0 ? ec.DiscountPercent : 0 // если скидка отсутствует, то 0
             //         };
-
-            //// Соединяем последовательности EC и D по полям Название магазина и Артикул товара, чтобы получить цену для каждого проданного товара
+ы
             //var ECD = from ec in EC
             //          join d in D on new { ec.Shop, ec.Id } equals new { d.Shop, d.Id }
             //          select new
@@ -463,7 +462,7 @@ namespace LINQ
             //              Price = d.Price * (100 - ec.Discount) / 100 // учитываем скидку и отбрасываем копейки
             //          };
 
-            //// Соединяем последовательности ECD и A по полю Код потребителя, чтобы получить год рождения для каждого проданного товара
+
             //var ECDA = from ecd in ECD
             //           join a in A on ecd.Code equals a.Code
             //           select new
@@ -473,7 +472,7 @@ namespace LINQ
             //               ecd.Price
             //           };
 
-            //// Группируем последовательность ECDA по полям Год рождения и Название магазина и вычисляем суммарную стоимость для каждой группы
+
             //var result = from ecda in ECDA
             //             group ecda by new { ecda.Year, ecda.Shop } into g
             //             select new
@@ -482,11 +481,8 @@ namespace LINQ
             //                 g.Key.Shop,
             //                 Summa = g.Sum(x => x.Price)
             //             };
-
-            //// Сортируем результат по возрастанию номеров года и по названиям магазинов в алфавитном порядке
             //result = result.OrderBy(x => x.Year).ThenBy(x => x.Shop);
 
-            //// Выводим результат на консоль в требуемом формате
             //foreach (var r in result)
             //{
             //    Console.WriteLine($"{r.Year} {r.Shop} {r.Summa}");
