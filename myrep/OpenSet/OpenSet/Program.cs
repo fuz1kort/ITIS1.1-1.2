@@ -4,53 +4,33 @@
     {
         static void Main()
         {
-            Console.WriteLine("set1, Add, ToString,");
-            var set1 = new MySet();
+            HashSet<int> set1 = new HashSet<int>();
             set1.Add(1);
             set1.Add(2);
             set1.Add(3);
-            set1.Add(4);
-            set1.Add(2);
-            Console.WriteLine(set1);
-            Console.WriteLine("--------------");
-            Console.WriteLine("Delete");
-            Console.WriteLine(set1);
-            set1.Delete(2);
-            Console.WriteLine(set1);
-            set1.Add(2);
-            Console.WriteLine("--------------");
-            Console.WriteLine(set1);
-            Console.WriteLine("IsContains 1");
-            Console.WriteLine(set1.IsContains(1));
-            Console.WriteLine("--------------");
-            Console.WriteLine("ToArray");
-            var arr = set1.ToArray();
-            foreach (var item in arr)
-                Console.Write($"{item} ");
-            Console.WriteLine();
-            Console.WriteLine("--------------");
-            Console.WriteLine("set2");
-            var set2 = new MySet();
-            set2.Add(1);
-            set2.Add(8);
-            set2.Add(15);
-            Console.WriteLine(set2);
-            Console.WriteLine("--------------");
-            Console.WriteLine("set 1 intersection set 2");
-            Console.WriteLine(set1.Intersection(set2));
-            Console.WriteLine("--------------");
-            Console.WriteLine("set 1 unification set 2");
-            Console.WriteLine(set1.Unification(set2));
-            Console.WriteLine("--------------");
-            Console.WriteLine("set 1 difference set 2");
-            set1.Difference(set2);
-            Console.WriteLine(set1);
-            Console.WriteLine("--------------");
-            Console.WriteLine("set 1 is supset set 2");
-            set2 = set1.Unification(set2);
-            Console.WriteLine(set1);
-            Console.WriteLine(set2);
-            Console.WriteLine(set1.IsSupSet(set2));
+
+            HashSet<int> set2 = new HashSet<int>();
+            set2.Add(2);
+            set2.Add(3);
+            set2.Add(4);
+
+            Console.WriteLine("set1: " + set1); // {1, 2, 3}
+            Console.WriteLine("set2: " + set2); // {2, 3, 4}
+
+            HashSet<int> intersection = set1.Intersection(set2);
+            Console.WriteLine("intersection: " + intersection); // {2, 3}
+
+            HashSet<int> union = set1.Union(set2);
+            Console.WriteLine("union: " + union); // {1, 2, 3, 4}
+
+            HashSet<int> difference = set1.Difference(set2);
+            Console.WriteLine("difference: " + difference); // {1}
+
+            HashSet<int> symmetricDifference = set1.SymmetricDifference(set2);
+            Console.WriteLine("symmetric difference: " + symmetricDifference); // {1, 4}
+
+            bool isSuperset = set1.IsSupersetOf(intersection);
+            Console.WriteLine("is set1 a superset of intersection? " + isSuperset); // True
         }
     }
 }

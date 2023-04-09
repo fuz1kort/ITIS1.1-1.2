@@ -8,24 +8,19 @@
     "net7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\gafar\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Marat\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\gafar\\Source\\Repos\\fuz1kort\\itiscs\\myrep\\OpenSet\\OpenSet\\OpenSet.csproj",
+      "projectUniqueName": "C:\\Users\\Marat\\Documents\\GitHub\\itiscs\\myrep\\OpenSet\\OpenSet\\OpenSet.csproj",
       "projectName": "OpenSet",
-      "projectPath": "C:\\Users\\gafar\\Source\\Repos\\fuz1kort\\itiscs\\myrep\\OpenSet\\OpenSet\\OpenSet.csproj",
-      "packagesPath": "C:\\Users\\gafar\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\gafar\\Source\\Repos\\fuz1kort\\itiscs\\myrep\\OpenSet\\OpenSet\\obj\\",
+      "projectPath": "C:\\Users\\Marat\\Documents\\GitHub\\itiscs\\myrep\\OpenSet\\OpenSet\\OpenSet.csproj",
+      "packagesPath": "C:\\Users\\Marat\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Marat\\Documents\\GitHub\\itiscs\\myrep\\OpenSet\\OpenSet\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\gafar\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\Marat\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
