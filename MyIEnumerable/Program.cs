@@ -449,7 +449,7 @@ namespace LINQ
             //             e.Code,
             //             Discount = ec.DiscountPercent != 0 ? ec.DiscountPercent : 0 // если скидка отсутствует, то 0
             //         };
-ы
+
             //var ECD = from ec in EC
             //          join d in D on new { ec.Shop, ec.Id } equals new { d.Shop, d.Id }
             //          select new
