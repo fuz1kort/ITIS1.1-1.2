@@ -29,8 +29,13 @@
             HashSet<int> symmetricDifference = set1.SymmetricDifference(set2);
             Console.WriteLine("symmetric difference: " + symmetricDifference); // {1, 4}
 
+<<<<<<< HEAD
             bool isSuperset = intersection.IsSubset(set1);
             Console.WriteLine("is set1 a superset of intersection? " + isSuperset); // True
+=======
+            bool isSubset = set1.IsSupersetOf(intersection);
+            Console.WriteLine("is set1 a superset of intersection? " + isSubset); // True
+>>>>>>> ы
         }
     }
 }
