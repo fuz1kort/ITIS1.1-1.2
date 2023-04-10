@@ -6,77 +6,114 @@ namespace OpenSet
 {
     class HashSet<T>
     {
-        private const int InitialCapacity = 16;
+        private const int DefaultCapacity = 1;
 
+        private int _count;
+        private int _capacity;
         private T[] table;
-        private bool[] deleted;
-        private int size;
+        private bool[] places;
+        int Count => _count;
+        public HashSet() : this(DefaultCapacity) { }
 
-        public HashSet()
+        public HashSet(int capacity)
         {
-            table = new T[InitialCapacity];
-            deleted = new bool[InitialCapacity];
-            size = 0;
+            this._count = 0;
+            this._capacity = capacity;
+            this.table = new T[capacity];
+            this.places = new bool[capacity];
         }
 
-        public void Add(T value)
+        public void Add(T item)
         {
-            if (size * 2 >= table.Length)
+            if (Contains(item))
             {
-                Expand();
+                return;
             }
 
-            int index = FindIndex(value, true);
-            if (table[index] == null)
+            if (_count + 1 > _capacity * 0.75)
             {
-                table[index] = value;
-                size++;
+                Resize(_capacity * 2);
+            }
+
+            int index = GetIndex(item);
+            while (places[index])
+            {
+                index = (index + 1) % _capacity;
+            }
+
+            table[index] = item;
+            places[index] = true;
+            _count++;
+
+        }
+
+        public void Remove(T item)
+        {
+            int index = GetIndex(item);
+            while (places[index])
+            {
+                if (table[index].Equals(item))
+                {
+                    Move(index);
+                    places[index] = false;
+                    _count--;
+                    return;
+                }
+
+                index = (index + 1) % _capacity;
             }
         }
 
-        public bool Contains(T value)
+        private void Move(int index)
         {
-            int index = FindIndex(value, false);
-            return index >= 0 && table[index] != null;
-        }
-
-        public void Remove(T value)
-        {
-            int index = FindIndex(value, false);
-            if (index >= 0 && table[index] != null)
+            for (int i = index; i < table.Length - 1; i++)
             {
-                table[index] = default;
-                deleted[index] = true;
-                size--;
+                table[i] = table[i + 1];
             }
         }
 
-        public override string ToString() => "{" + string.Join(", ", ToArray()) + "}";
+        public bool Contains(T item)
+        {
+            //int index = GetIndex(item);
+            //while (places[index])
+            //{
+            //    if (table[index].Equals(item))
+            //    {
+            //        return true;
+            //    }
+            //    index = (index + 1) % _capacity;
+            //}
+
+            //return false;
+            return table.Contains(item);
+        }
+
+        public override string ToString() => "{" + string.Join(",", ToArray()) + "}";
+
 
         public T[] ToArray()
         {
-            T[] result = new T[size];
-            int j = 0;
+            T[] array = new T[_count];
+            int index = 0;
             for (int i = 0; i < table.Length; i++)
             {
-                if (table[i] != null && !deleted[i])
+                if (places[i])
                 {
-                    result[j] = table[i];
-                    j++;
+                    array[index++] = table[i];
                 }
             }
 
-            return result;
+            return array;
         }
 
         public HashSet<T> Intersection(HashSet<T> other)
         {
-            HashSet<T> result = new HashSet<T>();
-            foreach (T value in other.ToArray())
+            HashSet<T> result = new();
+            for (int i = 0; i < table.Length; i++)
             {
-                if (Contains(value))
+                if (places[i] && other.Contains(table[i]))
                 {
-                    result.Add(value);
+                    result.Add(table[i]);
                 }
             }
 
@@ -85,15 +122,21 @@ namespace OpenSet
 
         public HashSet<T> Union(HashSet<T> other)
         {
-            HashSet<T> result = new HashSet<T>();
-            foreach (T value in ToArray())
+            HashSet<T> result = new();
+            for (int i = 0; i < table.Length; i++)
             {
-                result.Add(value);
+                if (places[i])
+                {
+                    result.Add(table[i]);
+                }
             }
 
-            foreach (T value in other.ToArray())
+            for (int i = 0; i < other.table.Length; i++)
             {
-                result.Add(value);
+                if (other.places[i])
+                {
+                    result.Add(other.table[i]);
+                }
             }
 
             return result;
@@ -101,12 +144,12 @@ namespace OpenSet
 
         public HashSet<T> Difference(HashSet<T> other)
         {
-            HashSet<T> result = new HashSet<T>();
-            foreach (T value in ToArray())
+            HashSet<T> result = new();
+            for (int i = 0; i < _capacity; i++)
             {
-                if (!other.Contains(value))
+                if (places[i] && !other.Contains(table[i]))
                 {
-                    result.Add(value);
+                    result.Add(table[i]);
                 }
             }
 
@@ -116,79 +159,80 @@ namespace OpenSet
         public HashSet<T> SymmetricDifference(HashSet<T> other)
         {
             HashSet<T> result = new HashSet<T>();
-            foreach (T value in ToArray())
+            foreach (T value1 in ToArray())
             {
-                if (!other.Contains(value))
+                if (!other.Contains(value1))
                 {
-                    result.Add(value);
+                    result.Add(value1);
                 }
             }
 
-            foreach (T value in other.ToArray())
+            foreach (T value2 in other.ToArray())
             {
-                if (!Contains(value))
+                if (!Contains(value2))
                 {
-                    result.Add(value);
+                    result.Add(value2);
                 }
             }
 
             return result;
         }
 
-        public bool IsSupersetOf(HashSet<T> other)
+        public bool IsSubset(HashSet<T> other)
         {
-            foreach (T value in other.ToArray())
+            int c = 0;
+            for (int i = 0; i < _capacity; i++)
             {
-                if (!Contains(value))
+                if (places[i])
                 {
-                    return false;
+                    if (other.Contains(table[i]))
+                    {
+                        c++;
+                    }
+
                 }
             }
 
-            return true;
+            if (c == this.Count)
+            {
+                return true;
+            }
+
+            return false;
         }
 
-        private int FindIndex(T value, bool insert)
+        int GetIndex(T item, int capacity = -1)
         {
-            int hashCode = value.GetHashCode();
-            int index = (hashCode & 0x7fffffff) % table.Length;
-            int steps = 0;
-
-            while (table[index] != null && (!table[index].Equals(value) || deleted[index]))
+            if (capacity == -1)
             {
-                steps++;
-                index = (index + steps * steps) % table.Length;
+                capacity = _capacity;
             }
 
-            if (insert)
-            {
-                return index;
-            }
-
-            else if (table[index] != null)
-            {
-                return index;
-            }
-
-            return -1;
+            int index = item.GetHashCode() % capacity;
+            return index >= 0 ? index : -index;
         }
-
-        private void Expand()
+        void Resize(int capacity)
         {
-            T[] oldTable = table;
-            bool[] oldDeleted = deleted;
-            table = new T[oldTable.Length * 2];
-            deleted = new bool[table.Length];
-            size = 0;
-
-            foreach (T value in oldTable)
+            var oldTable = table;
+            var oldPlaces = places;
+            table = new T[capacity];
+            places = new bool[capacity];
+            for (int i = 0; i < oldPlaces.Length; i++)
             {
-                if (value != null)
+                if (oldPlaces[i])
                 {
-                    int index = FindIndex(value, true);
-                    table[index] = value;
+                    T item = oldTable[i];
+                    int index = GetIndex(item, capacity);
+                    while (places[index])
+                    {
+                        index++;
+                    }
+                    table[index] = item;
+                    places[index] = true;
                 }
             }
+
+            _capacity = capacity;
         }
     }
 }

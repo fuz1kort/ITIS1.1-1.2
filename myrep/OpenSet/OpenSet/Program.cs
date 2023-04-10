@@ -4,12 +4,12 @@
     {
         static void Main()
         {
-            HashSet<int> set1 = new HashSet<int>();
+            HashSet<int> set1 = new();
             set1.Add(1);
             set1.Add(2);
             set1.Add(3);
 
-            HashSet<int> set2 = new HashSet<int>();
+            HashSet<int> set2 = new();
             set2.Add(2);
             set2.Add(3);
             set2.Add(4);
@@ -29,7 +29,7 @@
             HashSet<int> symmetricDifference = set1.SymmetricDifference(set2);
             Console.WriteLine("symmetric difference: " + symmetricDifference); // {1, 4}
 
-            bool isSuperset = set1.IsSupersetOf(intersection);
+            bool isSuperset = intersection.IsSubset(set1);
             Console.WriteLine("is set1 a superset of intersection? " + isSuperset); // True
         }
     }
