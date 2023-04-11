@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Text;
-
-namespace OpenSet
+﻿namespace OpenSet
 {
     class HashSet<T>
     {
@@ -85,6 +81,7 @@ namespace OpenSet
             //}
 
             //return false;
+
             return table.Contains(item);
         }
 
