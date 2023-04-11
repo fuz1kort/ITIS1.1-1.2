@@ -57,12 +57,20 @@ namespace OpenSet
                     size++;
                 }
             }
+<<<<<<< HEAD
             //if (table[index] == null)
             //{
             //    table[index] = value;
             //    size++;
             //}
 >>>>>>> ы
+=======
+            if (table[index] == null)
+            {
+                table[index] = value;
+                size++;
+            }
+>>>>>>> s
         }
 
         public void Remove(T item)
