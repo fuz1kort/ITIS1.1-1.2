@@ -76,9 +76,9 @@
             //};
 
             //var results = clients.GroupBy(x => x.Month).OrderByDescending(x => x.Sum(y => y.Hours)).ThenBy(x => x.Key);
-            //foreach (var result in results)
+            //foreach (var results in results)
             //{
-            //    Console.WriteLine($"{result.Sum(x => x.Hours)}\t{result.Key}");
+            //    Console.WriteLine($"{results.Sum(x => x.Hours)}\t{results.Key}");
             //}
 
 
@@ -229,124 +229,152 @@
             //};
 
             //var subjectread = Console.ReadLine();
-            //var result = scores
+            //var results = scores
             //     .GroupBy(x => x.Class)
             //     .OrderBy(x => x.Key)
-            //     .Select(x => new { Class = x.Key, Count = x.Count(y => y.Subject == subjectread && y.Mark >= 3.5 
-            //     && scores.Any(x => x.Mark != 2 && x.Subject == subjectread && y.Class == x.Class && y.Surname == x.Surname)) });
+            //     .Select(x => new
+            //     {
+            //         Class = x.Key,
+            //         Count = x.Count(y => y.Subject == subjectread && y.Mark >= 3.5
+            //     && scores.Any(x => x.Mark != 2 && x.Subject == subjectread && y.Class == x.Class && y.Surname == x.Surname))
+            //     });
 
 
 
-            //foreach (var _class in result)
+            //foreach (var _class in results)
             //{
             //    Console.WriteLine($"{_class.Class} {_class.Count}");
             //}
 
             //76
 
-            List<Product> B = new()
-            {
-                new Product { Id = "MI343-9874", Category = "Milk", Country = "Russia"},
-                new Product { Id = "BR954-7564", Category = "Bread", Country = "USA"},
-                new Product { Id = "ME111-3645", Category = "Meat", Country = "USA"},
-                new Product { Id = "VE254-8645", Category = "Vegetables", Country = "Russia"},
-                new Product { Id = "FR987-1345", Category = "Fruits", Country = "Turkey"},
-                new Product { Id = "DE246-5342", Category = "Dessert", Country = "France"},
-                new Product { Id = "EG5875-5325", Category = "Eggs", Country = "Russia"},
-                new Product { Id = "SS785-9874", Category = "Seasonings", Country = "Italy"},
-                new Product { Id = "TE543-9274" , Category = "Tea", Country = "China"},
-                new Product { Id = "AL452-9543", Category = "Alcohol", Country = "Germany"},
-            };
-
-            List<Item> D = new()
-            {
-                new Item { Id = "MI343-9874", Price = 100, Shop = "Pyaterka"},
-                new Item { Id = "BR954-7564", Price = 45, Shop = "Magnit"},
-                new Item { Id = "ME111-3645", Price = 120, Shop = "Eurospar"},
-                new Item { Id = "VE254-8645", Price = 30, Shop = "Pyaterka"},
-                new Item { Id = "FR987-1345", Price = 40, Shop = "Eurospar"},
-                new Item { Id = "DE246-5342", Price = 75, Shop = "Pyaterka"},
-                new Item { Id = "EG5875-5325", Price = 20, Shop = "Magnit"},
-                new Item { Id = "SS785-9874", Price = 80, Shop = "Magnit"},
-                new Item { Id = "TE543-9274", Price = 70, Shop = "Eurospar"},
-                new Item { Id = "AL452-9543", Price = 150, Shop = "Pyaterka"},
-            };
-
-            var prodprice = from item in D
-                            join prod in B on item.Id equals prod.Id
-                            select new
-                            {
-                                Id = item.Id,
-                                Item = item.Price,
-                                Shop = item.Shop,
-                                Country = prod.Country,
-                            };
-            var countries = from prod in prodprice
-                            group prod by prod.Country into prodcountrygroup
-                            orderby prodcountrygroup.Count(), prodcountrygroup.Key
-                            let minprice = prodcountrygroup.Select(x => x.Item).Min()
-                            select new
-                            {
-                                Count = prodcountrygroup.Count(),
-                                Country = prodcountrygroup.Key,
-                                MinPrice = minprice,
-                            };
-
-            foreach (var country in countries)
-            {
-                Console.WriteLine($"{country.Count} {country.Country} {country.MinPrice}");
-            }
-
-            //86
-
-            //List<Discount> C = new()
+            //List<Product> B = new()
             //{
-            //    new Discount { DiscountPercent = 5, Code = 0, Shop = "Magnit" },
-            //    new Discount { DiscountPercent = 2, Code = 0, Shop = "Eurospar" },
-            //    new Discount { DiscountPercent = 10, Code = 1, Shop = "Eurospar" },
-            //    new Discount { DiscountPercent = 3, Code = 1, Shop = "Magnit" },
-            //    new Discount { DiscountPercent = 0, Code = 1, Shop = "Pyaterka" },
-            //    new Discount { DiscountPercent = 7, Code = 2, Shop = "Eurospar" },
-            //    new Discount { DiscountPercent = 4, Code = 3, Shop = "Pyaterka" },
-            //    new Discount { DiscountPercent = 2, Code = 3, Shop = "Eurospar" },
+            //    new Product { Id = "MI343-9874", Category = "Milk", Country = "Russia"},
+            //    new Product { Id = "BR954-7564", Category = "Bread", Country = "USA"},
+            //    new Product { Id = "ME111-3645", Category = "Meat", Country = "USA"},
+            //    new Product { Id = "VE254-8645", Category = "Vegetables", Country = "Russia"},
+            //    new Product { Id = "FR987-1345", Category = "Fruits", Country = "Turkey"},
+            //    new Product { Id = "DE246-5342", Category = "Dessert", Country = "France"},
+            //    new Product { Id = "EG5875-5325", Category = "Eggs", Country = "Russia"},
+            //    new Product { Id = "SS785-9874", Category = "Seasonings", Country = "Italy"},
+            //    new Product { Id = "TE543-9274" , Category = "Tea", Country = "China"},
+            //    new Product { Id = "AL452-9543", Category = "Alcohol", Country = "Germany"},
             //};
 
             //List<Item> D = new()
             //{
             //    new Item { Id = "MI343-9874", Price = 100, Shop = "Pyaterka"},
-            //    new Item { Id = "VE254-8645", Price = 30, Shop = "Pyaterka"},
-            //    new Item { Id = "DE246-5342", Price = 75, Shop = "Pyaterka"},
-            //    new Item { Id = "AL452-9543", Price = 150, Shop = "Pyaterka"},
-            //    new Item { Id = "BR954-7564", Price = 40, Shop = "Pyaterka"},
-            //    new Item { Id = "EG5875-5325", Price = 15, Shop = "Pyaterka"},
-            //    new Item { Id = "SS785-9874", Price = 70, Shop = "Pyaterka"},
-            //    new Item { Id = "ME111-3645", Price = 105, Shop = "Pyaterka"},
-            //    new Item { Id = "FR987-1345", Price = 35, Shop = "Pyaterka"},
-            //    new Item { Id = "TE543-9274", Price = 60, Shop = "Pyaterka"},
-
-
-
             //    new Item { Id = "BR954-7564", Price = 45, Shop = "Magnit"},
+            //    new Item { Id = "ME111-3645", Price = 120, Shop = "Eurospar"},
+            //    new Item { Id = "VE254-8645", Price = 30, Shop = "Pyaterka"},
+            //    new Item { Id = "FR987-1345", Price = 40, Shop = "Eurospar"},
+            //    new Item { Id = "DE246-5342", Price = 75, Shop = "Pyaterka"},
             //    new Item { Id = "EG5875-5325", Price = 20, Shop = "Magnit"},
             //    new Item { Id = "SS785-9874", Price = 80, Shop = "Magnit"},
-
-
-
-            //    new Item { Id = "ME111-3645", Price = 120, Shop = "Eurospar"},
-            //    new Item { Id = "FR987-1345", Price = 40, Shop = "Eurospar"},
             //    new Item { Id = "TE543-9274", Price = 70, Shop = "Eurospar"},
-
+            //    new Item { Id = "AL452-9543", Price = 150, Shop = "Pyaterka"},
             //};
 
-            //List<Purchase> E = new()
+            //var prodprice = from item in D
+            //                join prod in B on item.Id equals prod.Id
+            //                select new
+            //                {
+            //                    Id = item.Id,
+            //                    Item = item.Price,
+            //                    Shop = item.Shop,
+            //                    Country = prod.Country,
+            //                };
+            //var countries = from prod in prodprice
+            //                group prod by prod.Country into prodcountrygroup
+            //                orderby prodcountrygroup.Count(), prodcountrygroup.Key
+            //                let minprice = prodcountrygroup.Select(x => x.Item).Min()
+            //                select new
+            //                {
+            //                    Count = prodcountrygroup.Count(),
+            //                    Country = prodcountrygroup.Key,
+            //                    MinPrice = minprice,
+            //                };
+
+            //foreach (var country in countries)
             //{
-            //    new Purchase { Id = "VE254-8645", Code = 0, Shop = "Pyaterka"},
-            //    new Purchase { Id = "SS785-9874", Code = 2, Shop = "Magnit"},
-            //    new Purchase { Id = "BR954-7564", Code = 2, Shop = "Magnit"},
-            //    new Purchase { Id = "TE543-9274", Code = 1, Shop = "Eurospar"},
-            //    new Purchase { Id = "MI343-9874", Code = 3, Shop = "Pyaterka"},
-            //    new Purchase { Id = "ME111-3645", Code = 3, Shop = "Eurospar"},
-            //};
+            //    Console.WriteLine($"{country.Count} {country.Country} {country.MinPrice}");
+            //}
+
+            //86
+
+            List<Discount> C = new()
+            {
+                new Discount { DiscountPercent = 5, Code = 0, Shop = "Magnit" },
+                new Discount { DiscountPercent = 2, Code = 0, Shop = "Eurospar" },
+                new Discount { DiscountPercent = 10, Code = 1, Shop = "Eurospar" },
+                new Discount { DiscountPercent = 3, Code = 1, Shop = "Magnit" },
+                new Discount { DiscountPercent = 0, Code = 1, Shop = "Pyaterka" },
+                new Discount { DiscountPercent = 7, Code = 2, Shop = "Eurospar" },
+                new Discount { DiscountPercent = 4, Code = 3, Shop = "Pyaterka" },
+                new Discount { DiscountPercent = 2, Code = 3, Shop = "Eurospar" },
+            };
+
+            List<Item> D = new()
+            {
+                new Item { Id = "MI343-9874", Price = 100, Shop = "Pyaterka"},
+                new Item { Id = "VE254-8645", Price = 30, Shop = "Pyaterka"},
+                new Item { Id = "DE246-5342", Price = 75, Shop = "Pyaterka"},
+                new Item { Id = "AL452-9543", Price = 150, Shop = "Pyaterka"},
+                new Item { Id = "BR954-7564", Price = 40, Shop = "Pyaterka"},
+                new Item { Id = "EG5875-5325", Price = 15, Shop = "Pyaterka"},
+                new Item { Id = "SS785-9874", Price = 70, Shop = "Pyaterka"},
+                new Item { Id = "ME111-3645", Price = 105, Shop = "Pyaterka"},
+                new Item { Id = "FR987-1345", Price = 35, Shop = "Pyaterka"},
+                new Item { Id = "TE543-9274", Price = 60, Shop = "Pyaterka"},
+
+
+
+                new Item { Id = "BR954-7564", Price = 45, Shop = "Magnit"},
+                new Item { Id = "EG5875-5325", Price = 20, Shop = "Magnit"},
+                new Item { Id = "SS785-9874", Price = 80, Shop = "Magnit"},
+
+
+
+                new Item { Id = "ME111-3645", Price = 120, Shop = "Eurospar"},
+                new Item { Id = "FR987-1345", Price = 40, Shop = "Eurospar"},
+                new Item { Id = "TE543-9274", Price = 70, Shop = "Eurospar"},
+
+            };
+
+            List<Purchase> E = new()
+            {
+                new Purchase { Id = "VE254-8645", Code = 0, Shop = "Pyaterka"},
+                new Purchase { Id = "SS785-9874", Code = 2, Shop = "Magnit"},
+                new Purchase { Id = "BR954-7564", Code = 2, Shop = "Magnit"},
+                new Purchase { Id = "TE543-9274", Code = 1, Shop = "Eurospar"},
+                new Purchase { Id = "MI343-9874", Code = 3, Shop = "Pyaterka"},
+                new Purchase { Id = "ME111-3645", Code = 3, Shop = "Eurospar"},
+            };
+
+
+            var DE = E.Join(D,
+                            e => new { e.Shop, e.Id },
+                            d => new { d.Shop, d.Id },
+                            (e, d) => new { Id = e.Id, Price = d.Price, Shop = d.Shop, Code = e.Code });
+
+
+            C.AddRange(DE.Where(de => !C.Any(c => c.Code == de.Code && c.Shop == de.Shop))
+            .Select(de => new Discount { DiscountPercent = 0, Code = de.Code, Shop = de.Shop }));
+
+            var results = C.Join(DE,
+                c => new { c.Shop, c.Code},
+                de => new {de.Shop, de.Code},
+                (c, de) => new { Id = de.Id, Shop = de.Shop, Price = de.Price * c.DiscountPercent/100})
+                .OrderBy(x => x.Id)
+                .ThenBy(x => x.Shop);
+            
+            foreach(var res in results)
+            {
+                Console.WriteLine($"{res.Id} {res.Shop} {res.Price}");
+            }
+
+
 
 
 

@@ -206,8 +206,9 @@
             }
 
             int index = item.GetHashCode() % capacity;
-            return index >= 0 ? index : -index;
+            return Math.Abs(index);
         }
+
         void Resize(int capacity)
         {
             var oldTable = table;
@@ -224,6 +225,7 @@
                     {
                         index++;
                     }
+
                     table[index] = item;
                     places[index] = true;
                 }
