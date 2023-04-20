@@ -13,11 +13,19 @@
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\Marat\\Documents\\GitHub\\itiscs\\MyIEnumerable\\LINQ.csproj",
       "projectName": "LINQ",
       "projectPath": "C:\\Users\\Marat\\Documents\\GitHub\\itiscs\\MyIEnumerable\\LINQ.csproj",
       "packagesPath": "C:\\Users\\Marat\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Marat\\Documents\\GitHub\\itiscs\\MyIEnumerable\\obj\\",
+=======
+      "projectUniqueName": "C:\\Users\\gafar\\Source\\Repos\\fuz1kort\\itiscs\\MyIEnumerable\\YieldApp.csproj",
+      "projectName": "YieldApp",
+      "projectPath": "C:\\Users\\gafar\\Source\\Repos\\fuz1kort\\itiscs\\MyIEnumerable\\YieldApp.csproj",
+      "packagesPath": "C:\\Users\\gafar\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\gafar\\Source\\Repos\\fuz1kort\\itiscs\\MyIEnumerable\\obj\\",
+>>>>>>> matrixthread work
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Marat\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -61,7 +69,11 @@
             "privateAssets": "all"
           }
         },
+<<<<<<< HEAD
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+=======
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+>>>>>>> matrixthread work
       }
     }
   }

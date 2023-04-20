@@ -1,9 +1,11 @@
 ﻿using System.Collections;
+using YieldApp;
 
 namespace YieldApp;
 
 public class StringEnumerator : IEnumerable<string>
 {
+<<<<<<< HEAD
 <<<<<<< HEAD
     private string[] Words;
     //public WordsEnumerator WordsOrderedByLength;
@@ -11,6 +13,10 @@ public class StringEnumerator : IEnumerable<string>
     private readonly string[] Words;
     public WordsEnumerator WordsOrderedByLength;
 >>>>>>> w
+=======
+    private string[] Words;
+    //public WordsEnumerator WordsOrderedByLength;
+>>>>>>> matrixthread work
     private bool IfOrdered = false;
 
     public StringEnumerator(string words)
@@ -27,6 +33,9 @@ public class StringEnumerator : IEnumerable<string>
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> matrixthread work
     //public IEnumerable<string> GetOrderedByLength()
     //{
     //    if (!IfOrdered)
@@ -34,6 +43,7 @@ public class StringEnumerator : IEnumerable<string>
     //        WordsOrderedByLength = new WordsEnumerator(Words);
     //        IfOrdered = true;
     //    }
+<<<<<<< HEAD
 =======
     public IEnumerable<string> GetOrderedByLength()
     {
@@ -48,6 +58,8 @@ public class StringEnumerator : IEnumerable<string>
 
     }
 >>>>>>> s
+=======
+>>>>>>> matrixthread work
 
     //    return WordsOrderedByLength;
     //}

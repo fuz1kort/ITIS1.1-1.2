@@ -1,6 +1,7 @@
 {
   "version": 2,
 <<<<<<< HEAD
+<<<<<<< HEAD
   "dgSpecHash": "FGvvSHSDuMiBWUz0+uxNKKoqsW/baH0EN6zjRYL7WxLvieBPwWZ6HZNbw4BCXJ4sCufEg5i9HiBMowj6p7Srsw==",
   "success": true,
   "projectFilePath": "C:\\Users\\gafar\\OneDrive\\Документы\\GitHub\\itiscs\\myrep\\EnumeratorApp\\EnumeratorApp\\YieldApp.csproj",
@@ -9,6 +10,11 @@
   "success": true,
   "projectFilePath": "C:\\Users\\gafar\\Source\\Repos\\fuz1kort\\itiscs\\myrep\\EnumeratorApp\\EnumeratorApp\\YieldApp.csproj",
 >>>>>>> w
+=======
+  "dgSpecHash": "U9vyw/MTZqu45hxQrKXJG3uHxvbaP4G6yv3EzWP8OwBKru47Kgfm/zLec+SBQpf5G/wF9lHMiJ52Bu49IgAoww==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\gafar\\source\\repos\\fuz1kort\\itiscs\\myrep\\EnumeratorApp\\EnumeratorApp\\YieldApp.csproj",
+>>>>>>> matrixthread work
   "expectedPackageFiles": [],
   "logs": []
 }

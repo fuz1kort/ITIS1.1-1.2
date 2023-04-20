@@ -15,6 +15,7 @@
     "version": "1.0.0",
     "restore": {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\gafar\\OneDrive\\Документы\\GitHub\\itiscs\\myrep\\EnumeratorApp\\EnumeratorApp\\YieldApp.csproj",
       "projectName": "YieldApp",
       "projectPath": "C:\\Users\\gafar\\OneDrive\\Документы\\GitHub\\itiscs\\myrep\\EnumeratorApp\\EnumeratorApp\\YieldApp.csproj",
@@ -22,8 +23,11 @@
       "outputPath": "C:\\Users\\gafar\\OneDrive\\Документы\\GitHub\\itiscs\\myrep\\EnumeratorApp\\EnumeratorApp\\obj\\",
 =======
       "projectUniqueName": "C:\\Users\\gafar\\Source\\Repos\\fuz1kort\\itiscs\\myrep\\EnumeratorApp\\EnumeratorApp\\YieldApp.csproj",
+=======
+      "projectUniqueName": "C:\\Users\\gafar\\source\\repos\\fuz1kort\\itiscs\\myrep\\EnumeratorApp\\EnumeratorApp\\YieldApp.csproj",
+>>>>>>> matrixthread work
       "projectName": "YieldApp",
-      "projectPath": "C:\\Users\\gafar\\Source\\Repos\\fuz1kort\\itiscs\\myrep\\EnumeratorApp\\EnumeratorApp\\YieldApp.csproj",
+      "projectPath": "C:\\Users\\gafar\\source\\repos\\fuz1kort\\itiscs\\myrep\\EnumeratorApp\\EnumeratorApp\\YieldApp.csproj",
       "packagesPath": "C:\\Users\\gafar\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\gafar\\Source\\Repos\\fuz1kort\\itiscs\\myrep\\EnumeratorApp\\EnumeratorApp\\obj\\",
 >>>>>>> w
