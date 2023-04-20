@@ -1,0 +1,15 @@
+C:\Users\gafar\source\repos\ThreadApp\obj\Debug\net7.0\ThreadApp.csproj.AssemblyReference.cache
+C:\Users\gafar\source\repos\ThreadApp\obj\Debug\net7.0\ThreadApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gafar\source\repos\ThreadApp\obj\Debug\net7.0\ThreadApp.AssemblyInfoInputs.cache
+C:\Users\gafar\source\repos\ThreadApp\obj\Debug\net7.0\ThreadApp.AssemblyInfo.cs
+C:\Users\gafar\source\repos\ThreadApp\obj\Debug\net7.0\ThreadApp.csproj.CoreCompileInputs.cache
+C:\Users\gafar\source\repos\ThreadApp\bin\Debug\net7.0\ThreadApp.exe
+C:\Users\gafar\source\repos\ThreadApp\bin\Debug\net7.0\ThreadApp.deps.json
+C:\Users\gafar\source\repos\ThreadApp\bin\Debug\net7.0\ThreadApp.runtimeconfig.json
+C:\Users\gafar\source\repos\ThreadApp\bin\Debug\net7.0\ThreadApp.dll
+C:\Users\gafar\source\repos\ThreadApp\bin\Debug\net7.0\ThreadApp.pdb
+C:\Users\gafar\source\repos\ThreadApp\obj\Debug\net7.0\ThreadApp.dll
+C:\Users\gafar\source\repos\ThreadApp\obj\Debug\net7.0\refint\ThreadApp.dll
+C:\Users\gafar\source\repos\ThreadApp\obj\Debug\net7.0\ThreadApp.pdb
+C:\Users\gafar\source\repos\ThreadApp\obj\Debug\net7.0\ThreadApp.genruntimeconfig.cache
+C:\Users\gafar\source\repos\ThreadApp\obj\Debug\net7.0\ref\ThreadApp.dll
