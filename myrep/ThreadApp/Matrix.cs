@@ -76,9 +76,5 @@ namespace ThreadApp
                 pmin = matrix[row,j] < pmin ? matrix[row,j] : pmin;
             return (pmin);
         }
-
-
-
-
     }
 }
