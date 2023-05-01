@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "LpcwLctVRVH36DofRtuGFMdE1KagceQcd+e8uRzpPoj1xtrvxPXtWZgbL+A5qeiVboYVIF9tHOQ+H7cHdvh5oQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Marat\\Documents\\GitHub\\itiscs\\MyIEnumerable\\LINQ.csproj",
+=======
+  "dgSpecHash": "L9BRxkMlGh+V4TEJmT/tIFuB0V8Ndv1fBOMmrsDh0dDYOODIW81Il6ZQmAz00jy1B71lrwisl2aXezQtryth3Q==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\gafar\\Source\\Repos\\fuz1kort\\itiscs\\MyIEnumerable\\YieldApp.csproj",
+>>>>>>> matrixthread work
   "expectedPackageFiles": [],
   "logs": []
 }

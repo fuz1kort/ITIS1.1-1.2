@@ -8,4 +8,16 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = QueueApp
+<<<<<<< HEAD
 build_property.ProjectDir = C:\Users\Marat\Documents\GitHub\itiscs\QueueApp\
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+build_property.ProjectDir = C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\QueueApp\
+=======
+build_property.ProjectDir = C:\Users\gafar\Source\Repos\fuz1kort\itiscs\QueueApp\
+>>>>>>> w
+=======
+build_property.ProjectDir = C:\Users\gafar\source\repos\fuz1kort\itiscs\QueueApp\
+>>>>>>> matrixthread work
+>>>>>>> 3df0eb799f6c16c0a925e0cc60fbc2b6b0c4e4c7

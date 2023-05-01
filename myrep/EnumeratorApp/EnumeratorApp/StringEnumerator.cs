@@ -5,8 +5,18 @@ namespace YieldApp;
 
 public class StringEnumerator : IEnumerable<string>
 {
+<<<<<<< HEAD
+<<<<<<< HEAD
     private string[] Words;
     //public WordsEnumerator WordsOrderedByLength;
+=======
+    private readonly string[] Words;
+    public WordsEnumerator WordsOrderedByLength;
+>>>>>>> w
+=======
+    private string[] Words;
+    //public WordsEnumerator WordsOrderedByLength;
+>>>>>>> matrixthread work
     private bool IfOrdered = false;
 
     public StringEnumerator(string words)
@@ -22,6 +32,10 @@ public class StringEnumerator : IEnumerable<string>
         }
     }
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> matrixthread work
     //public IEnumerable<string> GetOrderedByLength()
     //{
     //    if (!IfOrdered)
@@ -29,6 +43,23 @@ public class StringEnumerator : IEnumerable<string>
     //        WordsOrderedByLength = new WordsEnumerator(Words);
     //        IfOrdered = true;
     //    }
+<<<<<<< HEAD
+=======
+    public IEnumerable<string> GetOrderedByLength()
+    {
+        if (!IfOrdered)
+        {
+
+            WordsOrderedByLength = new WordsEnumerator(Words);
+            IfOrdered = true;
+        }
+
+        return WordsOrderedByLength;
+
+    }
+>>>>>>> s
+=======
+>>>>>>> matrixthread work
 
     //    return WordsOrderedByLength;
     //}

@@ -8,4 +8,12 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = MyVehicle
+<<<<<<< HEAD
 build_property.ProjectDir = C:\Users\Marat\Documents\GitHub\itiscs\MyVehicle\
+=======
+<<<<<<< HEAD
+build_property.ProjectDir = C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\MyVehicle\
+=======
+build_property.ProjectDir = C:\Users\gafar\source\repos\fuz1kort\itiscs\MyVehicle\
+>>>>>>> matrixthread work
+>>>>>>> 3df0eb799f6c16c0a925e0cc60fbc2b6b0c4e4c7
