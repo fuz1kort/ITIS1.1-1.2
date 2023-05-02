@@ -9,17 +9,15 @@ namespace ThreadApp
             Console.WriteLine("Введите размер матрицы");
             var m = new Matrix(Convert.ToInt32(Console.ReadLine()));
 
-            var t1 = Stopwatch.StartNew();
-            var x = m.PoslMins().Max();
-;            t1.Stop();
-            Console.WriteLine($"{x}\nпоследовательно - {t1.Elapsed}");
+            var timep = Stopwatch.StartNew();
+            var maxp = m.PoslMaxOfMins();
+            timep.Stop();
+            Console.WriteLine($"{maxp}\nпараллельно - {timep.Elapsed}");
 
-
-
-            var t11 = Stopwatch.StartNew();
-            var x2 = m.ParallelMins().Max();
-            t11.Stop();
-            Console.WriteLine($"{x2}\nпараллельно - {t11.Elapsed}");
+            var time = Stopwatch.StartNew();
+            var max = m.ParallelMaxofMins();
+            time.Stop();
+            Console.WriteLine($"{max}\nпараллельно - {time.Elapsed}");
         }
     }
 }
