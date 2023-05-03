@@ -1,8 +1,8 @@
 ﻿namespace Gauss
 {
-    public class GaussThreads
+    public static class GaussThreads
     {
-        public static void SolveGaussThread(double[][] matrix, double[] vector, int threadCount)
+        public static void SolveGaussThread(int[][] matrix, int[] vector, int threadCount)
         {
             int rowCount = matrix.Length;
             int columnCount = matrix[0].Length;
@@ -17,8 +17,8 @@
                     for (int j = startRow; j < endRow; j++)
                     {
 
-                        double[] row = matrix[j];
-                        double factor = row[j];
+                        int[] row = matrix[j];
+                        int factor = row[j];
                         row[j] = 1;
                         for (int k = j + 1; k < columnCount; k++)
                         {
@@ -27,8 +27,8 @@
                         vector[j] /= factor;
                         for (int k = j + 1; k < rowCount; k++)
                         {
-                            double[] nextRow = matrix[k];
-                            double nextFactor = nextRow[j];
+                            int[] nextRow = matrix[k];
+                            int nextFactor = nextRow[j];
                             nextRow[j] = 0;
                             for (int l = j + 1; l < columnCount; l++)
                             {
@@ -49,8 +49,8 @@
 
             for (int i = rowCount - 1; i >= 0; i--)
             {
-                double[] row = matrix[i];
-                double value = vector[i];
+                int[] row = matrix[i];
+                int value = vector[i];
                 for (int j = i + 1; j < rowCount; j++)
                 {
                     value -= row[j] * vector[j];

@@ -21,8 +21,8 @@ namespace ThreadApp
 
         public int ParallelMaxofMins()
         {
+            int[] res = new int[size];
             object locker = new();
-            var max = int.MinValue;
             Parallel.For(0, size, i =>
             {
                 int pmin = int.MaxValue;
@@ -30,12 +30,12 @@ namespace ThreadApp
                     pmin = matrix[i, j] < pmin ? matrix[i, j] : pmin;
 
                 lock (locker)
-                    {
-                        max = pmin>= max? pmin: max;
-                    }
+                {
+                    res[i] = pmin;
+                }
             });
-
-            return max;
+            
+            return res.Max();
         }
 
         public int PoslMaxOfMins()
