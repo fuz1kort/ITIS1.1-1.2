@@ -10,8 +10,9 @@ namespace Gauss
         static void Main()
         {
 
-            Console.WriteLine("Введите размер матрицы");
-            var size = Convert.ToInt32(Console.ReadLine());
+            //Console.WriteLine("Введите размер матрицы");
+            //var size = Convert.ToInt32(Console.ReadLine());
+            var size = 100;
 
             var mymatrix = GetMatrix(size);
 
@@ -24,40 +25,41 @@ namespace Gauss
             //    Console.WriteLine(v);
             //}
 
-            Console.WriteLine("----------------");
-
-            Console.WriteLine("Введите количество потоков");
-            var count = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("----------------");
-            
-
-            var t1 = Stopwatch.StartNew();
-            var res = GaussParallelFor.SolveGaussParallelFor(mymatrix, myvector, count);
-            t1.Stop();
-            foreach(var item in res) Console.Write($"{item.ToString("N2")} ");
-            Console.WriteLine($"Время - {t1.Elapsed}");
-
-            //PrintMatr(mymatrix);
-            Console.WriteLine("----------------");
+            for(int i = 1; i<=16; i *= 2)
+            {
+                Console.WriteLine($"Кол-во потоков - {i}");
+                Console.WriteLine("----------------");
+                var count = i;
+                //Console.WriteLine("Введите количество потоков");
+                //var count = Convert.ToInt32(Console.ReadLine());
+                //Console.WriteLine("----------------");
 
 
-            var t2 = Stopwatch.StartNew();
-            var res2 = GaussThreads.SolveGaussThread(mymatrix, myvector, count);
-            t2.Stop();
-            foreach (var item in res2) Console.Write($"{item.ToString("N2")} ");
-            Console.WriteLine($"Время - {t2.Elapsed}");
+                var t1 = Stopwatch.StartNew();
+                var res = GaussParallelFor.SolveGaussParallelFor(mymatrix, myvector, count);
+                t1.Stop();
+                Console.WriteLine($"Время - {t1.Elapsed}");
 
-            //PrintMatr(mymatrix);
-            Console.WriteLine("----------------");
+                //PrintMatr(mymatrix);
+                Console.WriteLine("----------------");
 
-            var t3 = Stopwatch.StartNew();
-            var res3 = GaussTask.SolveGaussTask(mymatrix, myvector, count);
-            t3.Stop();
-            foreach (var item in res3) Console.Write($"{item.ToString("N2")} ");
-            Console.WriteLine($"Время - {t3.Elapsed}");
 
-            //PrintMatr(mymatrix);
-            Console.WriteLine("----------------");
+                var t2 = Stopwatch.StartNew();
+                var res2 = GaussThreads.SolveGaussThread(mymatrix, myvector, count);
+                t2.Stop();
+                Console.WriteLine($"Время - {t2.Elapsed}");
+
+                //PrintMatr(mymatrix);
+                Console.WriteLine("----------------");
+
+                var t3 = Stopwatch.StartNew();
+                var res3 = GaussTask.SolveGaussTask(mymatrix, myvector, count);
+                t3.Stop();
+                Console.WriteLine($"Время - {t3.Elapsed}");
+
+                //PrintMatr(mymatrix);
+                Console.WriteLine("----------------");
+            }
 
 
 
