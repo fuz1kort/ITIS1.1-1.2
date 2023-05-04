@@ -2,50 +2,64 @@
 {
     public static class GaussParallelFor
     {
-        public static void SolveGaussParallelFor(int[][] matrix, int[] vector, int threadCount)
+        public static double[] SolveGaussParallelFor(double[][] matrix, double[] vector, int threadCount)
         {
             int rowCount = matrix.Length;
             int columnCount = matrix[0].Length;
+            double[] res = new double[rowCount];
 
-            Parallel.For(0, rowCount, new ParallelOptions { MaxDegreeOfParallelism = threadCount }, j =>
+            Parallel.For(0, rowCount - 1, new ParallelOptions { MaxDegreeOfParallelism = threadCount }, k =>
             {
-
-                int[] row = matrix[j];
-                int factor = row[j];
-                row[j] = 1;
-                for (int k = j + 1; k < columnCount; k++)
+                double max = Math.Abs(matrix[k][k]);
+                int maxIndex = k;
+                for (int i = k + 1; i < rowCount; i++) // Для каждой строки ниже текущей
                 {
-                    row[k] /= factor;
+                    if (Math.Abs(matrix[i][k]) > max) // Если модуль элемента в текущем столбце больше максимального
+                    {
+                        max = Math.Abs(matrix[i][k]); // Обновляем максимальный элемент
+                        maxIndex = i; // Обновляем его индекс
+                    }
                 }
 
-                vector[j] /= factor;
-
-
-                for (int k = j + 1; k < rowCount; k++)
+                if (maxIndex != k) // Если главный элемент не находится на главной диагонали
                 {
-                    int[] nextRow = matrix[k];
-                    int nextFactor = nextRow[j];
-                    nextRow[j] = 0;
-                    for (int l = j + 1; l < columnCount; l++)
+                    for (int j = k; j < columnCount; j++) // Для каждого элемента в строке
                     {
-                        nextRow[l] -= row[l] * nextFactor;
+                        double temp = matrix[k][j]; // Меняем местами элементы в текущей строке и строке с главным элементом
+                        matrix[k][j] = matrix[maxIndex][j];
+                        matrix[maxIndex][j] = temp;
                     }
-                    vector[k] -= vector[j] * nextFactor;
+
+                    double temp2 = vector[k]; // Меняем местами элементы в векторе свободных членов
+                    vector[k] = vector[maxIndex];
+                    vector[maxIndex] = temp2;
+                }
+
+
+                for (int i = k + 1; i < rowCount; i++)
+                {
+                    double factor = matrix[i][k] / matrix[k][k]; // Вычисляем коэффициент для вычитания строк
+                    for (int j = k; j < columnCount; j++) // Для каждого элемента в строке
+                    {
+                        matrix[i][j] -= matrix[k][j] * factor; // Вычитаем из элемента в текущей строке элемент в верхней строке, умноженный на коэффициент
+                    }
+
+                    vector[i] -= vector[k] * factor; 
                 }
             });
 
 
-            for (int i = rowCount - 1; i >= 0; i--)
+            for (int i = rowCount - 1; i >= 0; i--) // Для каждой строки матрицы, начиная с последней
             {
-                int[] row = matrix[i];
-                int value = vector[i];
-                for (int j = i + 1; j < rowCount; j++)
+                double sum = 0; // Сумма произведений элементов матрицы и вектора решения
+                for (int j = i + 1; j < rowCount; j++) // Для каждого элемента правее главной диагонали
                 {
-                    value -= row[j] * vector[j];
+                    sum += matrix[i][j] * res[j]; // Добавляем к сумме произведение элемента матрицы и соответствующего элемента вектора решения
                 }
-
-                vector[i] = value / row[i];
+                res[i] = (vector[i] - sum) / matrix[i][i]; // Вычисляем значение неизвестной по формуле: x_i = (b_i - sum) / a_ii
             }
+
+            return res;
         }
     }
 }
