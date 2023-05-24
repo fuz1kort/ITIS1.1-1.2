@@ -1,6 +1,8 @@
-﻿namespace Lab
+﻿using System.Text.Json;
+
+namespace Lab
 {
-    internal class Program
+    public class Program
     {
         public static void Main()
         {
@@ -21,7 +23,7 @@
                 Console.WriteLine("5. Добавить контракт");
                 Console.WriteLine("6. Просмотреть заключенные контракты");
                 Console.WriteLine("7. Посчитать зарплату сотрудику");
-                Console.WriteLine("8. Выйти");
+                Console.WriteLine("8. Сохранить и выйти");
 
                 var enter = Convert.ToInt32(Console.ReadLine());
                 Console.Clear();
@@ -74,7 +76,14 @@
                             }
 
                             company.AddEmployee(employee);
-                            Console.WriteLine("Добавить еще одного сотрудника?(Да, Нет)");
+                            Console.Clear();
+                            //SaveEmp(employee);
+                            string json = JsonSerializer.Serialize(employee, typeof(Employee));
+                            StreamWriter file = File.CreateText("Employees.json");
+                            file.WriteLine(json);
+                            Console.WriteLine("Данные были сохранены");
+
+                            Console.WriteLine("\nДобавить еще одного сотрудника?(Да, Нет)");
                             if (Console.ReadLine() == "Да")
                             {
                                 Console.Clear();
@@ -185,6 +194,9 @@
                     case 8: 
                         { 
                             Console.Clear();
+
+
+
                             exit = true;
                             break; 
                         }
@@ -217,6 +229,36 @@
                 foreach (var contract in company.GetAllContracts())
                     Console.WriteLine(contract);
             }
+
+            void SaveEmp(Employee emp)
+            {
+                string json = JsonSerializer.Serialize(emp);
+                File.WriteAllText(@"C:\Файлы компании\employees.json", json);
+                Console.WriteLine("Данные были сохранены");
+            }
+
+            //async void Read(Timeboard tb)
+            //{
+            //    using (FileStream fs = new("MyCompany.json", FileMode.OpenOrCreate))
+            //    {
+            //        Timeboard? timeboard = await JsonSerializer.DeserializeAsync<Timeboard>(fs);
+            //        var timesheet = timeboard.GetTimesheet();
+            //        foreach (KeyValuePair<DateOnly, SortedDictionary<int, int>> day in timesheet)
+            //        {
+            //            foreach (KeyValuePair<int, int> code_hours in day.Value)
+            //            {
+            //                var employee = company.GetEmploymentByCode(code_hours);
+            //                if (day.Key >= employee.GetEmploymentDate())
+            //                    Console.WriteLine($"Дата: {day.Key} - {day.Key.DayOfWeek}," +
+            //                                      $"\nРаботник - {employee.GetFullName()}," +
+            //                                      $"\nВремя работы в часах: {code_hours.Value}");
+            //            }
+
+            //            Console.WriteLine("***********************************");
+            //        }
+
+            //    }
+            //}
         }
     }
 }

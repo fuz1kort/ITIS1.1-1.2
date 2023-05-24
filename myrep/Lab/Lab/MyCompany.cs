@@ -1,5 +1,6 @@
 ﻿namespace Lab
 {
+    [Serializable]
     public class MyCompany
     {
         private static List<Employee> Employees { get; set; } = new List<Employee>();

@@ -2,7 +2,7 @@
 {
     public class Employee
     {
-        private int Number { get; set; }
+        public int Number { get; set; }
         private string FullName { get; set; } = string.Empty;
         private int Rating { get; set; }
         private DateOnly EmploymentDate { get; set; }

@@ -10,9 +10,8 @@ namespace Gauss
         static void Main()
         {
 
-            //Console.WriteLine("Введите размер матрицы");
-            //var size = Convert.ToInt32(Console.ReadLine());
-            var size = 100;
+            Console.WriteLine("Введите размер матрицы");
+            var size = Convert.ToInt32(Console.ReadLine());
 
             var mymatrix = GetMatrix(size);
 
@@ -38,7 +37,7 @@ namespace Gauss
                 var t1 = Stopwatch.StartNew();
                 var res = GaussParallelFor.SolveGaussParallelFor(mymatrix, myvector, count);
                 t1.Stop();
-                Console.WriteLine($"Время - {t1.Elapsed}");
+                Console.WriteLine($"Парал Время - {t1.Elapsed}");
 
                 //PrintMatr(mymatrix);
                 Console.WriteLine("----------------");
@@ -47,7 +46,7 @@ namespace Gauss
                 var t2 = Stopwatch.StartNew();
                 var res2 = GaussThreads.SolveGaussThread(mymatrix, myvector, count);
                 t2.Stop();
-                Console.WriteLine($"Время - {t2.Elapsed}");
+                Console.WriteLine($"Треды Время - {t2.Elapsed}");
 
                 //PrintMatr(mymatrix);
                 Console.WriteLine("----------------");
@@ -55,7 +54,7 @@ namespace Gauss
                 var t3 = Stopwatch.StartNew();
                 var res3 = GaussTask.SolveGaussTask(mymatrix, myvector, count);
                 t3.Stop();
-                Console.WriteLine($"Время - {t3.Elapsed}");
+                Console.WriteLine($"Таски Время - {t3.Elapsed}");
 
                 //PrintMatr(mymatrix);
                 Console.WriteLine("----------------");
