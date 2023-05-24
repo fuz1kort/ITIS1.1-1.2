@@ -1,39 +1,15 @@
-﻿using Newtonsoft.Json;
-using System.Text.Json;
-
-namespace Lab
+﻿namespace Lab
 {
     public class Program
     {
         public static void Main()
         {
-            string com = File.ReadAllText(@"C:\Users\Marat\Documents\Моя Компания\Компания.json");
-            MyCompany company;
-            if (string.IsNullOrEmpty(com))
-            {
-                company = new();
-            }
-
-            else
-            {
-                company = System.Text.Json.JsonSerializer.Deserialize<MyCompany>(com);
-            }
-
-            string tb = File.ReadAllText(@"C:\Users\Marat\Documents\Моя Компания\Таблица.json");
-            Timeboard timeboard;
-            if (string.IsNullOrEmpty(tb))
-            {
-                timeboard = new();
-            }
-
-            else
-            {
-                timeboard = System.Text.Json.JsonSerializer.Deserialize<Timeboard>(tb);
-            }
-
-            //MyCompany company = new();
-            //company.Init();
-            //Timeboard timeboard = new();
+            var xmlfile = new XMLFile("MyCompany.xml", "MyTimeboard.xml");
+            var jsonfile = new JsonFile("Компания.json", "Таблица.json");
+            MyCompany company = jsonfile.ReadComp();
+            Timeboard timeboard = jsonfile.ReadTimeboard();
+            //MyCompany company = xmlfile.ReadComp();
+            //Timeboard timeboard = new Timeboard();
             bool exit = false;
 
             while (!exit)
@@ -222,8 +198,10 @@ namespace Lab
                         { 
                             Console.Clear();
 
-                            SaveTimeboard(timeboard);
-                            SaveComp(company);
+                            jsonfile.SaveComp(company);
+                            jsonfile.SaveTimeboard(timeboard);
+                            //xmlfile.SaveComp(company);
+                            //Console.WriteLine(xmlfile.ReadComp());
                             Console.WriteLine("Данные были сохранены");
                             exit = true;
                             break; 
@@ -258,9 +236,6 @@ namespace Lab
                     Console.WriteLine(contract);
             }
 
-            void SaveComp(MyCompany с) => File.WriteAllText(@"C:\Users\Marat\Documents\Моя Компания\Компания.json", JsonConvert.SerializeObject(с));
-
-            void SaveTimeboard(Timeboard t) => File.WriteAllText(@"C:\Users\Marat\Documents\Моя Компания\Таблица.json", JsonConvert.SerializeObject(t));
         }
     }
 }

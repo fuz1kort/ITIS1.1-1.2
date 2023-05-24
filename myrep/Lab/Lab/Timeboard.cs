@@ -1,4 +1,7 @@
-﻿namespace Lab
+﻿using System.Xml;
+using System.Xml.Serialization;
+
+namespace Lab
 {
     [Serializable]
     public class Timeboard
