@@ -43,3 +43,5 @@ C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\myrep\Lab\Lab\bin\Debug
 C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\myrep\Lab\Lab\bin\Debug\net7.0\Lab.pdb
 C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\myrep\Lab\Lab\obj\Debug\net7.0\Lab.genruntimeconfig.cache
 C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\myrep\Lab\Lab\obj\Debug\net7.0\ref\Lab.dll
+C:\Users\Marat\Documents\GitHub\itiscs\myrep\Lab\Lab\bin\Debug\net7.0\Newtonsoft.Json.dll
+C:\Users\Marat\Documents\GitHub\itiscs\myrep\Lab\Lab\obj\Debug\net7.0\Lab.csproj.CopyComplete

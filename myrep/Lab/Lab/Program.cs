@@ -1,4 +1,5 @@
-﻿using System.Text.Json;
+﻿using Newtonsoft.Json;
+using System.Text.Json;
 
 namespace Lab
 {
@@ -6,9 +7,33 @@ namespace Lab
     {
         public static void Main()
         {
-            MyCompany company = new();
-            company.Init();
-            Timeboard timeboard = new();
+            string com = File.ReadAllText(@"C:\Users\Marat\Documents\Моя Компания\Компания.json");
+            MyCompany company;
+            if (string.IsNullOrEmpty(com))
+            {
+                company = new();
+            }
+
+            else
+            {
+                company = System.Text.Json.JsonSerializer.Deserialize<MyCompany>(com);
+            }
+
+            string tb = File.ReadAllText(@"C:\Users\Marat\Documents\Моя Компания\Таблица.json");
+            Timeboard timeboard;
+            if (string.IsNullOrEmpty(tb))
+            {
+                timeboard = new();
+            }
+
+            else
+            {
+                timeboard = System.Text.Json.JsonSerializer.Deserialize<Timeboard>(tb);
+            }
+
+            //MyCompany company = new();
+            //company.Init();
+            //Timeboard timeboard = new();
             bool exit = false;
 
             while (!exit)
@@ -25,7 +50,14 @@ namespace Lab
                 Console.WriteLine("7. Посчитать зарплату сотрудику");
                 Console.WriteLine("8. Сохранить и выйти");
 
-                var enter = Convert.ToInt32(Console.ReadLine());
+                var str = Console.ReadLine();
+                if (string.IsNullOrEmpty(str))
+                {
+                    Console.Clear();
+                    continue;
+                }
+                
+                int enter = Convert.ToInt32(str);
                 Console.Clear();
                 int countE = 0;
                 int countC = 0;
@@ -77,11 +109,6 @@ namespace Lab
 
                             company.AddEmployee(employee);
                             Console.Clear();
-                            //SaveEmp(employee);
-                            string json = JsonSerializer.Serialize(employee, typeof(Employee));
-                            StreamWriter file = File.CreateText("Employees.json");
-                            file.WriteLine(json);
-                            Console.WriteLine("Данные были сохранены");
 
                             Console.WriteLine("\nДобавить еще одного сотрудника?(Да, Нет)");
                             if (Console.ReadLine() == "Да")
@@ -195,8 +222,9 @@ namespace Lab
                         { 
                             Console.Clear();
 
-
-
+                            SaveTimeboard(timeboard);
+                            SaveComp(company);
+                            Console.WriteLine("Данные были сохранены");
                             exit = true;
                             break; 
                         }
@@ -230,35 +258,9 @@ namespace Lab
                     Console.WriteLine(contract);
             }
 
-            void SaveEmp(Employee emp)
-            {
-                string json = JsonSerializer.Serialize(emp);
-                File.WriteAllText(@"C:\Файлы компании\employees.json", json);
-                Console.WriteLine("Данные были сохранены");
-            }
+            void SaveComp(MyCompany с) => File.WriteAllText(@"C:\Users\Marat\Documents\Моя Компания\Компания.json", JsonConvert.SerializeObject(с));
 
-            //async void Read(Timeboard tb)
-            //{
-            //    using (FileStream fs = new("MyCompany.json", FileMode.OpenOrCreate))
-            //    {
-            //        Timeboard? timeboard = await JsonSerializer.DeserializeAsync<Timeboard>(fs);
-            //        var timesheet = timeboard.GetTimesheet();
-            //        foreach (KeyValuePair<DateOnly, SortedDictionary<int, int>> day in timesheet)
-            //        {
-            //            foreach (KeyValuePair<int, int> code_hours in day.Value)
-            //            {
-            //                var employee = company.GetEmploymentByCode(code_hours);
-            //                if (day.Key >= employee.GetEmploymentDate())
-            //                    Console.WriteLine($"Дата: {day.Key} - {day.Key.DayOfWeek}," +
-            //                                      $"\nРаботник - {employee.GetFullName()}," +
-            //                                      $"\nВремя работы в часах: {code_hours.Value}");
-            //            }
-
-            //            Console.WriteLine("***********************************");
-            //        }
-
-            //    }
-            //}
+            void SaveTimeboard(Timeboard t) => File.WriteAllText(@"C:\Users\Marat\Documents\Моя Компания\Таблица.json", JsonConvert.SerializeObject(t));
         }
     }
 }

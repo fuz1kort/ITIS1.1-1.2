@@ -3,19 +3,22 @@
     [Serializable]
     public class MyCompany
     {
-        private static List<Employee> Employees { get; set; } = new List<Employee>();
-        private static List<Position> Positions { get; set; } = new List<Position>();
-        private static List<Contract> Contracts { get; set; } = new List<Contract>();
+        public List<Employee> Employees { get; set; } = new List<Employee>();
+        public List<Position> Positions { get; set; } = new List<Position>();
+        public List<Contract> Contracts { get; set; } = new List<Contract>();
 
-        public void Init()
-        {
-            Positions.Add(new Position(0, "Электрик", 90));
-            Positions.Add(new Position(1, "Плотник", 110));
-            Positions.Add(new Position(2, "Разработчик", 140));
-            Positions.Add(new Position(3, "Столяр", 120));
-            Positions.Add(new Position(4, "Маляр", 80));
-            Positions.Add(new Position(5, "Каменщик", 130));
-        }
+        public MyCompany() { }
+
+        //public void Init()
+        //{
+        //    Positions.Add(new Position(0, "Электрик", 90));
+        //    Positions.Add(new Position(1, "Плотник", 110));
+        //    Positions.Add(new Position(2, "Разработчик", 140));
+        //    Positions.Add(new Position(3, "Столяр", 120));
+        //    Positions.Add(new Position(4, "Маляр", 80));
+        //    Positions.Add(new Position(5, "Каменщик", 130));
+        //}
+
         public List<Position> GetAllPositions() => Positions;
         public List<Contract> GetAllContracts()
         {

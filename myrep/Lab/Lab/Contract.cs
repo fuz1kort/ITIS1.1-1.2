@@ -2,11 +2,13 @@
 {
     public class Contract
     {
-        private int Number { get; set; }
-        private DateOnly Date { get; set; }
-        private string Client { get; set; } = string.Empty;
-        private double Amount { get; set; }
-        private string Comment { get; set; } = string.Empty;
+        public int Number { get; set; }
+        public DateOnly Date { get; set; }
+        public string Client { get; set; } = string.Empty;
+        public double Amount { get; set; }
+        public string Comment { get; set; } = string.Empty;
+
+        public Contract() { }
 
         public Contract(int number, DateOnly date, string client, double amount, string comment)
         {

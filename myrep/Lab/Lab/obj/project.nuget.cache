@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "zJO9xpMLBrhryXreN5B8Amron0G+hRXEAwjTHIdUKqS/vKdT1yKp1xyEjpGf0Jij+9dg41U280dk2mz8dUGj+g==",
+  "dgSpecHash": "JMXAr+isQq11LxfzLnU/H0YceBvffyGFeSDnbvhSmEm0B4Cb/LIRSxW6lSzDGNxcYQYxX7CF6Wq22A4XaJTCsA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\gafar\\OneDrive\\Документы\\GitHub\\itiscs\\myrep\\Lab\\Lab\\Lab.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\Marat\\Documents\\GitHub\\itiscs\\myrep\\Lab\\Lab\\Lab.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Marat\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

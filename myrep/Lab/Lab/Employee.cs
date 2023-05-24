@@ -1,15 +1,16 @@
 ﻿namespace Lab
 {
+    [Serializable]
     public class Employee
     {
         public int Number { get; set; }
-        private string FullName { get; set; } = string.Empty;
-        private int Rating { get; set; }
-        private DateOnly EmploymentDate { get; set; }
-        private bool IsMemberOfLaborUnion { get; set; }
-        private Position Position { get; set; } = new();
-        private double HourlyRate { get; set; }
-        private int NumberOfScheme { get; set; }
+        public string FullName { get; set; } = string.Empty;
+        public int Rating { get; set; }
+        public DateOnly EmploymentDate { get; set; }
+        public bool IsMemberOfLaborUnion { get; set; }
+        public Position Position { get; set; } = new();
+        public double HourlyRate { get; set; }
+        public int NumberOfScheme { get; set; }
         public Employee() { }
         public Employee(int number, string fullName, int rating, DateOnly employmentDate, bool isMemberOfLaborUnion, int numberOfScheme)
         {
