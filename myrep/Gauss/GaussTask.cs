@@ -19,35 +19,35 @@
                     {
                         double max = Math.Abs(matrix[k][k]);
                         int maxIndex = k;
-                        for (int i = k + 1; i < rowCount; i++) // Для каждой строки ниже текущей
+                        for (int i = k + 1; i < rowCount; i++)
                         {
-                            if (Math.Abs(matrix[i][k]) > max) // Если модуль элемента в текущем столбце больше максимального
+                            if (Math.Abs(matrix[i][k]) > max)
                             {
-                                max = Math.Abs(matrix[i][k]); // Обновляем максимальный элемент
-                                maxIndex = i; // Обновляем его индекс
+                                max = Math.Abs(matrix[i][k]); 
+                                maxIndex = i;
                             }
                         }
 
-                        if (maxIndex != k) // Если главный элемент не находится на главной диагонали
+                        if (maxIndex != k) 
                         {
-                            for (int j = k; j < columnCount; j++) // Для каждого элемента в строке
+                            for (int j = k; j < columnCount; j++) 
                             {
-                                double temp = matrix[k][j]; // Меняем местами элементы в текущей строке и строке с главным элементом
+                                double temp = matrix[k][j]; 
                                 matrix[k][j] = matrix[maxIndex][j];
                                 matrix[maxIndex][j] = temp;
                             }
 
-                            double temp2 = vector[k]; // Меняем местами элементы в векторе свободных членов
+                            double temp2 = vector[k];
                             vector[k] = vector[maxIndex];
                             vector[maxIndex] = temp2;
                         }
 
                         for (int i = k + 1; i < rowCount; i++)
                         {
-                            double factor = matrix[i][k] / matrix[k][k]; // Вычисляем коэффициент для вычитания строк
-                            for (int j = k; j < columnCount; j++) // Для каждого элемента в строке
+                            double factor = matrix[i][k] / matrix[k][k];
+                            for (int j = k; j < columnCount; j++)
                             {
-                                matrix[i][j] -= matrix[k][j] * factor; // Вычитаем из элемента в текущей строке элемент в верхней строке, умноженный на коэффициент
+                                matrix[i][j] -= matrix[k][j] * factor;
                             }
 
                             vector[i] -= vector[k] * factor;
@@ -59,14 +59,14 @@
             Task.WaitAll(tasks);
 
 
-            for (int i = rowCount - 1; i >= 0; i--) // Для каждой строки матрицы, начиная с последней
+            for (int i = rowCount - 1; i >= 0; i--) 
             {
-                double sum = 0; // Сумма произведений элементов матрицы и вектора решения
-                for (int j = i + 1; j < rowCount; j++) // Для каждого элемента правее главной диагонали
+                double sum = 0;
+                for (int j = i + 1; j < rowCount; j++)
                 {
-                    sum += matrix[i][j] * res[j]; // Добавляем к сумме произведение элемента матрицы и соответствующего элемента вектора решения
+                    sum += matrix[i][j] * res[j];
                 }
-                res[i] = (vector[i] - sum) / matrix[i][i]; // Вычисляем значение неизвестной по формуле: x_i = (b_i - sum) / a_ii
+                res[i] = (vector[i] - sum) / matrix[i][i]; 
             }
 
             return res;

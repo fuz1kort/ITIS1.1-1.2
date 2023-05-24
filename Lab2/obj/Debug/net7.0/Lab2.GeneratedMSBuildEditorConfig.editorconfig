@@ -8,8 +8,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Lab2
-<<<<<<< HEAD
-build_property.ProjectDir = C:\Users\Marat\Documents\GitHub\itiscs\Lab2\
-=======
-build_property.ProjectDir = C:\Users\gafar\source\repos\fuz1kort\itiscs\Lab2\
->>>>>>> 3df0eb799f6c16c0a925e0cc60fbc2b6b0c4e4c7
+build_property.ProjectDir = C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\Lab2\
