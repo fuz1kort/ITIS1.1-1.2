@@ -1,23 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
 <MyCompany xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Employees>
-    <Employee>
+  <Employees />
+  <Positions>
+    <Position>
+      <Code>0</Code>
+      <Name>Электрик</Name>
+      <BaseHourlyRate>90</BaseHourlyRate>
+    </Position>
+    <Position>
+      <Code>1</Code>
+      <Name>Плотник</Name>
+      <BaseHourlyRate>110</BaseHourlyRate>
+    </Position>
+    <Position>
+      <Code>2</Code>
+      <Name>Разработчик</Name>
+      <BaseHourlyRate>140</BaseHourlyRate>
+    </Position>
+    <Position>
+      <Code>3</Code>
+      <Name>Столяр</Name>
+      <BaseHourlyRate>120</BaseHourlyRate>
+    </Position>
+    <Position>
+      <Code>4</Code>
+      <Name>Маляр</Name>
+      <BaseHourlyRate>80</BaseHourlyRate>
+    </Position>
+    <Position>
+      <Code>5</Code>
+      <Name>Каменщик</Name>
+      <BaseHourlyRate>130</BaseHourlyRate>
+    </Position>
+  </Positions>
+  <Contracts>
+    <Contract>
       <Number>1</Number>
-      <FullName>Гена</FullName>
-      <Rating>2</Rating>
-      <EmploymentDate />
-      <IsMemberOfLaborUnion>true</IsMemberOfLaborUnion>
-      <Position>
-        <Code>3</Code>
-        <Name>Столяр</Name>
-        <BaseHourlyRate>120</BaseHourlyRate>
+      <Date />
+      <Client>Люда</Client>
+      <Amount>2000</Amount>
+      <Comment>Кайф</Comment>
+    </Contract>
+  </Contracts>
+</MyCompany>ode>2</Code>
+        <Name>Разработчик</Name>
+        <BaseHourlyRate>140</BaseHourlyRate>
       </Position>
-      <HourlyRate>132</HourlyRate>
+      <HourlyRate>168</HourlyRate>
       <NumberOfScheme>4</NumberOfScheme>
     </Employee>
     <Employee>
       <Number>1</Number>
-      <FullName>гена</FullName>
+      <FullName>Лара</FullName>
+      <Rating>1</Rating>
+      <EmploymentDate />
+      <IsMemberOfLaborUnion>true</IsMemberOfLaborUnion>
+      <Position>
+        <Code>4</Code>
+        <Name>Маляр</Name>
+        <BaseHourlyRate>80</BaseHourlyRate>
+      </Position>
+      <HourlyRate>80</HourlyRate>
+      <NumberOfScheme>3</NumberOfScheme>
+    </Employee>
+    <Employee>
+      <Number>1</Number>
+      <FullName>Миша</FullName>
       <Rating>3</Rating>
       <EmploymentDate />
       <IsMemberOfLaborUnion>true</IsMemberOfLaborUnion>
@@ -28,20 +76,6 @@
       </Position>
       <HourlyRate>96</HourlyRate>
       <NumberOfScheme>3</NumberOfScheme>
-    </Employee>
-    <Employee>
-      <Number>1</Number>
-      <FullName>Kf</FullName>
-      <Rating>3</Rating>
-      <EmploymentDate />
-      <IsMemberOfLaborUnion>true</IsMemberOfLaborUnion>
-      <Position>
-        <Code>2</Code>
-        <Name>Разработчик</Name>
-        <BaseHourlyRate>140</BaseHourlyRate>
-      </Position>
-      <HourlyRate>168</HourlyRate>
-      <NumberOfScheme>4</NumberOfScheme>
     </Employee>
   </Employees>
   <Positions>
@@ -135,6 +169,44 @@
       <Name>Каменщик</Name>
       <BaseHourlyRate>130</BaseHourlyRate>
     </Position>
+    <Position>
+      <Code>0</Code>
+      <Name>Электрик</Name>
+      <BaseHourlyRate>90</BaseHourlyRate>
+    </Position>
+    <Position>
+      <Code>1</Code>
+      <Name>Плотник</Name>
+      <BaseHourlyRate>110</BaseHourlyRate>
+    </Position>
+    <Position>
+      <Code>2</Code>
+      <Name>Разработчик</Name>
+      <BaseHourlyRate>140</BaseHourlyRate>
+    </Position>
+    <Position>
+      <Code>3</Code>
+      <Name>Столяр</Name>
+      <BaseHourlyRate>120</BaseHourlyRate>
+    </Position>
+    <Position>
+      <Code>4</Code>
+      <Name>Маляр</Name>
+      <BaseHourlyRate>80</BaseHourlyRate>
+    </Position>
+    <Position>
+      <Code>5</Code>
+      <Name>Каменщик</Name>
+      <BaseHourlyRate>130</BaseHourlyRate>
+    </Position>
   </Positions>
-  <Contracts />
+  <Contracts>
+    <Contract>
+      <Number>1</Number>
+      <Date />
+      <Client>Дима</Client>
+      <Amount>2000</Amount>
+      <Comment>Кайф</Comment>
+    </Contract>
+  </Contracts>
 </MyCompany>

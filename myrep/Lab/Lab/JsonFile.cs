@@ -7,6 +7,9 @@ namespace Lab
 {
     public class JsonFile: ISavingApp
     {
+        public delegate void JsonFileHandler(string message);
+
+        public event JsonFileHandler? Notify;
         public string FileCompany { get; set; }
         public string FileTimeboard { get; set; }
 
@@ -21,10 +24,17 @@ namespace Lab
             FileCompany = fileWayComp;
             FileTimeboard = fileWayTime;
         }
-        public void SaveComp(MyCompany с) => File.WriteAllText(FileCompany, JsonSerializer.Serialize(с, _options));
+        public void SaveComp(MyCompany с)
+        {
+            File.WriteAllText(FileCompany, JsonSerializer.Serialize(с, _options));
+            Notify?.Invoke("Данные о компании были успешно сохранены");
+        }
 
-        public void SaveTimeboard(Timeboard t) => File.WriteAllText(FileTimeboard, JsonSerializer.Serialize(t, _options));
-
+        public void SaveTimeboard(Timeboard t)
+        {
+            File.WriteAllText(FileTimeboard, JsonSerializer.Serialize(t, _options));
+            Notify?.Invoke("Данные о таблице были успешно сохранены");
+        }
 
         public MyCompany ReadComp()
         {

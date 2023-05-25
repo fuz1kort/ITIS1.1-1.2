@@ -6,6 +6,10 @@ namespace Lab
     [Serializable]
     public class Timeboard
     {
+        public delegate void TimeboardHandler(string message);
+
+        public event TimeboardHandler? Notify;
+
         [NonSerialized]
         public DateOnly StartDate;
 
@@ -22,6 +26,7 @@ namespace Lab
         {
             DateOnly date = new(year, month, day);
             Timesheet.Add(date, new SortedDictionary<int, int> { [number] = hours });
+            Notify?.Invoke($"Был добавлен новый рабочий день");
         }
         public SortedDictionary<DateOnly, SortedDictionary<int, int>> GetTimesheet() => Timesheet;
         public DateOnly GetStartDate() => StartDate;

@@ -3,6 +3,9 @@
     [Serializable]
     public class MyCompany
     {
+        public delegate void MyCompanyHandler(string message);
+
+        public event MyCompanyHandler? Notify;
         public List<Employee> Employees { get; set; } = new List<Employee>();
         public List<Position> Positions { get; set; } = new List<Position>();
         public List<Contract> Contracts { get; set; } = new List<Contract>();
@@ -57,7 +60,16 @@
             return 0;
         }
 
-        public void AddEmployee(Employee employee) => Employees.Add(employee);
-        public void AddContract(Contract contract) => Contracts.Add(contract);
+        public void AddEmployee(Employee employee)
+        {
+            Employees.Add(employee);
+            Notify?.Invoke($"Был добавлен новый сотрудник:\n{employee.FullName}");
+        }
+
+        public void AddContract(Contract contract)
+        {
+            Contracts.Add(contract);
+            Notify?.Invoke($"Был добавлен новый контракт\n№{contract.Number}");
+        }
     }
 }
