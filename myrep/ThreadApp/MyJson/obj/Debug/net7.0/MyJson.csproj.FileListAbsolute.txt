@@ -1,0 +1,15 @@
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\myrep\ThreadApp\MyJson\bin\Debug\net7.0\MyJson.exe
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\myrep\ThreadApp\MyJson\bin\Debug\net7.0\MyJson.deps.json
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\myrep\ThreadApp\MyJson\bin\Debug\net7.0\MyJson.runtimeconfig.json
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\myrep\ThreadApp\MyJson\bin\Debug\net7.0\MyJson.dll
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\myrep\ThreadApp\MyJson\bin\Debug\net7.0\MyJson.pdb
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\myrep\ThreadApp\MyJson\obj\Debug\net7.0\MyJson.csproj.AssemblyReference.cache
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\myrep\ThreadApp\MyJson\obj\Debug\net7.0\MyJson.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\myrep\ThreadApp\MyJson\obj\Debug\net7.0\MyJson.AssemblyInfoInputs.cache
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\myrep\ThreadApp\MyJson\obj\Debug\net7.0\MyJson.AssemblyInfo.cs
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\myrep\ThreadApp\MyJson\obj\Debug\net7.0\MyJson.csproj.CoreCompileInputs.cache
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\myrep\ThreadApp\MyJson\obj\Debug\net7.0\MyJson.dll
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\myrep\ThreadApp\MyJson\obj\Debug\net7.0\refint\MyJson.dll
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\myrep\ThreadApp\MyJson\obj\Debug\net7.0\MyJson.pdb
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\myrep\ThreadApp\MyJson\obj\Debug\net7.0\MyJson.genruntimeconfig.cache
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\myrep\ThreadApp\MyJson\obj\Debug\net7.0\ref\MyJson.dll
