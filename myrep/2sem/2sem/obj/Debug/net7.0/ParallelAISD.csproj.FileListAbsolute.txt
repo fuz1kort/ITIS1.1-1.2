@@ -1,0 +1,15 @@
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\myrep\2sem\2sem\bin\Debug\net7.0\ParallelAISD.exe
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\myrep\2sem\2sem\bin\Debug\net7.0\ParallelAISD.deps.json
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\myrep\2sem\2sem\bin\Debug\net7.0\ParallelAISD.runtimeconfig.json
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\myrep\2sem\2sem\bin\Debug\net7.0\ParallelAISD.dll
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\myrep\2sem\2sem\bin\Debug\net7.0\ParallelAISD.pdb
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\myrep\2sem\2sem\obj\Debug\net7.0\ParallelAISD.csproj.AssemblyReference.cache
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\myrep\2sem\2sem\obj\Debug\net7.0\ParallelAISD.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\myrep\2sem\2sem\obj\Debug\net7.0\ParallelAISD.AssemblyInfoInputs.cache
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\myrep\2sem\2sem\obj\Debug\net7.0\ParallelAISD.AssemblyInfo.cs
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\myrep\2sem\2sem\obj\Debug\net7.0\ParallelAISD.csproj.CoreCompileInputs.cache
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\myrep\2sem\2sem\obj\Debug\net7.0\ParallelAISD.dll
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\myrep\2sem\2sem\obj\Debug\net7.0\refint\ParallelAISD.dll
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\myrep\2sem\2sem\obj\Debug\net7.0\ParallelAISD.pdb
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\myrep\2sem\2sem\obj\Debug\net7.0\ParallelAISD.genruntimeconfig.cache
+C:\Users\gafar\OneDrive\Документы\GitHub\itiscs\myrep\2sem\2sem\obj\Debug\net7.0\ref\ParallelAISD.dll
