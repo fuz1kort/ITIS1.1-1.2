@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\gafar\\OneDrive\\Документы\\GitHub\\itiscs\\myrep\\ThreadApp\\MyJson\\MyJson.csproj": {}
+    "C:\\Users\\Marat\\Documents\\GitHub\\itiscs\\myrep\\ThreadApp\\MyJson\\MyJson.csproj": {}
   },
   "projects": {
-    "C:\\Users\\gafar\\OneDrive\\Документы\\GitHub\\itiscs\\myrep\\ThreadApp\\MyJson\\MyJson.csproj": {
+    "C:\\Users\\Marat\\Documents\\GitHub\\itiscs\\myrep\\ThreadApp\\MyJson\\MyJson.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\gafar\\OneDrive\\Документы\\GitHub\\itiscs\\myrep\\ThreadApp\\MyJson\\MyJson.csproj",
+        "projectUniqueName": "C:\\Users\\Marat\\Documents\\GitHub\\itiscs\\myrep\\ThreadApp\\MyJson\\MyJson.csproj",
         "projectName": "MyJson",
-        "projectPath": "C:\\Users\\gafar\\OneDrive\\Документы\\GitHub\\itiscs\\myrep\\ThreadApp\\MyJson\\MyJson.csproj",
-        "packagesPath": "C:\\Users\\gafar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\gafar\\OneDrive\\Документы\\GitHub\\itiscs\\myrep\\ThreadApp\\MyJson\\obj\\",
+        "projectPath": "C:\\Users\\Marat\\Documents\\GitHub\\itiscs\\myrep\\ThreadApp\\MyJson\\MyJson.csproj",
+        "packagesPath": "C:\\Users\\Marat\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Marat\\Documents\\GitHub\\itiscs\\myrep\\ThreadApp\\MyJson\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\gafar\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Marat\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

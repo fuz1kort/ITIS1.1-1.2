@@ -15,9 +15,11 @@
             var json = MyJson.SerializeObject(citroen);
             var task = Task.Run(() => MyJson.WriteJsonInFile(json, path));
             await task;
+            Console.WriteLine(json);
 
             var obj = MyJson.DeserializeObject<Car>(path);
             Console.WriteLine($"Name: {obj.Name}\nMaxSpeed: {obj.MaxSpeed}\nColour: {obj.Colour}");
+
         }
     }
 

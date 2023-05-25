@@ -61,7 +61,7 @@ namespace MyJson
         {
             var json = File.ReadAllText(path);
             var obj = new T();
-            var properties = json.Trim(new Char[] {'{', '}'}).Split(',');
+            var properties = json.Trim().Trim('{', '}').Split(',');
 
             foreach (var property in properties)
             {
@@ -80,7 +80,7 @@ namespace MyJson
 
                         for (int i = 0; i < values.Length; i++)
                         {
-                            var target = values[i].Trim(new char[] { '}', ']', '"' });
+                            var target = values[i].Trim('}', ']', '"');
                             var val = Convert.ChangeType(target, elementType);
                             array.SetValue(val, i);
                         }
