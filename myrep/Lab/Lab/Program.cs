@@ -205,8 +205,8 @@
 
                             jsonfile.SaveComp(company);
                             jsonfile.SaveTimeboard(timeboard);
-                            xmlfile.SaveComp(company);
-                            xmlfile.SaveTimeboard(timeboard);
+                            //xmlfile.SaveComp(company);
+                            //xmlfile.SaveTimeboard(timeboard);
                             //Console.WriteLine(xmlfile.ReadComp());
                             exit = true;
                             break; 
