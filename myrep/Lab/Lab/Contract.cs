@@ -1,5 +1,6 @@
 ﻿namespace Lab
 {
+    [Serializable]
     public class Contract
     {
         public int Number { get; set; }

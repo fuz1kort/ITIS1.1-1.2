@@ -8,8 +8,11 @@
             var jsonfile = new JsonFile("Компания.json", "Таблица.json");
             MyCompany company = jsonfile.ReadComp();
             Timeboard timeboard = jsonfile.ReadTimeboard();
+            company.Notify += DisplayMessage;
+            jsonfile.Notify += DisplayMessage;
+            xmlfile.Notify += DisplayMessage;
             //MyCompany company = xmlfile.ReadComp();
-            //Timeboard timeboard = new Timeboard();
+            //Timeboard timeboard = xmlfile.ReadTimeboard();
             bool exit = false;
 
             while (!exit)
@@ -83,8 +86,9 @@
                                 }
                             }
 
-                            company.AddEmployee(employee);
                             Console.Clear();
+                            company.AddEmployee(employee);
+
 
                             Console.WriteLine("\nДобавить еще одного сотрудника?(Да, Нет)");
                             if (Console.ReadLine() == "Да")
@@ -154,6 +158,7 @@
                             var comment = Console.ReadLine() ?? string.Empty;
                             DateOnly date = new(year, month, day);
                             Contract contract = new(number, date, name, amount, comment);
+                            Console.Clear();
                             company.AddContract(contract);
                             break;
                         }
@@ -201,8 +206,8 @@
                             jsonfile.SaveComp(company);
                             jsonfile.SaveTimeboard(timeboard);
                             //xmlfile.SaveComp(company);
+                            //xmlfile.SaveTimeboard(timeboard);
                             //Console.WriteLine(xmlfile.ReadComp());
-                            Console.WriteLine("Данные были сохранены");
                             exit = true;
                             break; 
                         }
@@ -235,6 +240,8 @@
                 foreach (var contract in company.GetAllContracts())
                     Console.WriteLine(contract);
             }
+
+            void DisplayMessage(string message) => Console.WriteLine(message);
 
         }
     }

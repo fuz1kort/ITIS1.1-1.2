@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "dtupl6tjWeLrAGZZdDgq68pffLHxP8Rbit95cIBGxWqten9hb0fug7OszPXaUbxJhbuP2diXhFp9papEQZ71EQ==",
+  "dgSpecHash": "uxmPLv3OgU30TRBHenzIxRfH5KUSIrQL+uLn75PT17Ie9xby26IqiBx94n4pvCGGrSD/TwxokLQ1NAIZGAVJYQ==",
   "success": false,
-  "projectFilePath": "C:\\Users\\gafar\\Source\\Repos\\fuz1kort\\itiscs\\TestProject1\\TestZadacha910.csproj",
+  "projectFilePath": "C:\\Users\\gafar\\OneDrive\\Документы\\GitHub\\itiscs\\TestProject1\\TestZadacha910.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\gafar\\.nuget\\packages\\coverlet.collector\\3.1.2\\coverlet.collector.3.1.2.nupkg.sha512",
     "C:\\Users\\gafar\\.nuget\\packages\\microsoft.codecoverage\\17.3.2\\microsoft.codecoverage.17.3.2.nupkg.sha512",
@@ -56,8 +56,8 @@
     {
       "code": "NU1104",
       "level": "Error",
-      "message": "Не удалось найти проект \"C:\\Users\\gafar\\Source\\Repos\\fuz1kort\\itiscs\\9-10\\Zadacha910.csproj\". Убедитесь, что ссылка на проект действительна и файл проекта существует.",
-      "libraryId": "C:\\Users\\gafar\\Source\\Repos\\fuz1kort\\itiscs\\9-10\\Zadacha910.csproj",
+      "message": "Не удалось найти проект \"C:\\Users\\gafar\\OneDrive\\Документы\\GitHub\\itiscs\\9-10\\Zadacha910.csproj\". Убедитесь, что ссылка на проект действительна и файл проекта существует.",
+      "libraryId": "C:\\Users\\gafar\\OneDrive\\Документы\\GitHub\\itiscs\\9-10\\Zadacha910.csproj",
       "targetGraphs": [
         "net7.0"
       ]

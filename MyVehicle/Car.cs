@@ -1,25 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MyVehicle
+﻿namespace MyVehicle
 {
-    public class Car : Vehicle
+    class Car : Vehicle
     {
         private string townFrom;
         private string townTo;
-        
-        protected override int Maxspeed { get => maxSpeed; set { } }
-        protected override int Currspeed
+
+        private static int maxSpeed;
+        public int currspeed;
+        int MaxSpeed { get => maxSpeed; set { } }
+        int Currspeed
         {
             get => currSpeed;
             set
             {
-                if (value > Maxspeed)
-                    currSpeed = Maxspeed;
+                if (value > MaxSpeed)
+                    currSpeed = MaxSpeed;
                 else if (value < 0)
                     currSpeed = 0;
                 currSpeed = value;
@@ -30,10 +25,17 @@ namespace MyVehicle
             townFrom = from;
             townTo = to;
         }
-        
 
-        public override void SpeedDown() => Currspeed -= 5;
-        public override void SpeedUp() => Currspeed += 5;
-        public override string ToString() => $"Машина едет со скоростью {Currspeed} км/ч из {townFrom} в {townTo}";
+
+        public static void Go() => Console.WriteLine("Go Go Go");
+        public override void SpeedDown() => Currspeed -= 10;
+        public override void SpeedUp() => Currspeed += 10;
+
+        public int SetupSpeed(int speed)
+        {
+            Currspeed = speed;
+            return Currspeed;
+        }
+       
     }
 }

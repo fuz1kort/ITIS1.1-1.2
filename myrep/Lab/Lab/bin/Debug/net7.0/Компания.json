@@ -3,16 +3,16 @@
     {
       "Number": 1,
       "FullName": "Гена",
-      "Rating": 2,
+      "Rating": 3,
       "EmploymentDate": "2012-12-12",
       "IsMemberOfLaborUnion": true,
       "Position": {
-        "Code": 3,
-        "Name": "Столяр",
-        "BaseHourlyRate": 120
+        "Code": 4,
+        "Name": "Маляр",
+        "BaseHourlyRate": 80
       },
-      "HourlyRate": 132,
-      "NumberOfScheme": 2
+      "HourlyRate": 96,
+      "NumberOfScheme": 3
     }
   ],
   "Positions": [
@@ -47,5 +47,13 @@
       "BaseHourlyRate": 130
     }
   ],
-  "Contracts": []
+  "Contracts": [
+    {
+      "Number": 1,
+      "Date": "2012-12-12",
+      "Client": "Люда",
+      "Amount": 2000,
+      "Comment": "Кайф"
+    }
+  ]
 }
