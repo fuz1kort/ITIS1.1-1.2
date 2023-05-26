@@ -1,1 +1,1 @@
-{"Name":"C4","MaxSpeed":"150","Colour":"White"}
+{"Name":"Vesta","MaxSpeed":"150","Colour":"Silver"}

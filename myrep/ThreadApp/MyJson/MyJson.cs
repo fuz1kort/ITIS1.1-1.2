@@ -9,7 +9,6 @@ namespace MyJson
         public static string SerializeObject<T>(T obj)
         {
             var type = typeof(T);
-
             var properties = type.GetProperties();
             var jsonBuilder = new StringBuilder();
             jsonBuilder.Append("{");
@@ -96,6 +95,27 @@ namespace MyJson
             }
 
             return obj;
+        }
+
+        public static string SerializeObject<T>(List<T> list)
+        {
+            var jsonbuilder = new StringBuilder();
+            jsonbuilder.Append("{");
+            var nameT = typeof(T).Name;
+            jsonbuilder.Append(nameT);
+            foreach ( var item in list )
+            {
+                SerializeObject(item);
+            }
+
+            jsonbuilder.Append("}");
+            return jsonbuilder.ToString();
+        }
+
+        public static List<T> DeserializeObject<T>(string path)
+            where T : new()
+        {
+            var json = File.ReadAllText(path);
         }
 
         public static async Task WriteJsonInFile(string json, string path)

@@ -5,14 +5,21 @@
         private static readonly string path = Directory.GetCurrentDirectory() + @"/path.txt";
         static async Task Main()
         {
-            var citroen = new Car()
+            var cars = new List<Car>()
             {
-                Name = "C4",
-                MaxSpeed = 150,
-                Colour = "White"
+                new Car{ Name = "Citroen", MaxSpeed = 120, Colour = "White" },
+                new Car{ Name = "BMW", MaxSpeed = 300, Colour = "Black" },
+                new Car{ Name = "Mercedes-Benz", MaxSpeed = 250, Colour = "Green"}
             };
 
-            var json = MyJson.SerializeObject(citroen);
+            var lada = new Car()
+            {
+                Name = "Vesta",
+                MaxSpeed = 150,
+                Colour = "Silver"
+            };
+
+            var json = MyJson.SerializeObject(lada);
             var task = Task.Run(() => MyJson.WriteJsonInFile(json, path));
             await task;
             Console.WriteLine(json);
@@ -23,7 +30,7 @@
         }
     }
 
-    class Car
+    public class Car
     {
         public string Name { get; set; }
         public int MaxSpeed { get; set; }
