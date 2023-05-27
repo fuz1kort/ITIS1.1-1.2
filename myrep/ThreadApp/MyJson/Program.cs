@@ -2,7 +2,8 @@
 {
     class Program
     {
-        private static readonly string path = Directory.GetCurrentDirectory() + @"/path.txt";
+        private static readonly string path1 = Directory.GetCurrentDirectory() + @"/path1.txt";
+        private static readonly string path2 = Directory.GetCurrentDirectory() + @"/path2.txt";
         static async Task Main()
         {
             var cars = new List<Car>()
@@ -19,21 +20,34 @@
                 Colour = "Silver"
             };
 
-            var json = MyJson.SerializeObject(lada);
-            var task = Task.Run(() => MyJson.WriteJsonInFile(json, path));
-            await task;
-            Console.WriteLine(json);
 
-            var obj = MyJson.DeserializeObject<Car>(path);
-            Console.WriteLine($"Name: {obj.Name}\nMaxSpeed: {obj.MaxSpeed}\nColour: {obj.Colour}");
+            var json = MyJson.SerializeObject(lada);
+            var task1 = Task.Run(() => MyJson.WriteJsonInFile(json, path1));
+            await task1;
+            Console.WriteLine(json);
+            var obje = MyJson.DeserializeObject<Car>(path1);
+            Console.WriteLine($"Name: {obje.Name}\nMaxSpeed: {obje.MaxSpeed}\nColour: {obje.Colour}");
+
+
+
+            var jsons = MyJson.SerializeList(cars);
+            var task2 = Task.Run(() => MyJson.WriteJsonInFile(jsons, path2));
+            await task2;
+            Console.WriteLine(jsons);
+            var objs = MyJson.DeserializeList<Car>(path2);
+            foreach (var obj in objs)
+            {
+                Console.WriteLine($"Name: {obj.Name}\nMaxSpeed: {obj.MaxSpeed}\nColour: {obj.Colour}");
+            }
+
 
         }
     }
 
     public class Car
     {
-        public string Name { get; set; }
+        public string? Name { get; set; }
         public int MaxSpeed { get; set; }
-        public string Colour { get; set; }
+        public string? Colour { get; set; }
     }
 }
